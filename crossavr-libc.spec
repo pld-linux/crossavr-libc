@@ -1,5 +1,5 @@
-Summary:	AVR libc 
-Summary(pl):	AVR libc
+Summary:	AVR libc
+Summary(pl):	libc na AVR
 Name:		crossavr-libc
 Version:	20020203
 Release:	1
