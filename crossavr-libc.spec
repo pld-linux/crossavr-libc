@@ -1,11 +1,11 @@
 Summary:	AVR libc
 Summary(pl):	libc na AVR
 Name:		crossavr-libc
-Version:	20020203
+Version:	1.0.2
 Release:	1
 License:	Public Domain
 Group:		Development/Tools
-Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.gz
+Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.bz2
 # Source0-md5:	fb80cdba885f5ed0f62422393062255f
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils
@@ -48,6 +48,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/*.html
 %dir %{arch}/include
 %{arch}/include/*.h
+%dir %{arch}/include/avr
+%{arch}/include/avr/*.h
 %dir %{arch}/lib
 %{arch}/lib/*.[oa]
 %dir %{arch}/lib/avr?
