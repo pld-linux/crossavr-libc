@@ -6,8 +6,7 @@ Release:	1
 Epoch:		1
 License:	Public Domain
 Group:		Development/Tools
-#Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.bz2
-Source0:	http://jubal.westnet.com/AVR/avr-libc-%{version}.tar.gz
+Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.gz
 # Source0-md5:	7ed0af0f978c0b62ee0e07d3af58eeee
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils
@@ -16,6 +15,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target		avr
 %define		arch		%{_prefix}/%{target}
+%define		no_install_post_strip	1
 
 %description
 Contains the standard C library for Atmel AVR microcontrollers.
