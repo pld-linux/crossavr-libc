@@ -6,6 +6,7 @@ Release:	1
 License:	Public Domain
 Group:		Development/Tools
 Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.gz
+# Source0-md5:	fb80cdba885f5ed0f62422393062255f
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils
 BuildRequires:	crossavr-gcc
