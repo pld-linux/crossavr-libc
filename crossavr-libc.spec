@@ -41,6 +41,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc doc/*.html
 %dir %{arch}/include
 %{arch}/include/*.h
 %dir %{arch}/lib
