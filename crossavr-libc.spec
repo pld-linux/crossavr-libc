@@ -5,8 +5,10 @@ Version:	20020203
 Release:	1
 License:	Public Domain
 Group:		Development/Tools
-Source0:	http://www.amelek.gda.pl/libc/avr-libc-%{version}.tar.gz
-BuildPrereq:	crossavr-binutils, crossavr-gcc
+Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.gz
+URL:		http://www.nongnu.org/avr-libc/
+BuildRequires:	crossavr-binutils
+BuildRequires:	crossavr-gcc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target		avr
