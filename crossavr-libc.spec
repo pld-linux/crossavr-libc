@@ -19,7 +19,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Contains the standard C library for Atmel AVR microcontrollers.
 
 %description -l pl
-Pakiet zawiera standardow± bibliotekê C dla mikrokontrolerów Atmel AVR.
+Pakiet zawiera standardow± bibliotekê C dla mikrokontrolerów Atmel
+AVR.
 
 %prep
 %setup -q -n avr-libc-%{version}
