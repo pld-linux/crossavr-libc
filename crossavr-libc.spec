@@ -13,6 +13,7 @@ Source1:	http://savannah.nongnu.org/download/avr-libc/avr-libc-user-manual.tar.b
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils >= 2.14
 BuildRequires:	crossavr-gcc >= 3.3
+Requires:	crossavr-gcc >= 3.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target		avr
@@ -40,9 +41,13 @@ PREFIX=%{arch}
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_prefix}
 
-cd build
-%{__make} install \
+%{__make} -C build install \
 	prefix=$RPM_BUILD_ROOT%{_prefix}
+
+%if 0%{!?debug:1}
+%{target}-strip -g $RPM_BUILD_ROOT%{arch}/lib/*.[oa] \
+	$RPM_BUILD_ROOT%{arch}/lib/avr?/*.[oa]
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,7 +59,6 @@ rm -rf $RPM_BUILD_ROOT
 %{arch}/include/*.h
 %dir %{arch}/include/avr
 %{arch}/include/avr/*.h
-%dir %{arch}/lib
 %{arch}/lib/*.[oa]
 %dir %{arch}/lib/avr?
 %{arch}/lib/avr?/*.[oa]
