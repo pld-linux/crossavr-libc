@@ -3,6 +3,7 @@ Summary(pl):	libc na AVR
 Name:		crossavr-libc
 Version:	1.0.2
 Release:	1
+Epoch:		1
 License:	Public Domain
 Group:		Development/Tools
 Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.bz2
