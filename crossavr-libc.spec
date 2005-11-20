@@ -1,21 +1,20 @@
 Summary:	AVR libc
 Summary(pl):	libc na AVR
 Name:		crossavr-libc
-Version:	1.2.6
-Release:	2
+Version:	1.4.0
+Release:	1
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
 Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.bz2
-# Source0-md5:	481c280ae3e66f071bf4a74af3565539
+# Source0-md5:	f32c3728fd99055fec6420843e6b5863
 Source1:	http://savannah.nongnu.org/download/avr-libc/avr-libc-user-manual-%{version}.tar.bz2
-# Source1-md5:	cfa1a9768488aa96b4a55dd6aeb6c62f
-Source2:	http://savannah.nongnu.org/download/avr-libc/avr-libc-manpages-%{version}.bz2
-# Source2-md5:	1ec7091540538919e1ada2841757dc3e
+# Source1-md5:	58c1d6e46f6aaa2b5883fdb51ca4ad18
+Source2:	http://savannah.nongnu.org/download/avr-libc/avr-libc-manpages-%{version}.tar.bz2
+# Source2-md5:	a251deecc4e368f5034069b003412814
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils >= 2.14
 BuildRequires:	crossavr-gcc >= 3.3
-BuildRequires:	sed >= 4.0
 Requires:	crossavr-gcc >= 3.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,22 +33,21 @@ AVR.
 %setup -q -n avr-libc-%{version} -a1 -a2
 
 %build
-sed -i -e 's|@DOC_INST_DIR@|%{_datadir}/%{name}-%{version}|' scripts/avr-man.in
-
-CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" \
-CONFIG_SHELL="/bin/bash" \
-PREFIX=%{arch}
-./doconf
-./domake
+CFLAGS="%{rpmcflags}" \
+CXXFLAGS="%{rpmcflags}"
+./configure \
+	--prefix=%{_prefix} \
+	--build=%{_target_platform} \
+	--host=%{target} 
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_prefix}
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%{__make} -C build install \
-	prefix=$RPM_BUILD_ROOT%{_prefix}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT 
 
 cp -rf doc/examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -rf man $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
@@ -72,6 +70,8 @@ rm -rf $RPM_BUILD_ROOT
 %{arch}/include/avr/*.h
 %dir %{arch}/include/compat
 %{arch}/include/compat/*.h
+%dir %{arch}/include/util
+%{arch}/include/util/*.h
 %{arch}/lib/*.[oa]
 %dir %{arch}/lib/avr?
 %{arch}/lib/avr?/*.[oa]
