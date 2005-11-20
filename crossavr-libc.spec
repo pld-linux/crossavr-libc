@@ -2,7 +2,7 @@ Summary:	AVR libc
 Summary(pl):	libc na AVR
 Name:		crossavr-libc
 Version:	1.4.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
@@ -34,12 +34,13 @@ AVR.
 
 %build
 CFLAGS="%{rpmcflags}" \
-CXXFLAGS="%{rpmcflags}"
+CXXFLAGS="%{rpmcflags}" \
 ./configure \
 	--prefix=%{_prefix} \
 	--build=%{_target_platform} \
 	--host=%{target} 
-%{__make}
+%{__make} \
+	DOC_INST_DIR="%{_datadir}/%{name}-%{version}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
