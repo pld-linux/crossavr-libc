@@ -1,17 +1,17 @@
 Summary:	AVR libc
 Summary(pl):	libc na AVR
 Name:		crossavr-libc
-Version:	1.4.1
+Version:	1.4.2
 Release:	1
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
 Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.bz2
-# Source0-md5:	970244f82015f75a51e8f05749ef05ec
+# Source0-md5:	d4cb171169cabda4889ba6f6a58f1fa8
 Source1:	http://savannah.nongnu.org/download/avr-libc/avr-libc-user-manual-%{version}.tar.bz2
-# Source1-md5:	8954b5207cc009a804484fac91bb4f1c
+# Source1-md5:	7302c9cc8f315ab6b6ce1d1c57bd29bf
 Source2:	http://savannah.nongnu.org/download/avr-libc/avr-libc-manpages-%{version}.tar.bz2
-# Source2-md5:	f53defc01e251ab893efe49dcc3cac68
+# Source2-md5:	3837a83f7087280052d3207e2397c121
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils >= 2.14
 BuildRequires:	crossavr-gcc >= 3.3
