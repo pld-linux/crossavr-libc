@@ -1,5 +1,5 @@
 Summary:	AVR libc
-Summary(pl.UTF-8):   libc na AVR
+Summary(pl.UTF-8):	libc na AVR
 Name:		crossavr-libc
 Version:	1.4.4
 Release:	1
