@@ -1,5 +1,5 @@
 Summary:	AVR libc
-Summary(pl):	libc na AVR
+Summary(pl.UTF-8):   libc na AVR
 Name:		crossavr-libc
 Version:	1.4.4
 Release:	1
@@ -25,8 +25,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Contains the standard C library for Atmel AVR microcontrollers.
 
-%description -l pl
-Pakiet zawiera standardow± bibliotekê C dla mikrokontrolerów Atmel
+%description -l pl.UTF-8
+Pakiet zawiera standardowÄ… bibliotekÄ™ C dla mikrokontrolerÃ³w Atmel
 AVR.
 
 %prep
