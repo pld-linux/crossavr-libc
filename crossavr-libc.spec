@@ -2,7 +2,7 @@ Summary:	AVR libc
 Summary(pl.UTF-8):	libc na AVR
 Name:		crossavr-libc
 Version:	1.4.5
-Release:	1
+Release:	0.2
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
@@ -52,6 +52,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 cp -rf doc/examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -rf man $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
+rm -rf $RPM_BUILD_ROOT%{_docdir}/avr-libc-%{version}/examples
 
 %if 0%{!?debug:1}
 %{target}-strip -g $RPM_BUILD_ROOT%{arch}/lib/*.[oa] \
