@@ -2,7 +2,7 @@ Summary:	AVR libc
 Summary(pl.UTF-8):	libc na AVR
 Name:		crossavr-libc
 Version:	1.4.5
-Release:	0.2
+Release:	2
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
