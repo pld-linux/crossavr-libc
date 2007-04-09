@@ -1,21 +1,21 @@
 Summary:	AVR libc
 Summary(pl.UTF-8):	libc na AVR
 Name:		crossavr-libc
-Version:	1.4.4
+Version:	1.4.5
 Release:	1
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
-Source0:	http://savannah.nongnu.org/download/avr-libc/avr-libc-%{version}.tar.bz2
-# Source0-md5:	04f774841b9dc9886de8120f1dfb16e3
-Source1:	http://savannah.nongnu.org/download/avr-libc/avr-libc-user-manual-%{version}.tar.bz2
-# Source1-md5:	d16d93acd3fff820511ed3ad5add512c
-Source2:	http://savannah.nongnu.org/download/avr-libc/avr-libc-manpages-%{version}.tar.bz2
-# Source2-md5:	59ac7ee9fcd30f2b3fbb978d3acf0d66
+Source0:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-1.4.5.tar.bz2
+# Source0-md5:	4ff3b350e1cefc995dae0b6266c16f46
+Source1:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-user-manual-%{version}.tar.bz2
+# Source1-md5:	584aecb290da445e8c5491be54258b35
+Source2:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-manpages-%{version}.tar.bz2
+# Source2-md5:	f439e21de8a9704f46f32e3da70b8264
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils >= 2.14
-BuildRequires:	crossavr-gcc >= 3.3
-Requires:	crossavr-gcc >= 3.3
+BuildRequires:	crossavr-gcc >= 1:3.3
+Requires:	crossavr-gcc >= 1:3.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target		avr
