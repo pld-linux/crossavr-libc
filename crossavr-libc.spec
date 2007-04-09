@@ -6,7 +6,7 @@ Release:	1
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
-Source0:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-1.4.5.tar.bz2
+Source0:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-%{version}.tar.bz2
 # Source0-md5:	4ff3b350e1cefc995dae0b6266c16f46
 Source1:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-user-manual-%{version}.tar.bz2
 # Source1-md5:	584aecb290da445e8c5491be54258b35
@@ -38,7 +38,7 @@ CXXFLAGS="%{rpmcflags}" \
 ./configure \
 	--prefix=%{_prefix} \
 	--build=%{_target_platform} \
-	--host=%{target} 
+	--host=%{target}
 %{__make} \
 	DOC_INST_DIR="%{_datadir}/%{name}-%{version}"
 
@@ -48,7 +48,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT 
+	DESTDIR=$RPM_BUILD_ROOT
 
 cp -rf doc/examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -rf man $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
