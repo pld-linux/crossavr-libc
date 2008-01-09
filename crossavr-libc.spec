@@ -1,17 +1,17 @@
 Summary:	AVR libc
 Summary(pl.UTF-8):	libc na AVR
 Name:		crossavr-libc
-Version:	1.4.6
+Version:	1.6.1
 Release:	1
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
 Source0:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-%{version}.tar.bz2
-# Source0-md5:	504b5e3beefc0d500ff94ea88391f71d
+# Source0-md5:	22b822edcae196621482a5524dfd4bed
 Source1:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-user-manual-%{version}.tar.bz2
-# Source1-md5:	4ed26ca4061aec886209099fa713c6d8
+# Source1-md5:	3b691a08ed290339baef8b069e7795a3
 Source2:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-manpages-%{version}.tar.bz2
-# Source2-md5:	c80daf3fe433d1a70ad8d91fac951866
+# Source2-md5:	435ed68e113ec072645f3105a8c5ab33
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils >= 2.14
 BuildRequires:	crossavr-gcc >= 1:3.3
@@ -33,6 +33,7 @@ AVR.
 %setup -q -n avr-libc-%{version} -a1 -a2
 
 %build
+
 CFLAGS="%{rpmcflags}" \
 CXXFLAGS="%{rpmcflags}" \
 ./configure \
