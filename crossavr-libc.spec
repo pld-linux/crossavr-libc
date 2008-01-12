@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{arch}/include/util
 %{arch}/include/util/*.h
 %{arch}/lib/*.[oa]
-%dir %{arch}/lib/avr?
-%{arch}/lib/avr?/*.[oa]
+%dir %{arch}/lib/avr*
+%{arch}/lib/avr*/*.[oa]
 %{_datadir}/%{name}-%{version}
 %{_examplesdir}/%{name}-%{version}
