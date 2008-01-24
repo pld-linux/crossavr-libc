@@ -20,7 +20,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target		avr
 %define		arch		%{_prefix}/%{target}
-%define		no_install_post_strip	1
 
 %description
 Contains the standard C library for Atmel AVR microcontrollers.
