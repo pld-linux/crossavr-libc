@@ -1,17 +1,17 @@
 Summary:	AVR libc
 Summary(pl.UTF-8):	libc na AVR
 Name:		crossavr-libc
-Version:	1.6.1
+Version:	1.6.2
 Release:	1
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
 Source0:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-%{version}.tar.bz2
-# Source0-md5:	22b822edcae196621482a5524dfd4bed
+# Source0-md5:	f503d8ef5487b7e3584d9fb4a0c1a14b
 Source1:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-user-manual-%{version}.tar.bz2
-# Source1-md5:	3b691a08ed290339baef8b069e7795a3
+# Source1-md5:	2c63dcee618877077c70ef12faf506f5
 Source2:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-manpages-%{version}.tar.bz2
-# Source2-md5:	435ed68e113ec072645f3105a8c5ab33
+# Source2-md5:	60f141c8e92ba819ceae5c5f173db90a
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils >= 2.14
 BuildRequires:	crossavr-gcc >= 1:3.3
@@ -20,6 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target		avr
 %define		arch		%{_prefix}/%{target}
+
+%define		__strip		%{target}-strip
 
 %description
 Contains the standard C library for Atmel AVR microcontrollers.
