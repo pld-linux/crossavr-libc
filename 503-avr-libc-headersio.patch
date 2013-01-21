@@ -1,0 +1,254 @@
+diff -Naurp include/avr/io.h include/avr/io.h
+--- include/avr/io.h	2012-11-03 00:46:16.079399592 +0530
++++ include/avr/io.h	2012-11-03 00:58:30.251040217 +0530
+@@ -196,20 +196,36 @@
+ #  include <avr/iom64a.h>
+ #elif defined (__AVR_ATmega640__)
+ #  include <avr/iom640.h>
+-#elif defined (__AVR_ATmega644__) || defined (__AVR_ATmega644A__)
++#elif defined (__AVR_ATmega644__) 
+ #  include <avr/iom644.h>
++#elif (defined __AVR_ATmega644A__)
++#include <avr/iom644a.h>
+ #elif defined (__AVR_ATmega644P__)
+ #  include <avr/iom644p.h>
+ #elif defined (__AVR_ATmega644PA__)
+ #  include <avr/iom644pa.h>
+-#elif defined (__AVR_ATmega645__) || defined (__AVR_ATmega645A__) || defined (__AVR_ATmega645P__)
++#elif defined (__AVR_ATmega645__)
+ #  include <avr/iom645.h>
+-#elif defined (__AVR_ATmega6450__) || defined (__AVR_ATmega6450A__) || defined (__AVR_ATmega6450P__)
++#elif (defined __AVR_ATmega645A__)
++#include <avr/iom645a.h>
++#elif (defined __AVR_ATmega645P__)
++#include <avr/iom645p.h>
++#elif defined (__AVR_ATmega6450__)
+ #  include <avr/iom6450.h>
+-#elif defined (__AVR_ATmega649__) || defined (__AVR_ATmega649A__)
++#elif (defined __AVR_ATmega6450A__)
++#include <avr/iom6450a.h>
++#elif (defined __AVR_ATmega6450P__)
++#include <avr/iom6450p.h>
++#elif defined (__AVR_ATmega649__)
+ #  include <avr/iom649.h>
+-#elif defined (__AVR_ATmega6490__) || defined (__AVR_ATmega6490A__) || defined (__AVR_ATmega6490P__)
++#elif (defined __AVR_ATmega649A__)
++#include <avr/iom649a.h>
++#elif defined (__AVR_ATmega6490__)
+ #  include <avr/iom6490.h>
++#elif (defined __AVR_ATmega6490A__)
++#include <avr/iom6490a.h>
++#elif (defined __AVR_ATmega6490P__)
++#include <avr/iom6490p.h>
+ #elif defined (__AVR_ATmega649P__)
+ #  include <avr/iom649p.h>
+ #elif defined (__AVR_ATmega64HVE__)
+@@ -222,34 +238,48 @@
+ #  include <avr/iom32a.h>
+ #elif defined (__AVR_ATmega323__)
+ #  include <avr/iom323.h>
+-#elif defined (__AVR_ATmega324P__) || defined (__AVR_ATmega324A__)
+-#  include <avr/iom324.h>
++#elif defined (__AVR_ATmega324P__)
++#  include <avr/iom324p.h>
++#elif (defined __AVR_ATmega324A__)
++#include <avr/iom324a.h>
+ #elif defined (__AVR_ATmega324PA__)
+ #  include <avr/iom324pa.h>
+-#elif defined (__AVR_ATmega325__) || defined (__AVR_ATmega325A__)
++#elif defined (__AVR_ATmega325__)
+ #  include <avr/iom325.h>
++#elif (defined __AVR_ATmega325A__)
++#include <avr/iom325a.h>
+ #elif defined (__AVR_ATmega325P__)
+-#  include <avr/iom325.h>
++#  include <avr/iom325p.h>
+ #elif defined (__AVR_ATmega325PA__)
+ #  include <avr/iom325pa.h>  
+-#elif defined (__AVR_ATmega3250__) || defined (__AVR_ATmega3250A__)
++#elif defined (__AVR_ATmega3250__) 
+ #  include <avr/iom3250.h>
++#elif (defined __AVR_ATmega3250A__)
++#include <avr/iom3250a.h>
+ #elif defined (__AVR_ATmega3250P__)
+-#  include <avr/iom3250.h>
++#  include <avr/iom3250p.h>
+ #elif defined (__AVR_ATmega3250PA__)
+ #  include <avr/iom3250pa.h>  
+-#elif defined (__AVR_ATmega328P__) || defined (__AVR_ATmega328__)
++#elif defined (__AVR_ATmega328P__)
+ #  include <avr/iom328p.h>
+-#elif defined (__AVR_ATmega329__) || defined (__AVR_ATmega329A__)
+-#  include <avr/iom329.h>
+-#elif defined (__AVR_ATmega329P__) || defined (__AVR_ATmega329PA__)
++#elif (defined __AVR_ATmega328__)
++#include <avr/iom328.h>
++#elif defined (__AVR_ATmega329__)
+ #  include <avr/iom329.h>
+-#elif defined (__AVR_ATmega3290__) || defined (__AVR_ATmega3290A__)
++#elif (defined __AVR_ATmega329A__)
++#include <avr/iom329a.h>
++#elif defined (__AVR_ATmega329P__) 
++#  include <avr/iom329p.h>
++#elif (defined __AVR_ATmega329PA__)
++#include <avr/iom329pa.h>
++#elif (defined __AVR_ATmega3290PA__)
++#include <avr/iom3290pa.h>
++#elif defined (__AVR_ATmega3290__)
+ #  include <avr/iom3290.h>
++#elif (defined __AVR_ATmega3290A__)
++#include <avr/iom3290a.h>
+ #elif defined (__AVR_ATmega3290P__)
+ #  include <avr/iom3290.h>
+-#elif defined (__AVR_ATmega3290PA__)
+-#  include <avr/iom3290pa.h> 
+ #elif defined (__AVR_ATmega32HVB__)
+ #  include <avr/iom32hvb.h>
+ #elif defined (__AVR_ATmega32HVBREVB__)
+@@ -266,24 +296,32 @@
+ #  include <avr/iom162.h>
+ #elif defined (__AVR_ATmega163__)
+ #  include <avr/iom163.h>
+-#elif defined (__AVR_ATmega164P__) || defined (__AVR_ATmega164A__)
+-#  include <avr/iom164.h>
++#elif defined (__AVR_ATmega164P__)
++#  include <avr/iom164p.h>
++#elif (defined __AVR_ATmega164A__)
++#include <avr/iom164a.h>
+ #elif defined (__AVR_ATmega164PA__)
+ #  include <avr/iom164pa.h>
+-#elif defined (__AVR_ATmega165__) || defined (__AVR_ATmega165A__)
++#elif defined (__AVR_ATmega165__)
+ #  include <avr/iom165.h>
++#elif (defined __AVR_ATmega165A__)
++#include <avr/iom165a.h>
+ #elif defined (__AVR_ATmega165P__)
+ #  include <avr/iom165p.h>
+ #elif defined (__AVR_ATmega165PA__)
+ #  include <avr/iom165pa.h>
+-#elif defined (__AVR_ATmega168__) || defined (__AVR_ATmega168A__)
++#elif defined (__AVR_ATmega168__)
+ #  include <avr/iom168.h>
++#elif (defined __AVR_ATmega168A__)
++#include <avr/iom168a.h>
+ #elif defined (__AVR_ATmega168P__)
+ #  include <avr/iom168p.h>
+ #elif defined (__AVR_ATmega168PA__)
+ #  include <avr/iom168pa.h>
+-#elif defined (__AVR_ATmega169__) || defined (__AVR_ATmega169A__)
++#elif defined (__AVR_ATmega169__)
+ #  include <avr/iom169.h>
++#elif (defined __AVR_ATmega169A__)
++#include <avr/iom169a.h>
+ #elif defined (__AVR_ATmega169P__)
+ #  include <avr/iom169p.h>
+ #elif defined (__AVR_ATmega169PA__)
+@@ -302,14 +340,18 @@
+ #  include <avr/iom8.h>
+ #elif defined (__AVR_ATmega8A__)
+ #  include <avr/iom8a.h>
+-#elif defined (__AVR_ATmega48__) || defined (__AVR_ATmega48A__)
++#elif (defined __AVR_ATmega48A__)
++#  include <avr/iom48a.h>
++#elif defined (__AVR_ATmega48__)
+ #  include <avr/iom48.h>
+ #elif defined (__AVR_ATmega48PA__)
+ #  include <avr/iom48pa.h>
+ #elif defined (__AVR_ATmega48P__)
+ #  include <avr/iom48p.h>
+-#elif defined (__AVR_ATmega88__) || defined (__AVR_ATmega88A__)
++#elif defined (__AVR_ATmega88__)
+ #  include <avr/iom88.h>
++#elif (defined __AVR_ATmega88A__)
++#  include <avr/iom88a.h>
+ #elif defined (__AVR_ATmega88P__)
+ #  include <avr/iom88p.h>
+ #elif defined (__AVR_ATmega88PA__)
+diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
+--- include/avr/Makefile.am	2012-11-03 00:46:16.079399592 +0530
++++ include/avr/Makefile.am	2012-11-03 00:58:30.251040217 +0530
+@@ -91,14 +91,19 @@ avr_HEADERS = \
+     iom162.h \
+     iom163.h \
+     iom164.h \
++    iom164p.h \
++    iom164a.h \
+     iom164pa.h \
+     iom165.h \
++    iom165a.h \
+     iom165p.h \
+     iom165pa.h \
+     iom168.h \
++    iom168a.h \
+     iom168p.h \
+     iom168pa.h \
+     iom169.h \
++    iom169a.h \
+     iom169p.h \
+     iom169pa.h \
+     iom16hva.h \
+@@ -115,15 +120,25 @@ avr_HEADERS = \
+     iom32.h \
+     iom32a.h \
+     iom323.h \
+-    iom324.h \
++    iom324p.h \
++    iom324a.h \
+     iom324pa.h \
+     iom325.h \
++    iom325a.h \
++    iom325p.h \
+     iom325pa.h \
+     iom3250.h \
++    iom3250a.h \
++    iom3250p.h \
+     iom3250pa.h \
++    iom328.h \
+     iom328p.h \
+     iom329.h \
++    iom329p.h \
++    iom329a.h \
++    iom329pa.h \
+     iom3290.h \
++    iom3290a.h \
+     iom3290pa.h \
+     iom32hvb.h \
+     iom32hvbrevb.h \
+@@ -132,6 +147,7 @@ avr_HEADERS = \
+     iom32u2.h \
+     iom32u4.h \
+     iom32u6.h \
++    iom48a.h \
+     iom48.h \
+     iom48pa.h \
+     iom48p.h \
+@@ -140,13 +156,21 @@ avr_HEADERS = \
+     iom64a.h \
+     iom640.h \
+     iom644.h \
++    iom644a.h \
+     iom644p.h \
+     iom644pa.h \
+     iom645.h \
++    iom645a.h \
++    iom645p.h \
+     iom6450.h \
++    iom6450a.h \
++    iom6450p.h \
+     iom649.h \
++    iom649a.h \
+     iom649p.h \
+     iom6490.h \
++    iom6490a.h \
++    iom6490p.h \
+     iom64c1.h \
+     iom64hve.h \
+     iom64m1.h \
+@@ -156,6 +180,7 @@ avr_HEADERS = \
+     iom8515.h \
+     iom8535.h \
+     iom88.h \
++    iom88a.h \
+     iom88p.h \
+     iom88pa.h \
+     iom8hva.h \

@@ -1,0 +1,12 @@
+diff -Naurp include/avr/power.h include/avr/power.h
+--- include/avr/power.h	2012-02-13 14:51:12.000000000 +0530
++++ include/avr/power.h	2012-02-13 14:55:55.000000000 +0530
+@@ -526,7 +526,7 @@ do { \
+     PR_PRGEN|= (uint8_t)(PR_EBI_bm|PR_RTC_bm|PR_EVSYS_bm|PR_DMA_bm); \
+     PR_PRPA |= (uint8_t)(PR_ADC_bm|PR_AC_bm); \
+     PR_PRPB |= (uint8_t)(PR_ADC_bm|PR_AC_bm); \
+-    PR_PRPC |= (uint8_t)(PR_TWI_bm|R_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPC |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
+     PR_PRPD |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
+     PR_PRPE |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
+     PR_PRPF |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \

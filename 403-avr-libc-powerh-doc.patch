@@ -1,0 +1,1185 @@
+diff -Naurp include/avr/power.h include/avr/power.h
+--- include/avr/power.h	2012-11-03 00:46:16.083399618 +0530
++++ include/avr/power.h	2012-11-03 00:43:37.914615292 +0530
+@@ -72,279 +72,1047 @@ find out which macros are applicable to
+   </tr>
+ 
+   <tr>
+-    <td>power_adc_enable()</td>
+-    <td>Enable the Analog to Digital Converter module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_aca_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_adc_disable()</td>
+-    <td>Disable the Analog to Digital Converter module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_aca_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_lcd_enable()</td>
+-    <td>Enable the LCD module.</td>
+-    <td>ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3</td>
++   <td>power_acb_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_lcd_disable().</td>
+-    <td>Disable the LCD module.</td>
+-    <td>ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3</td>
++   <td>power_acb_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_pscr_enable()</td>
+-    <td>Enable the Reduced Power Stage Controller module.</td>
+-    <td>AT90PWM81</td>
++   <td>power_adc_disable()</td>
++     <td>Disable the Analog to Digital Converter module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATmega1284, ATmega1284P, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634, ATtiny4, ATtiny5, ATtiny9, ATtiny10, ATtiny13A, ATtiny20, ATtiny40</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_pscr_disable()</td>
+-    <td>Disable the Reduced Power Stage Controller module.</td>
+-    <td>AT90PWM81</td>
++   <td>power_adc_enable()</td>
++     <td>Enable the Analog to Digital Converter module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATmega1284, ATmega1284P, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634, ATtiny4, ATtiny5, ATtiny9, ATtiny10, ATtiny13A, ATtiny20, ATtiny40</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_psc0_enable()</td>
+-    <td>Enable the Power Stage Controller 0 module.</td>
+-    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B</td>
++   <td>power_adca_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_psc0_disable()</td>
+-    <td>Disable the Power Stage Controller 0 module.</td>
+-    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B</td>
++   <td>power_adca_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_psc1_enable()</td>
+-    <td>Enable the Power Stage Controller 1 module.</td>
+-    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B</td>
++   <td>power_adcb_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_psc1_disable()</td>
+-    <td>Disable the Power Stage Controller 1 module.</td>
+-    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B</td>
++   <td>power_adcb_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_psc2_enable()</td>
+-    <td>Enable the Power Stage Controller 2 module.</td>
+-    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM81</td>
++   <td>power_aes_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3, AT90SCR100</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_psc2_disable()</td>
+-    <td>Disable the Power Stage Controller 2 module.</td>
+-    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM81</td>
++   <td>power_aes_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3, AT90SCR100</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_spi_enable()</td>
+-    <td>Enable the Serial Peripheral Interface module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_all_disable()</td>
++     <td>Disable all modules.</td>
++    <td>ATxmega384C3, ATxmega256A3BU, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega64A4U, ATxmega128A3U, ATxmega128A4U, ATxmega192A3U, ATxmega256A3U, ATxmega384C3, ATxmega256A3BU, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega64A4U, ATxmega128A3U, ATxmega128A4U, ATxmega192A3U, ATxmega256A3U, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega64D4, ATxmega128D4, ATxmega16D4, ATxmega32D4, ATxmega64D3, ATxmega128D3, ATxmega192D3, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3, ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega406, ATtiny828, ATtiny828, ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATA5790, ATA5795, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100, ATtiny4, ATtiny5, ATtiny9, ATtiny10, ATtiny13A, ATtiny20, ATtiny40</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_spi_disable()</td>
+-    <td>Disable the Serial Peripheral Interface module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_all_enable()</td>
++     <td>Enable all modules.</td>
++    <td>ATxmega384C3, ATxmega256A3BU, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega64A4U, ATxmega128A3U, ATxmega128A4U, ATxmega192A3U, ATxmega256A3U, ATxmega384C3, ATxmega256A3BU, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega64A4U, ATxmega128A3U, ATxmega128A4U, ATxmega192A3U, ATxmega256A3U, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega64D4, ATxmega128D4, ATxmega16D4, ATxmega32D4, ATxmega64D3, ATxmega128D3, ATxmega192D3, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3, ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega406, ATtiny828, ATtiny828, ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATA5790, ATA5795, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100, ATtiny4, ATtiny5, ATtiny9, ATtiny10, ATtiny13A, ATtiny20, ATtiny40</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer0_enable()</td>
+-    <td>Enable the Timer 0 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM216, AT90PWM316, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_can_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer0_disable()</td>
+-    <td>Disable the Timer 0 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_can_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer1_enable()</td>
+-    <td>Enable the Timer 1 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_cinterface_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer1_disable()</td>
+-    <td>Disable the Timer 1 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_cinterface_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer2_enable()</td>
+-    <td>Enable the Timer 2 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168</td>
++   <td>power_crypto_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer2_disable()</td>
+-    <td>Disable the Timer 2 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168</td>
++   <td>power_crypto_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer3_enable()</td>
+-    <td>Enable the Timer 3 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287</td>
++   <td>power_daca_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer3_disable()</td>
+-    <td>Disable the Timer 3 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287</td>
++   <td>power_daca_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer4_enable()</td>
+-    <td>Enable the Timer 4 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561</td>
++   <td>power_dacb_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer4_disable()</td>
+-    <td>Disable the Timer 4 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561</td>
++   <td>power_dacb_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer5_enable()</td>
+-    <td>Enable the Timer 5 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561</td>
++   <td>power_dma_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_timer5_disable()</td>
+-    <td>Disable the Timer 5 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561</td>
++   <td>power_dma_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_twi_enable()</td>
+-    <td>Enable the Two Wire Interface module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_ebi_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_twi_disable()</td>
+-    <td>Disable the Two Wire Interface module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_ebi_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart_enable()</td>
+-    <td>Enable the USART module.</td>
+-    <td>AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B</td>
++   <td>power_edma_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart_disable()</td>
+-    <td>Disable the USART module.</td>
+-    <td>AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B</td>
++   <td>power_edma_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart0_enable()</td>
+-    <td>Enable the USART 0 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_evsys_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart0_disable()</td>
+-    <td>Disable the USART 0 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_evsys_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart1_enable()</td>
+-    <td>Enable the USART 1 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_hiresc_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart1_disable()</td>
+-    <td>Disable the USART 1 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATxmega16A4U, ATxmega32A4U</td>
++   <td>power_hiresc_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart2_enable()</td>
+-    <td>Enable the USART 2 module.</td>
++   <td>power_hiresd_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_hiresd_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_hirese_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_hirese_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_hiresf_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_hiresf_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_hsspi_disable()</td>
++    <td> Enter Description Here </td>
++    <td>AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_hsspi_enable()</td>
++    <td> Enter Description Here </td>
++    <td>AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_irdriver_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
++  </tr>
++
++  <tr>
++   <td>power_irdriver_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
++  </tr>
++
++  <tr>
++   <td>power_kb_disable()</td>
++    <td> Enter Description Here </td>
++    <td>AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_kb_enable()</td>
++    <td> Enter Description Here </td>
++    <td>AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_lcd_disable()</td>
++     <td>Disable the LCD module.</td>
++    <td>ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P</td>
++  </tr>
++
++  <tr>
++   <td>power_lcd_enable()</td>
++     <td>Enable the LCD module.</td>
++    <td>ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P</td>
++  </tr>
++
++  <tr>
++   <td>power_lfreceiver_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790</td>
++  </tr>
++
++  <tr>
++   <td>power_lfreceiver_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790</td>
++  </tr>
++
++  <tr>
++   <td>power_lin_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272</td>
++  </tr>
++
++  <tr>
++   <td>power_lin_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272</td>
++  </tr>
++
++  <tr>
++   <td>power_pga_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_pga_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_psc0_disable()</td>
++     <td>Disable the Power Stage Controller 0 module.</td>
++    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316</td>
++  </tr>
++
++  <tr>
++   <td>power_psc0_enable()</td>
++     <td>Enable the Power Stage Controller 0 module.</td>
++    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316</td>
++  </tr>
++
++  <tr>
++   <td>power_psc1_disable()</td>
++     <td>Disable the Power Stage Controller 1 module.</td>
++    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316</td>
++  </tr>
++
++  <tr>
++   <td>power_psc1_enable()</td>
++     <td>Enable the Power Stage Controller 1 module.</td>
++    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316</td>
++  </tr>
++
++  <tr>
++   <td>power_psc2_disable()</td>
++     <td>Disable the Power Stage Controller 2 module.</td>
++    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161</td>
++  </tr>
++
++  <tr>
++   <td>power_psc2_enable()</td>
++     <td>Enable the Power Stage Controller 2 module.</td>
++    <td>AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161</td>
++  </tr>
++
++  <tr>
++   <td>power_psc_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1</td>
++  </tr>
++
++  <tr>
++   <td>power_psc_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1</td>
++  </tr>
++
++  <tr>
++   <td>power_pscr_disable()</td>
++     <td>Disable the Reduced Power Stage Controller module.</td>
++    <td>AT90PWM81, AT90PWM161</td>
++  </tr>
++
++  <tr>
++   <td>power_pscr_enable()</td>
++     <td>Enable the Reduced Power Stage Controller module.</td>
++    <td>AT90PWM81, AT90PWM161</td>
++  </tr>
++
++  <tr>
++   <td>power_ram0_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_ram0_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_ram1_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_ram1_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_ram2_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_ram2_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_ram3_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_ram3_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_rtc_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_rtc_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_sci_disable()</td>
++    <td> Enter Description Here </td>
++    <td>AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_sci_enable()</td>
++    <td> Enter Description Here </td>
++    <td>AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_spi_disable()</td>
++     <td>Disable the Serial Peripheral Interface module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATA5790, ATA5795, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100, ATtiny20, ATtiny40</td>
++  </tr>
++
++  <tr>
++   <td>power_spi_enable()</td>
++     <td>Enable the Serial Peripheral Interface module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATA5790, ATA5795, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100, ATtiny20, ATtiny40</td>
++  </tr>
++
++  <tr>
++   <td>power_spic_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_spic_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_spid_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_spid_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_spie_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_spie_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_spif_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_spif_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc0c_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc0c_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc0d_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_tc0d_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_tc0e_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc0e_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc0f_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_tc0f_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_tc1c_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc1c_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc1d_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc1d_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc1e_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc1e_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc1f_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc1f_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_tc4c_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
++  </tr>
++
++  <tr>
++   <td>power_tc4c_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
++  </tr>
++
++  <tr>
++   <td>power_tc5c_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
++  </tr>
++
++  <tr>
++   <td>power_tc5c_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
++  </tr>
++
++  <tr>
++   <td>power_tc5d_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
++  </tr>
++
++  <tr>
++   <td>power_tc5d_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
++  </tr>
++
++  <tr>
++   <td>power_timer0_disable()</td>
++     <td>Disable the Timer 0 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega406, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100, ATtiny4, ATtiny5, ATtiny9, ATtiny10, ATtiny13A, ATtiny20, ATtiny40</td>
++  </tr>
++
++  <tr>
++   <td>power_timer0_enable()</td>
++     <td>Enable the Timer 0 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega406, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100, ATtiny4, ATtiny5, ATtiny9, ATtiny10, ATtiny13A, ATtiny20, ATtiny40</td>
++  </tr>
++
++  <tr>
++   <td>power_timer1_disable()</td>
++     <td>Disable the Timer 1 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega406, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATA5790, ATA5795, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100, ATtiny20, ATtiny40</td>
++  </tr>
++
++  <tr>
++   <td>power_timer1_enable()</td>
++     <td>Enable the Timer 1 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, AT90PWM161, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega406, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATA5790, ATA5795, ATmega16M1, ATmega32C1, ATmega32M1, ATmega64C1, ATmega64M1, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100, ATtiny20, ATtiny40</td>
++  </tr>
++
++  <tr>
++   <td>power_timer2_disable()</td>
++     <td>Disable the Timer 2 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATmega1284, ATmega1284P, ATA5790, ATA5795, AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_timer2_enable()</td>
++     <td>Enable the Timer 2 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATmega1284, ATmega1284P, ATA5790, ATA5795, AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_timer3_disable()</td>
++     <td>Disable the Timer 3 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, ATmega1284, ATmega1284P, ATA5790, ATA5795</td>
++  </tr>
++
++  <tr>
++   <td>power_timer3_enable()</td>
++     <td>Enable the Timer 3 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, ATmega1284, ATmega1284P, ATA5790, ATA5795</td>
++  </tr>
++
++  <tr>
++   <td>power_timer4_disable()</td>
++     <td>Disable the Timer 4 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_timer4_enable()</td>
++     <td>Enable the Timer 4 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_timer5_disable()</td>
++     <td>Disable the Timer 5 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_timer5_enable()</td>
++     <td>Enable the Timer 5 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_timermodulator_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
++  </tr>
++
++  <tr>
++   <td>power_timermodulator_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
++  </tr>
++
++  <tr>
++   <td>power_transceiver_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_transceiver_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega256RFR2, ATmega128RFR2, ATmega64RFR2</td>
++  </tr>
++
++  <tr>
++   <td>power_twi_disable()</td>
++     <td>Disable the Two Wire Interface module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega406, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATtiny1634, AT90SCR100, ATtiny20, ATtiny40</td>
++  </tr>
++
++  <tr>
++   <td>power_twi_enable()</td>
++     <td>Enable the Two Wire Interface module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega406, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATmega1284, ATmega1284P, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB, ATtiny1634, AT90SCR100, ATtiny20, ATtiny40</td>
++  </tr>
++
++  <tr>
++   <td>power_twic_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_twic_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_twid_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_twid_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_twie_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_twie_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_twif_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_twif_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_usart0_disable()</td>
++     <td>Disable the USART 0 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, ATmega32U4, ATmega16U4, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATmega1284, ATmega1284P, ATtiny1634, AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_usart0_enable()</td>
++     <td>Enable the USART 0 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, ATmega32U4, ATmega16U4, ATmega165, ATmega165A, ATmega165P, ATmega165PA, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega645A, ATmega645P, ATmega6450, ATmega6450A, ATmega6450P, ATmega169, ATmega169A, ATmega169P, ATmega169PA, ATmega329, ATmega329A, ATmega329P, ATmega329PA, ATmega3290, ATmega3290A, ATmega3290P, ATmega3290PA, ATmega649, ATmega649A, ATmega649P, ATmega6490, ATmega6490A, ATmega6490P, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega644, ATmega164PA, ATmega48, ATmega48A, ATmega48PA, ATmega48P, ATmega88, ATmega88A, ATmega88P, ATmega88PA, ATmega168, ATmega168A, ATmega168P, ATmega168PA, ATmega328, ATmega328P, ATtiny48, ATtiny88, ATtiny828, ATmega1284, ATmega1284P, ATtiny1634, AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_usart1_disable()</td>
++     <td>Disable the USART 1 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega1284P, ATtiny1634, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2</td>
++  </tr>
++
++  <tr>
++   <td>power_usart1_enable()</td>
++     <td>Enable the USART 1 module.</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, ATmega128RFA1, ATmega256RFR2, ATmega128RFR2, ATmega64RFR2, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, ATmega164A, ATmega164P, ATmega324A, ATmega324P, ATmega324PA, ATmega644P, ATmega644A, ATmega644PA, ATmega1284P, ATtiny1634, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2</td>
++  </tr>
++
++  <tr>
++   <td>power_usart2_disable()</td>
++     <td>Disable the USART 2 module.</td>
+     <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart2_disable()</td>
+-    <td>Disable the USART 2 module.</td>
++   <td>power_usart2_enable()</td>
++     <td>Enable the USART 2 module.</td>
+     <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart3_enable()</td>
+-    <td>Enable the USART 3 module.</td>
++   <td>power_usart3_disable()</td>
++     <td>Disable the USART 3 module.</td>
+     <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usart3_disable()</td>
+-    <td>Disable the USART 3 module.</td>
++   <td>power_usart3_enable()</td>
++     <td>Enable the USART 3 module.</td>
+     <td>ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usb_enable()</td>
+-    <td>Enable the USB module.</td>
+-    <td>AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3, ATxmega16A4U, ATxmega32A4U, ATxmega128c3, ATxmega256c3, ATxmega16c4, ATxmega32c4</td>
++   <td>power_usart_disable()</td>
++     <td>Disable the USART module.</td>
++    <td>AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316</td>
++  </tr>
++
++  <tr>
++   <td>power_usart_enable()</td>
++     <td>Enable the USART module.</td>
++    <td>AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316</td>
++  </tr>
++
++  <tr>
++   <td>power_usartc0_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_usartc0_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_usartc1_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3</td>
++  </tr>
++
++  <tr>
++   <td>power_usartc1_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3</td>
++  </tr>
++
++  <tr>
++   <td>power_usartd0_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
++  </tr>
++
++  <tr>
++   <td>power_usartd0_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
++  </tr>
++
++  <tr>
++   <td>power_usartd1_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_usartd1_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_usarte0_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_usarte0_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3</td>
++  </tr>
++
++  <tr>
++   <td>power_usarte1_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_usarte1_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_usartf0_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_usartf0_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega16A4, ATxmega16A4U, ATxmega16D4, ATxmega32A4, ATxmega32A4U, ATxmega32D4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega64D3, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega128D3, ATxmega192A3, ATxmega192A3U, ATxmega192D3, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3, ATxmega64D4, ATxmega128D4</td>
++  </tr>
++
++  <tr>
++   <td>power_usartf1_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_usartf1_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega16A4, ATxmega16A4U, ATxmega32A4U, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmega64A3U, ATxmega64A4U, ATxmega128A1, ATxmega128A1U, ATxmega128A3, ATxmega128A3U, ATxmega128A4U, ATxmega192A3, ATxmega192A3U, ATxmega256A3, ATxmega256A3U, ATxmega256A3B, ATxmega256A3BU, ATxmega384C3</td>
++  </tr>
++
++  <tr>
++   <td>power_usb_disable()</td>
++     <td>Disable the USB module.</td>
++    <td>ATxmega384C3, ATxmega256A3BU, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega64A4U, ATxmega128A3U, ATxmega128A4U, ATxmega192A3U, ATxmega256A3U, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_usb_enable()</td>
++     <td>Enable the USB module.</td>
++    <td>ATxmega384C3, ATxmega256A3BU, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega64A4U, ATxmega128A3U, ATxmega128A4U, ATxmega192A3U, ATxmega256A3U, ATxmega16C4, ATxmega32C4, ATxmega64C3, ATxmega128C3, ATxmega192C3, ATxmega256C3, ATxmega64B1, ATxmega64B3, ATxmega128B1, ATxmega128B3, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega32U4, ATmega16U4, ATmega32U6, AT90USB82, AT90USB162, ATmega8U2, ATmega16U2, ATmega32U2, AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_usbh_disable()</td>
++    <td> Enter Description Here </td>
++    <td>AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_usbh_enable()</td>
++    <td> Enter Description Here </td>
++    <td>AT90SCR100</td>
++  </tr>
++
++  <tr>
++   <td>power_usi_disable()</td>
++     <td>Disable the Universal Serial Interface module.</td>
++    <td>ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634</td>
++  </tr>
++
++  <tr>
++   <td>power_usi_enable()</td>
++     <td>Enable the Universal Serial Interface module.</td>
++    <td>ATtiny24, ATtiny24A, ATtiny44, ATtiny44A, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny261A, ATtiny461, ATtiny461A, ATtiny861, ATtiny861A, ATtiny43U, ATtiny167, ATtiny87, ATA5505, ATA5272, ATtiny1634</td>
++  </tr>
++
++  <tr>
++   <td>power_vadc_disable()</td>
++     <td>Disable the Voltage ADC module.</td>
++    <td>ATmega406, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usb_disable()</td>
+-    <td>Disable the USB module.</td>
+-    <td>AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3, ATxmega16A4U, ATxmega32A4U,ATxmega128c3, ATxmega256c3, ATxmega16c4, ATxmega32c4</td>
++   <td>power_vadc_enable()</td>
++     <td>Enable the Voltage ADC module.</td>
++    <td>ATmega406, ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usi_enable()</td>
+-    <td>Enable the Universal Serial Interface module.</td>
+-    <td>ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++   <td>power_vmonitor_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_usi_disable()</td>
+-    <td>Disable the Universal Serial Interface module.</td>
+-    <td>ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++   <td>power_vmonitor_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATA5790, ATA5795</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_vadc_enable()</td>
+-    <td>Enable the Voltage ADC module.</td>
+-    <td>ATmega406</td>
++   <td>power_vrm_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_vadc_disable()</td>
+-    <td>Disable the Voltage ADC module.</td>
+-    <td>ATmega406</td>
++   <td>power_vrm_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATmega32HVB, ATmega32HVBREVB, ATmega16HVB, ATmega16HVBREVB</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_all_enable()</td>
+-    <td>Enable all modules.</td>
+-    <td>ATxmega6A4, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmegaA1, ATxmegaA1U, ATxmega128A3, ATxmega192A3, ATxmega256A3, ATxmegaA3B, ATxmega16D4, ATxmega32D4, ATxmega64D3, ATxmega128D3, ATxmega192D3, ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega128A3U, ATxmega192A3U, ATxmega256A3U</td>
++   <td>power_xcl_disable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
+   </tr>
+ 
+   <tr>
+-    <td>power_all_disable()</td>
+-    <td>Disable all modules.</td>
+-    <td>ATxmega6A4, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmegaA1, ATxmegaA1U, ATxmega128A3, ATxmega192A3, ATxmega256A3, ATxmegaA3B, ATxmega16D4, ATxmega32D4, ATxmega64D3, ATxmega128D3,ATxmega192D3, ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega128A3U, ATxmega192A3U, ATxmega256A3U</td>
++   <td>power_xcl_enable()</td>
++    <td> Enter Description Here </td>
++    <td>ATxmega32E5, ATxmega16E5, ATxmega8E5</td>
+   </tr>
+ </table>
+ </center>

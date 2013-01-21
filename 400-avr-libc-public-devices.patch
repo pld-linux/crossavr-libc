@@ -1,0 +1,2954 @@
+diff -Naurp configure.ac configure.ac
+--- configure.ac	2012-11-05 12:21:09.000000000 +0530
++++ configure.ac	2012-11-05 12:23:27.000000000 +0530
+@@ -461,6 +461,9 @@ AM_CONDITIONAL(HAS_avr25, test "x$HAS_av
+ CHECK_AVR_DEVICE(ata6289)
+ AM_CONDITIONAL(HAS_ata6289, test "x$HAS_ata6289" = "xyes")
+ 
++CHECK_AVR_DEVICE(ata5272)
++AM_CONDITIONAL(HAS_ata5272, test "x$HAS_ata5272" = "xyes")
++
+ CHECK_AVR_DEVICE(attiny13)
+ AM_CONDITIONAL(HAS_attiny13, test "x$HAS_attiny13" = "xyes")
+ 
+@@ -512,6 +515,9 @@ AM_CONDITIONAL(HAS_attiny461a, test "x$H
+ CHECK_AVR_DEVICE(attiny48)
+ AM_CONDITIONAL(HAS_attiny48, test "x$HAS_attiny48" = "xyes")
+ 
++CHECK_AVR_DEVICE(attiny828)
++AM_CONDITIONAL(HAS_attiny828, test "x$HAS_attiny828" = "xyes")
++
+ CHECK_AVR_DEVICE(attiny84)
+ AM_CONDITIONAL(HAS_attiny84, test "x$HAS_attiny84" = "xyes")
+ 
+@@ -560,6 +566,9 @@ AM_CONDITIONAL(HAS_at90usb82, test "x$HA
+ CHECK_AVR_DEVICE(at90usb162)
+ AM_CONDITIONAL(HAS_at90usb162, test "x$HAS_at90usb162" = "xyes")
+ 
++CHECK_AVR_DEVICE(ata5505)
++AM_CONDITIONAL(HAS_ata5505, test "x$HAS_ata5505" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega8u2)
+ AM_CONDITIONAL(HAS_atmega8u2, test "x$HAS_atmega8u2" = "xyes")
+ 
+@@ -572,6 +581,9 @@ AM_CONDITIONAL(HAS_atmega32u2, test "x$H
+ CHECK_AVR_DEVICE(attiny167)
+ AM_CONDITIONAL(HAS_attiny167, test "x$HAS_attiny167" = "xyes")
+ 
++CHECK_AVR_DEVICE(attiny1634)
++AM_CONDITIONAL(HAS_attiny1634, test "x$HAS_attiny1634" = "xyes")
++
+ 
+ # avr4
+ AM_CONDITIONAL(HAS_avr4, true)
+@@ -579,12 +591,24 @@ AM_CONDITIONAL(HAS_atmega8, true)
+ AM_CONDITIONAL(HAS_atmega8515, true)
+ AM_CONDITIONAL(HAS_atmega8535, true)
+ 
++CHECK_AVR_DEVICE(ata6285)
++AM_CONDITIONAL(HAS_ata6285, test "x$HAS_ata6285" = "xyes")
++
++CHECK_AVR_DEVICE(ata6286)
++AM_CONDITIONAL(HAS_ata6286, test "x$HAS_ata6286" = "xyes")
++
++CHECK_AVR_DEVICE(atmega8a)
++AM_CONDITIONAL(HAS_atmega8a, test "x$HAS_atmega8a" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega48)
+ AM_CONDITIONAL(HAS_atmega48, test "x$HAS_atmega48" = "xyes")
+ 
+ CHECK_AVR_DEVICE(atmega48a)
+ AM_CONDITIONAL(HAS_atmega48a, test "x$HAS_atmega48a" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega48pa)
++AM_CONDITIONAL(HAS_atmega48pa, test "x$HAS_atmega48pa" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega48p)
+ AM_CONDITIONAL(HAS_atmega48p, test "x$HAS_atmega48p" = "xyes")
+ 
+@@ -646,9 +670,18 @@ AM_CONDITIONAL(HAS_at90pwm316, test "x$H
+ CHECK_AVR_DEVICE(at90pwm216)
+ AM_CONDITIONAL(HAS_at90pwm216, test "x$HAS_at90pwm216" = "xyes")
+ 
++CHECK_AVR_DEVICE(at90pwm161)
++AM_CONDITIONAL(HAS_at90pwm161, test "x$HAS_at90pwm161" = "xyes")
++
+ CHECK_AVR_DEVICE(at94k)
+ AM_CONDITIONAL(HAS_at94k, test "x$HAS_at94k" = "xyes")
+ 
++CHECK_AVR_DEVICE(ata5790)
++AM_CONDITIONAL(HAS_ata5790, test "x$HAS_ata5790" = "xyes")
++
++CHECK_AVR_DEVICE(ata5795)
++AM_CONDITIONAL(HAS_ata5795, test "x$HAS_ata5795" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega16)
+ AM_CONDITIONAL(HAS_atmega16, test "x$HAS_atmega16" = "xyes")
+ 
+@@ -670,6 +703,9 @@ AM_CONDITIONAL(HAS_atmega164a, test "x$H
+ CHECK_AVR_DEVICE(atmega164p)
+ AM_CONDITIONAL(HAS_atmega164p, test "x$HAS_atmega164p" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega164pa)
++AM_CONDITIONAL(HAS_atmega164pa, test "x$HAS_atmega164pa" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega165)
+ AM_CONDITIONAL(HAS_atmega165, test "x$HAS_atmega165" = "xyes")
+ 
+@@ -679,6 +715,9 @@ AM_CONDITIONAL(HAS_atmega165a, test "x$H
+ CHECK_AVR_DEVICE(atmega165p)
+ AM_CONDITIONAL(HAS_atmega165p, test "x$HAS_atmega165p" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega165pa)
++AM_CONDITIONAL(HAS_atmega165pa, test "x$HAS_atmega165pa" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega168)
+ AM_CONDITIONAL(HAS_atmega168, test "x$HAS_atmega168" = "xyes")
+ 
+@@ -688,6 +727,9 @@ AM_CONDITIONAL(HAS_atmega168a, test "x$H
+ CHECK_AVR_DEVICE(atmega168p)
+ AM_CONDITIONAL(HAS_atmega168p, test "x$HAS_atmega168p" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega168pa)
++AM_CONDITIONAL(HAS_atmega168pa, test "x$HAS_atmega168pa" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega169)
+ AM_CONDITIONAL(HAS_atmega169, test "x$HAS_atmega169" = "xyes")
+ 
+@@ -721,6 +763,9 @@ AM_CONDITIONAL(HAS_atmega16u4, test "x$H
+ CHECK_AVR_DEVICE(atmega32)
+ AM_CONDITIONAL(HAS_atmega32, test "x$HAS_atmega32" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega32a)
++AM_CONDITIONAL(HAS_atmega32a, test "x$HAS_atmega32a" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega323)
+ AM_CONDITIONAL(HAS_atmega323, test "x$HAS_atmega323" = "xyes")
+ 
+@@ -742,6 +787,9 @@ AM_CONDITIONAL(HAS_atmega325a, test "x$H
+ CHECK_AVR_DEVICE(atmega325p)
+ AM_CONDITIONAL(HAS_atmega325p, test "x$HAS_atmega325p" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega325pa)
++AM_CONDITIONAL(HAS_atmega325pa, test "x$HAS_atmega325pa" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega3250)
+ AM_CONDITIONAL(HAS_atmega3250, test "x$HAS_atmega3250" = "xyes")
+ 
+@@ -751,6 +799,9 @@ AM_CONDITIONAL(HAS_atmega3250a, test "x$
+ CHECK_AVR_DEVICE(atmega3250p)
+ AM_CONDITIONAL(HAS_atmega3250p, test "x$HAS_atmega3250p" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega3250pa)
++AM_CONDITIONAL(HAS_atmega3250pa, test "x$HAS_atmega3250pa" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega328)
+ AM_CONDITIONAL(HAS_atmega328, test "x$HAS_atmega328" = "xyes")
+ 
+@@ -778,6 +829,9 @@ AM_CONDITIONAL(HAS_atmega3290a, test "x$
+ CHECK_AVR_DEVICE(atmega3290p)
+ AM_CONDITIONAL(HAS_atmega3290p, test "x$HAS_atmega3290p" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega3290pa)
++AM_CONDITIONAL(HAS_atmega3290pa, test "x$HAS_atmega3290pa" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega32c1)
+ AM_CONDITIONAL(HAS_atmega32c1, test "x$HAS_atmega32c1" = "xyes")
+ 
+@@ -802,6 +856,9 @@ AM_CONDITIONAL(HAS_atmega406, test "x$HA
+ CHECK_AVR_DEVICE(atmega64)
+ AM_CONDITIONAL(HAS_atmega64, test "x$HAS_atmega64" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega64a)
++AM_CONDITIONAL(HAS_atmega64a, test "x$HAS_atmega64a" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega640)
+ AM_CONDITIONAL(HAS_atmega640, test "x$HAS_atmega640" = "xyes")
+ 
+@@ -876,12 +933,18 @@ AM_CONDITIONAL(HAS_avr51, test "x$HAS_av
+ 
+ AM_CONDITIONAL(HAS_atmega128, true)
+ 
++CHECK_AVR_DEVICE(atmega128a)
++AM_CONDITIONAL(HAS_atmega128a, test "x$HAS_atmega128a" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega1280)
+ AM_CONDITIONAL(HAS_atmega1280, test "x$HAS_atmega1280" = "xyes")
+ 
+ CHECK_AVR_DEVICE(atmega1281)
+ AM_CONDITIONAL(HAS_atmega1281, test "x$HAS_atmega1281" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega1284)
++AM_CONDITIONAL(HAS_atmega1284, test "x$HAS_atmega1284" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega1284p)
+ AM_CONDITIONAL(HAS_atmega1284p, test "x$HAS_atmega1284p" = "xyes")
+ 
+@@ -913,12 +976,24 @@ AM_CONDITIONAL(HAS_avrxmega2, test "x$HA
+ CHECK_AVR_DEVICE(atxmega16a4)
+ AM_CONDITIONAL(HAS_atxmega16a4, test "x$HAS_atxmega16a4" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega16a4u)
++AM_CONDITIONAL(HAS_atxmega16a4u, test "x$HAS_atxmega16a4u" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega16c4)
++AM_CONDITIONAL(HAS_atxmega16c4, test "x$HAS_atxmega16c4" = "xyes")
++
+ CHECK_AVR_DEVICE(atxmega16d4)
+ AM_CONDITIONAL(HAS_atxmega16d4, test "x$HAS_atxmega16d4" = "xyes")
+ 
+ CHECK_AVR_DEVICE(atxmega32a4)
+ AM_CONDITIONAL(HAS_atxmega32a4, test "x$HAS_atxmega32a4" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega32a4u)
++AM_CONDITIONAL(HAS_atxmega32a4u, test "x$HAS_atxmega32a4u" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega32c4)
++AM_CONDITIONAL(HAS_atxmega32c4, test "x$HAS_atxmega32c4" = "xyes")
++
+ CHECK_AVR_DEVICE(atxmega32d4)
+ AM_CONDITIONAL(HAS_atxmega32d4, test "x$HAS_atxmega32d4" = "xyes")
+ 
+@@ -930,9 +1005,27 @@ AM_CONDITIONAL(HAS_avrxmega4, test "x$HA
+ CHECK_AVR_DEVICE(atxmega64a3)
+ AM_CONDITIONAL(HAS_atxmega64a3, test "x$HAS_atxmega64a3" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega64a3u)
++AM_CONDITIONAL(HAS_atxmega64a3u, test "x$HAS_atxmega64a3u" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega64a4u)
++AM_CONDITIONAL(HAS_atxmega64a4u, test "x$HAS_atxmega64a4u" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega64b1)
++AM_CONDITIONAL(HAS_atxmega64b1, test "x$HAS_atxmega64b1" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega64b3)
++AM_CONDITIONAL(HAS_atxmega64b3, test "x$HAS_atxmega64b3" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega64c3)
++AM_CONDITIONAL(HAS_atxmega64c3, test "x$HAS_atxmega64c3" = "xyes")
++
+ CHECK_AVR_DEVICE(atxmega64d3)
+ AM_CONDITIONAL(HAS_atxmega64d3, test "x$HAS_atxmega64d3" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega64d4)
++AM_CONDITIONAL(HAS_atxmega64d4, test "x$HAS_atxmega64d4" = "xyes")
++
+ 
+ # avrxmega5
+ CHECK_AVR_DEVICE(avrxmega5)
+@@ -952,24 +1045,59 @@ AM_CONDITIONAL(HAS_avrxmega6, test "x$HA
+ CHECK_AVR_DEVICE(atxmega128a3)
+ AM_CONDITIONAL(HAS_atxmega128a3, test "x$HAS_atxmega128a3" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega128a3u)
++AM_CONDITIONAL(HAS_atxmega128a3u, test "x$HAS_atxmega128a3u" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega128b1)
++AM_CONDITIONAL(HAS_atxmega128b1, test "x$HAS_atxmega128b1" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega128b3)
++AM_CONDITIONAL(HAS_atxmega128b3, test "x$HAS_atxmega128b3" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega128c3)
++AM_CONDITIONAL(HAS_atxmega128c3, test "x$HAS_atxmega128c3" = "xyes")
++
+ CHECK_AVR_DEVICE(atxmega128d3)
+ AM_CONDITIONAL(HAS_atxmega128d3, test "x$HAS_atxmega128d3" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega128d4)
++AM_CONDITIONAL(HAS_atxmega128d4, test "x$HAS_atxmega128d4" = "xyes")
++
+ CHECK_AVR_DEVICE(atxmega192a3)
+ AM_CONDITIONAL(HAS_atxmega192a3, test "x$HAS_atxmega192a3" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega192a3u)
++AM_CONDITIONAL(HAS_atxmega192a3u, test "x$HAS_atxmega192a3u" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega192c3)
++AM_CONDITIONAL(HAS_atxmega192c3, test "x$HAS_atxmega192c3" = "xyes")
++
+ CHECK_AVR_DEVICE(atxmega192d3)
+ AM_CONDITIONAL(HAS_atxmega192d3, test "x$HAS_atxmega192d3" = "xyes")
+ 
+ CHECK_AVR_DEVICE(atxmega256a3)
+ AM_CONDITIONAL(HAS_atxmega256a3, test "x$HAS_atxmega256a3" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega256a3u)
++AM_CONDITIONAL(HAS_atxmega256a3u, test "x$HAS_atxmega256a3u" = "xyes")
++
+ CHECK_AVR_DEVICE(atxmega256a3b)
+ AM_CONDITIONAL(HAS_atxmega256a3b, test "x$HAS_atxmega256a3b" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega256a3bu)
++AM_CONDITIONAL(HAS_atxmega256a3bu, test "x$HAS_atxmega256a3bu" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega256c3)
++AM_CONDITIONAL(HAS_atxmega256c3, test "x$HAS_atxmega256c3" = "xyes")
++
+ CHECK_AVR_DEVICE(atxmega256d3)
+ AM_CONDITIONAL(HAS_atxmega256d3, test "x$HAS_atxmega256d3" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega384c3)
++AM_CONDITIONAL(HAS_atxmega384c3, test "x$HAS_atxmega384c3" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega384d3)
++AM_CONDITIONAL(HAS_atxmega384d3, test "x$HAS_atxmega384d3" = "xyes")
+ 
+ # avrxmega7
+ CHECK_AVR_DEVICE(avrxmega7)
+@@ -981,6 +1109,9 @@ AM_CONDITIONAL(HAS_atxmega128a1, test "x
+ CHECK_AVR_DEVICE(atxmega128a1u)
+ AM_CONDITIONAL(HAS_atxmega128a1u, test "x$HAS_atxmega128a1u" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega128a4u)
++AM_CONDITIONAL(HAS_atxmega128a4u, test "x$HAS_atxmega128a4u" = "xyes")
++
+ 
+ # avrtiny10
+ CHECK_AVR_DEVICE(avrtiny10)
+@@ -1076,6 +1207,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr25/Makefile
+ 	avr/lib/avr25/at86rf401/Makefile
+ 	avr/lib/avr25/ata6289/Makefile
++	avr/lib/avr25/ata5272/Makefile
+ 	avr/lib/avr25/attiny13/Makefile
+ 	avr/lib/avr25/attiny13a/Makefile
+ 	avr/lib/avr25/attiny2313/Makefile
+@@ -1093,6 +1225,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr25/attiny461/Makefile
+ 	avr/lib/avr25/attiny461a/Makefile
+ 	avr/lib/avr25/attiny48/Makefile
++	avr/lib/avr25/attiny828/Makefile
+ 	avr/lib/avr25/attiny84/Makefile
+ 	avr/lib/avr25/attiny84a/Makefile
+ 	avr/lib/avr25/attiny85/Makefile
+@@ -1125,19 +1258,25 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr35/Makefile
+ 	avr/lib/avr35/at90usb82/Makefile
+ 	avr/lib/avr35/at90usb162/Makefile
++	avr/lib/avr35/ata5505/Makefile
+ 	avr/lib/avr35/atmega8u2/Makefile
+ 	avr/lib/avr35/atmega16u2/Makefile
+ 	avr/lib/avr35/atmega32u2/Makefile
+ 	avr/lib/avr35/attiny167/Makefile
++	avr/lib/avr35/attiny1634/Makefile
+ ])
+ 
+ #avr4
+ AC_CONFIG_FILES([
+ 	avr/lib/avr4/Makefile
++	avr/lib/avr4/ata6285/Makefile
++	avr/lib/avr4/ata6286/Makefile
+ 	avr/lib/avr4/atmega48/Makefile
+ 	avr/lib/avr4/atmega48a/Makefile
++	avr/lib/avr4/atmega48pa/Makefile
+ 	avr/lib/avr4/atmega48p/Makefile
+ 	avr/lib/avr4/atmega8/Makefile
++	avr/lib/avr4/atmega8a/Makefile
+ 	avr/lib/avr4/atmega88/Makefile
+ 	avr/lib/avr4/atmega88a/Makefile
+ 	avr/lib/avr4/atmega88p/Makefile
+@@ -1161,12 +1300,15 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr5/at90can128/Makefile
+ 	avr/lib/avr5/at90pwm216/Makefile
+ 	avr/lib/avr5/at90pwm316/Makefile
++	avr/lib/avr5/at90pwm161/Makefile
+ 	avr/lib/avr5/at90scr100/Makefile
+ 	avr/lib/avr5/at90usb646/Makefile
+ 	avr/lib/avr5/at90usb647/Makefile
+ 	avr/lib/avr5/at90usb1286/Makefile
+ 	avr/lib/avr5/at90usb1287/Makefile
+ 	avr/lib/avr5/at94k/Makefile 
++	avr/lib/avr5/ata5790/Makefile 
++	avr/lib/avr5/ata5795/Makefile 
+ 	avr/lib/avr5/atmega16/Makefile
+ 	avr/lib/avr5/atmega16a/Makefile
+ 	avr/lib/avr5/atmega161/Makefile
+@@ -1174,12 +1316,15 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr5/atmega163/Makefile
+ 	avr/lib/avr5/atmega164a/Makefile
+ 	avr/lib/avr5/atmega164p/Makefile
++	avr/lib/avr5/atmega164pa/Makefile
+ 	avr/lib/avr5/atmega165/Makefile
+ 	avr/lib/avr5/atmega165a/Makefile
+ 	avr/lib/avr5/atmega165p/Makefile
++        avr/lib/avr5/atmega165pa/Makefile
+ 	avr/lib/avr5/atmega168/Makefile
+ 	avr/lib/avr5/atmega168a/Makefile
+ 	avr/lib/avr5/atmega168p/Makefile
++	avr/lib/avr5/atmega168pa/Makefile
+ 	avr/lib/avr5/atmega169/Makefile
+ 	avr/lib/avr5/atmega169a/Makefile
+ 	avr/lib/avr5/atmega169p/Makefile
+@@ -1191,6 +1336,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr5/atmega16m1/Makefile
+ 	avr/lib/avr5/atmega16u4/Makefile
+ 	avr/lib/avr5/atmega32/Makefile
++	avr/lib/avr5/atmega32a/Makefile
+ 	avr/lib/avr5/atmega323/Makefile
+ 	avr/lib/avr5/atmega324a/Makefile
+ 	avr/lib/avr5/atmega324p/Makefile
+@@ -1198,9 +1344,11 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr5/atmega325/Makefile
+ 	avr/lib/avr5/atmega325a/Makefile
+ 	avr/lib/avr5/atmega325p/Makefile
++	avr/lib/avr5/atmega325pa/Makefile
+ 	avr/lib/avr5/atmega3250/Makefile
+ 	avr/lib/avr5/atmega3250a/Makefile
+ 	avr/lib/avr5/atmega3250p/Makefile
++	avr/lib/avr5/atmega3250pa/Makefile
+ 	avr/lib/avr5/atmega328/Makefile
+ 	avr/lib/avr5/atmega328p/Makefile
+ 	avr/lib/avr5/atmega329/Makefile
+@@ -1210,6 +1358,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr5/atmega3290/Makefile
+ 	avr/lib/avr5/atmega3290a/Makefile
+ 	avr/lib/avr5/atmega3290p/Makefile
++	avr/lib/avr5/atmega3290pa/Makefile
+ 	avr/lib/avr5/atmega32c1/Makefile
+ 	avr/lib/avr5/atmega32hvb/Makefile
+ 	avr/lib/avr5/atmega32hvbrevb/Makefile
+@@ -1218,6 +1367,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr5/atmega32u6/Makefile
+ 	avr/lib/avr5/atmega406/Makefile
+ 	avr/lib/avr5/atmega64/Makefile
++	avr/lib/avr5/atmega64a/Makefile
+ 	avr/lib/avr5/atmega640/Makefile
+ 	avr/lib/avr5/atmega644/Makefile
+ 	avr/lib/avr5/atmega644a/Makefile
+@@ -1250,8 +1400,10 @@ AC_CONFIG_FILES([
+ AC_CONFIG_FILES([
+ 	avr/lib/avr51/Makefile
+ 	avr/lib/avr51/atmega128/Makefile
++	avr/lib/avr51/atmega128a/Makefile
+ 	avr/lib/avr51/atmega1280/Makefile
+ 	avr/lib/avr51/atmega1281/Makefile
++	avr/lib/avr51/atmega1284/Makefile
+ 	avr/lib/avr51/atmega1284p/Makefile
+ 	avr/lib/avr51/atmega128rfa1/Makefile
+ 	avr/lib/avr51/at90can128/Makefile
+@@ -1270,8 +1422,12 @@ AC_CONFIG_FILES([
+ AC_CONFIG_FILES([
+ 	avr/lib/avrxmega2/Makefile
+ 	avr/lib/avrxmega2/atxmega16a4/Makefile
++	avr/lib/avrxmega2/atxmega16a4u/Makefile
++	avr/lib/avrxmega2/atxmega16c4/Makefile
+ 	avr/lib/avrxmega2/atxmega16d4/Makefile
+ 	avr/lib/avrxmega2/atxmega32a4/Makefile
++	avr/lib/avrxmega2/atxmega32a4u/Makefile
++	avr/lib/avrxmega2/atxmega32c4/Makefile
+ 	avr/lib/avrxmega2/atxmega32d4/Makefile
+ ])
+ 
+@@ -1279,7 +1435,13 @@ AC_CONFIG_FILES([
+ AC_CONFIG_FILES([
+ 	avr/lib/avrxmega4/Makefile
+ 	avr/lib/avrxmega4/atxmega64a3/Makefile
++	avr/lib/avrxmega4/atxmega64a3u/Makefile
++	avr/lib/avrxmega4/atxmega64a4u/Makefile
++	avr/lib/avrxmega4/atxmega64b1/Makefile
++	avr/lib/avrxmega4/atxmega64b3/Makefile
++	avr/lib/avrxmega4/atxmega64c3/Makefile
+ 	avr/lib/avrxmega4/atxmega64d3/Makefile
++	avr/lib/avrxmega4/atxmega64d4/Makefile
+ ])
+ 
+ # avrxmega5
+@@ -1293,12 +1455,24 @@ AC_CONFIG_FILES([
+ AC_CONFIG_FILES([
+ 	avr/lib/avrxmega6/Makefile
+ 	avr/lib/avrxmega6/atxmega128a3/Makefile
++	avr/lib/avrxmega6/atxmega128a3u/Makefile
++	avr/lib/avrxmega6/atxmega128b1/Makefile
++	avr/lib/avrxmega6/atxmega128b3/Makefile
++	avr/lib/avrxmega6/atxmega128c3/Makefile
+ 	avr/lib/avrxmega6/atxmega128d3/Makefile
++	avr/lib/avrxmega6/atxmega128d4/Makefile
+ 	avr/lib/avrxmega6/atxmega192a3/Makefile
++	avr/lib/avrxmega6/atxmega192a3u/Makefile
++	avr/lib/avrxmega6/atxmega192c3/Makefile
+ 	avr/lib/avrxmega6/atxmega192d3/Makefile
+ 	avr/lib/avrxmega6/atxmega256a3/Makefile
++	avr/lib/avrxmega6/atxmega256a3u/Makefile
+ 	avr/lib/avrxmega6/atxmega256a3b/Makefile
++	avr/lib/avrxmega6/atxmega256a3bu/Makefile
++	avr/lib/avrxmega6/atxmega256c3/Makefile
+ 	avr/lib/avrxmega6/atxmega256d3/Makefile
++	avr/lib/avrxmega6/atxmega384c3/Makefile
++	avr/lib/avrxmega6/atxmega384d3/Makefile
+ ])
+ 
+ # avrxmega7
+@@ -1306,6 +1480,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avrxmega7/Makefile
+ 	avr/lib/avrxmega7/atxmega128a1/Makefile
+ 	avr/lib/avrxmega7/atxmega128a1u/Makefile
++	avr/lib/avrxmega7/atxmega128a4u/Makefile
+ ])
+ 
+ 
+diff -Naurp devtools/gen-avr-lib-tree.sh devtools/gen-avr-lib-tree.sh
+--- devtools/gen-avr-lib-tree.sh	2012-11-05 12:21:09.000000000 +0530
++++ devtools/gen-avr-lib-tree.sh	2012-11-05 12:23:27.000000000 +0530
+@@ -84,6 +84,7 @@ attiny861:crttn861.o:${DEV_DEFS}:${CFLAG
+ AVR25_DEV_INFO="\
+ at86rf401:crt86401.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ ata6289:crta6289.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++ata5272:crta5272.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny13:crttn13.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny13a:crttn13a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny2313:crttn2313.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -101,6 +102,7 @@ attiny45:crttn45.o:${DEV_DEFS}:${CFLAGS_
+ attiny461:crttn461.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny461a:crttn461a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny48:crttn48.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++attiny828:crttn828.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny84:crttn84.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny84a:crttn84a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny85:crttn85.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -127,17 +129,23 @@ at43usb320:crt43320.o:${DEV_DEFS}:${CFLA
+ AVR35_DEV_INFO="\
+ at90usb82:crtusb82.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at90usb162:crtusb162.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++ata5505:crta5505.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega8u2:crtm8u2.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega16u2:crtm16u2.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega32u2:crtm32u2.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+-attiny167:crttn167.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
++attiny167:crttn167.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++attiny1634:crttn1634.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
+ "
+ 
+ AVR4_DEV_INFO="\
++ata6285:crta6285.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++ata6286:crta6286.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega48:crtm48.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega48a:crtm48a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega48pa:crtm48pa.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega48p:crtm48p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega8:crtm8.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega8a:crtm8a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega88:crtm88.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega88a:crtm88a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega88p:crtm88p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -159,12 +167,15 @@ at90can64:crtcan64.o:${DEV_DEFS}:${CFLAG
+ at90can128:crtcan128.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at90pwm216:crt90pwm216.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at90pwm316:crt90pwm316.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++at90pwm161:crt90pwm161.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at90scr100:crt90scr100.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at90usb646:crtusb646.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at90usb647:crtusb647.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at90usb1286:crtusb1286.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at90usb1287:crtusb1287.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at94k:crtat94k.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++ata5790:crta5790.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++ata5795:crta5795.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega16:crtm16.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega16a:crtm16a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega161:crtm161.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -172,12 +183,15 @@ atmega162:crtm162.o:${DEV_DEFS}:${CFLAGS
+ atmega163:crtm163.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega164a:crtm164a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega164p:crtm164p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega164pa:crtm164pa.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega165:crtm165.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega165a:crtm165a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega165p:crtm165p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega165pa:crtm165pa.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega168:crtm168.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega168a:crtm168a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega168p:crtm168p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega168pa:crtm168pa.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega169:crtm169.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega169a:crtm169a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega169p:crtm169p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -189,6 +203,7 @@ atmega16hvbrevb:crtm16hvbrevb.o:${DEV_DE
+ atmega16m1:crtm16m1.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega16u4:crtm16u4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega32:crtm32.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega32a:crtm32a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega323:crtm323.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega324a:crtm324a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega324p:crtm324p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -196,9 +211,11 @@ atmega324pa:crtm324pa.o:${DEV_DEFS}:${CF
+ atmega325:crtm325.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega325a:crtm325a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega325p:crtm325p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega325pa:crtm325pa.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega3250:crtm3250.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega3250a:crtm3250a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega3250p:crtm3250p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega3250pa:crtm3250pa.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega328:crtm328.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega328p:crtm328p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega329:crtm329.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -208,6 +225,7 @@ atmega329pa:crtm329pa.o:${DEV_DEFS}:${CF
+ atmega3290:crtm3290.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega3290a:crtm3290a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega3290p:crtm3290p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega3290pa:crtm3290pa.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega32c1:crtm32c1.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega32hvb:crtm32hvb.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega32hvbrevb:crtm32hvbrevb.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -216,6 +234,7 @@ atmega32u4:crtm32u4.o:${DEV_DEFS}:${CFLA
+ atmega32u6:crtm32u6.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega406:crtm406.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega64:crtm64.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega64a:crtm64a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega640:crtm640.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega644:crtm644.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega644a:crtm644a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -246,8 +265,10 @@ m3000:crtm3000.o:${DEV_DEFS}:${CFLAGS_SP
+ 
+ AVR51_DEV_INFO="\
+ atmega128:crtm128.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atmega128a:crtm128a.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atmega1280:crtm1280.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atmega1281:crtm1281.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atmega1284:crtm1284.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atmega1284p:crtm1284p.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atmega128rfa1:crtm128rfa1.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ at90can128:crtcan128.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+@@ -262,14 +283,24 @@ atmega2561:crtm2561.o:${DEV_DEFS}:${CFLA
+ 
+ AVRXMEGA2_DEV_INFO="\
+ atxmega16a4:crtx16a4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atxmega16a4u:crtx16a4u.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atxmega16c4:crtx16c4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atxmega16d4:crtx16d4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atxmega32a4:crtx32a4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atxmega32a4u:crtx32a4u.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atxmega32c4:crtx32c4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atxmega32d4:crtx32d4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
+ "
+ 
+ AVRXMEGA4_DEV_INFO="\
+ atxmega64a3:crtx64a3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+-atxmega64d3:crtx64d3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS}\
++atxmega64a3u:crtx64a3u.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega64a4u:crtx64a4u.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega64b1:crtx64b1.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega64b3:crtx64b3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega64c3:crtx64c3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega64d3:crtx64d3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega64d4:crtx64d4.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS}\
+ "
+ 
+ AVRXMEGA5_DEV_INFO="\
+@@ -279,17 +310,30 @@ atxmega64a1u:crtx64a1u.o:${DEV_DEFS}:${C
+ 
+ AVRXMEGA6_DEV_INFO="\
+ atxmega128a3:crtx128a3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega128a3u:crtx128a3u.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega128b1:crtx128b1.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega128b3:crtx128b3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega128c3:crtx128c3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atxmega128d3:crtx128d3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega128d4:crtx128d4.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atxmega192a3:crtx192a3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega192a3u:crtx192a3u.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega192c3:crtx192c3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atxmega192d3:crtx192d3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atxmega256a3:crtx256a3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega256a3u:crtx256a3u.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atxmega256a3b:crtx256a3b.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+-atxmega256d3:crtx256d3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS}\
++atxmega256a3bu:crtx256a3bu.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega256c3:crtx256c3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega256d3:crtx256d3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega384c3:crtx384c3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega384d3:crtx384d3.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS}\
+ "
+ 
+ AVRXMEGA7_DEV_INFO="\
+ atxmega128a1:crtx128a1.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+-atxmega128a1u:crtx128a1u.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS}\
++atxmega128a1u:crtx128a1u.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atxmega128a4u:crtx128a4u.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS}\
+ "
+ 
+ AVRTINY10_DEV_INFO="\
+diff -Naurp doc/api/main_page.dox doc/api/main_page.dox
+--- doc/api/main_page.dox	2012-11-05 12:21:09.000000000 +0530
++++ doc/api/main_page.dox	2012-11-05 12:23:27.000000000 +0530
+@@ -94,8 +94,10 @@ compile-time.
+ 
+ - atmega103
+ - atmega128
++- atmega128a
+ - atmega1280
+ - atmega1281
++- atmega1284
+ - atmega1284p
+ - atmega16
+ - atmega161
+@@ -103,16 +105,20 @@ compile-time.
+ - atmega163
+ - atmega164a
+ - atmega164p
++- atmega164pa
+ - atmega165
+ - atmega165a
+ - atmega165p
++- atmega165pa
+ - atmega168
+ - atmega168a
+ - atmega168p
++- atmega168pa
+ - atmega16a
+ - atmega2560
+ - atmega2561
+ - atmega32
++- atmega32a
+ - atmega323
+ - atmega324a
+ - atmega324p
+@@ -120,15 +126,19 @@ compile-time.
+ - atmega325
+ - atmega325a
+ - atmega325p
++- atmega325pa
+ - atmega3250
+ - atmega3250a
+ - atmega3250p
++- atmega3250pa
+ - atmega328
+ - atmega328p
+ - atmega48
+ - atmega48a
++- atmega48pa
+ - atmega48p
+ - atmega64
++- atmega64a
+ - atmega640
+ - atmega644
+ - atmega644a
+@@ -141,6 +151,7 @@ compile-time.
+ - atmega6450a
+ - atmega6450p
+ - atmega8
++- atmega8a
+ - atmega88
+ - atmega88a
+ - atmega88p
+@@ -178,6 +189,7 @@ compile-time.
+ - attiny461
+ - attiny461a
+ - attiny48
++- attiny828
+ - attiny84
+ - attiny84a
+ - attiny85
+@@ -185,6 +197,7 @@ compile-time.
+ - attiny861a
+ - attiny87
+ - attiny88
++- attiny1634
+ 
+ \par Automotive AVR Devices:
+ 
+@@ -194,6 +207,10 @@ compile-time.
+ - atmega64c1
+ - atmega64m1
+ - attiny167
++- ata5505
++- ata5272
++- ata5790
++- ata5795
+ 
+ \par CAN AVR Devices:
+ 
+@@ -214,6 +231,7 @@ compile-time.
+ - atmega3290
+ - atmega3290a
+ - atmega3290p
++- atmega3290pa
+ - atmega649
+ - atmega649a
+ - atmega6490
+@@ -230,6 +248,7 @@ compile-time.
+ - at90pwm3
+ - at90pwm3b
+ - at90pwm316
++- at90pwm161
+ - at90pwm81
+ 
+ \par Smart Battery AVR Devices:
+@@ -262,22 +281,45 @@ compile-time.
+ \par XMEGA Devices:
+ 
+ - atxmega16a4
++- atxmega16a4u
++- atxmega16c4
+ - atxmega16d4
+ - atxmega32a4
++- atxmega32a4u
++- atxmega32c4
+ - atxmega32d4
+ - atxmega64a1
+ - atxmega64a1u
+ - atxmega64a3
++- atxmega64a3u
++- atxmega64a4u
++- atxmega64b1
++- atxmega64b3
++- atxmega64c3
+ - atxmega64d3
++- atxmega64d4
+ - atxmega128a1
+ - atxmega128a1u
+ - atxmega128a3
++- atxmega128a3u
++- atxmega128a4u
++- atxmega128b1
++- atxmega128b3
++- atxmega128c3
+ - atxmega128d3
++- atxmega128d4
+ - atxmega192a3
++- atxmega192a3u
++- atxmega192c3
+ - atxmega192d3
+ - atxmega256a3
++- atxmega256a3u
+ - atxmega256a3b
++- atxmega256a3bu
++- atxmega256c3
+ - atxmega256d3
++- atxmega384c3
++- atxmega384d3
+ 
+ \par Miscellaneous Devices:
+ 
+@@ -287,6 +329,8 @@ compile-time.
+ - at43usb355
+ - at86rf401
+ - at90scr100
++- ata6285
++- ata6286
+ - ata6289
+ - m3000 \ref supp_dev_footnote_four "[4]"
+ 
+diff -Naurp doc/api/using-tools.dox doc/api/using-tools.dox
+--- doc/api/using-tools.dox	2012-11-05 12:21:09.000000000 +0530
++++ doc/api/using-tools.dox	2012-11-05 12:23:27.000000000 +0530
+@@ -231,6 +231,7 @@ AVR will be defined as well when using t
+ 
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>at86rf401</td><td>__AVR_AT86RF401__</td></tr>
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>ata6289</td><td>__AVR_ATA6289__</td></tr>
++  <tr><td>avr2/avr25&nbsp;[1]</td><td>ata5272</td><td>__AVR_ATA5272__</td></tr>
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny13</td><td>__AVR_ATtiny13__</td></tr>
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny13a</td><td>__AVR_ATtiny13A__</td></tr>
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny2313</td><td>__AVR_ATtiny2313__</td></tr>
+@@ -248,6 +249,7 @@ AVR will be defined as well when using t
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny461</td><td>__AVR_ATtiny461__</td></tr>
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny461a</td><td>__AVR_ATtiny461A__</td></tr>
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny48</td><td>__AVR_ATtiny48__</td></tr>
++  <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny828</td><td>__AVR_ATtiny828__</td></tr>
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny84</td><td>__AVR_ATtiny84__</td></tr>
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny84a</td><td>__AVR_ATtiny84A__</td></tr>
+   <tr><td>avr2/avr25&nbsp;[1]</td><td>attiny85</td><td>__AVR_ATtiny85__</td></tr>
+@@ -264,16 +266,22 @@ AVR will be defined as well when using t
+ 
+   <tr><td>avr3/avr35&nbsp;[2]</td><td>at90usb82</td><td>__AVR_AT90USB82__</td></tr>
+   <tr><td>avr3/avr35&nbsp;[2]</td><td>at90usb162</td><td>__AVR_AT90USB162__</td></tr>
++  <tr><td>avr3/avr35&nbsp;[2]</td><td>ata5505</td><td>__AVR_ATA5505__</td></tr>
+   <tr><td>avr3/avr35&nbsp;[2]</td><td>atmega8u2</td><td>__AVR_ATmega8U2__</td></tr>
+   <tr><td>avr3/avr35&nbsp;[2]</td><td>atmega16u2</td><td>__AVR_ATmega16U2__</td></tr>
+   <tr><td>avr3/avr35&nbsp;[2]</td><td>atmega32u2</td><td>__AVR_ATmega32U2__</td></tr>
+   <tr><td>avr3/avr35&nbsp;[2]</td><td>attiny167</td><td>__AVR_ATtiny167__</td></tr>
++  <tr><td>avr3/avr35&nbsp;[2]</td><td>attiny1634</td><td>__AVR_ATtiny1634__</td></tr>
+ 
+   <tr><td>avr3</td><td>at76c711</td><td>__AVR_AT76C711__</td></tr>
++  <tr><td>avr4</td><td>ata6285</td><td>__AVR_ATA6285__</td></tr>
++  <tr><td>avr4</td><td>ata6286</td><td>__AVR_ATA6286__</td></tr>
+   <tr><td>avr4</td><td>atmega48</td><td>__AVR_ATmega48__</td></tr>
+   <tr><td>avr4</td><td>atmega48a</td><td>__AVR_ATmega48A__</td></tr>
++  <tr><td>avr4</td><td>atmega48pa</td><td>__AVR_ATmega48PA__</td></tr>
+   <tr><td>avr4</td><td>atmega48p</td><td>__AVR_ATmega48P__</td></tr>
+   <tr><td>avr4</td><td>atmega8</td><td>__AVR_ATmega8__</td></tr>
++  <tr><td>avr4</td><td>atmega8a</td><td>__AVR_ATmega8A__</td></tr>
+   <tr><td>avr4</td><td>atmega8515</td><td>__AVR_ATmega8515__</td></tr>
+   <tr><td>avr4</td><td>atmega8535</td><td>__AVR_ATmega8535__</td></tr>
+   <tr><td>avr4</td><td>atmega88</td><td>__AVR_ATmega88__</td></tr>
+@@ -290,6 +298,7 @@ AVR will be defined as well when using t
+ 
+   <tr><td>avr5</td><td>at90can32</td><td>__AVR_AT90CAN32__</td></tr>
+   <tr><td>avr5</td><td>at90can64</td><td>__AVR_AT90CAN64__</td></tr>
++  <tr><td>avr5</td><td>at90pwm161</td><td>__AVR_AT90PWM161__</td></tr>
+   <tr><td>avr5</td><td>at90pwm216</td><td>__AVR_AT90PWM216__</td></tr>
+   <tr><td>avr5</td><td>at90pwm316</td><td>__AVR_AT90PWM316__</td></tr>
+   <tr><td>avr5</td><td>at90scr100</td><td>__AVR_AT90SCR100__</td></tr>
+@@ -297,17 +306,22 @@ AVR will be defined as well when using t
+   <tr><td>avr5</td><td>at90usb647</td><td>__AVR_AT90USB647__</td></tr>
+   <tr><td>avr5</td><td>at94k</td><td>__AVR_AT94K__</td></tr>
+   <tr><td>avr5</td><td>atmega16</td><td>__AVR_ATmega16__</td></tr>
++  <tr><td>avr5</td><td>ata5790</td><td>__AVR_ATA5790__</td></tr>
++  <tr><td>avr5</td><td>ata5795</td><td>__AVR_ATA5795__</td></tr>
+   <tr><td>avr5</td><td>atmega161</td><td>__AVR_ATmega161__</td></tr>
+   <tr><td>avr5</td><td>atmega162</td><td>__AVR_ATmega162__</td></tr>
+   <tr><td>avr5</td><td>atmega163</td><td>__AVR_ATmega163__</td></tr>
+   <tr><td>avr5</td><td>atmega164a</td><td>__AVR_ATmega164A__</td></tr>
+   <tr><td>avr5</td><td>atmega164p</td><td>__AVR_ATmega164P__</td></tr>
++  <tr><td>avr5</td><td>atmega164pa</td><td>__AVR_ATmega164PA__</td></tr>
+   <tr><td>avr5</td><td>atmega165</td><td>__AVR_ATmega165__</td></tr>
+   <tr><td>avr5</td><td>atmega165a</td><td>__AVR_ATmega165A__</td></tr>
+   <tr><td>avr5</td><td>atmega165p</td><td>__AVR_ATmega165P__</td></tr>
++  <tr><td>avr5</td><td>atmega165pa</td><td>__AVR_ATmega165PA__</td></tr>
+   <tr><td>avr5</td><td>atmega168</td><td>__AVR_ATmega168__</td></tr>
+   <tr><td>avr5</td><td>atmega168a</td><td>__AVR_ATmega168A__</td></tr>
+   <tr><td>avr5</td><td>atmega168p</td><td>__AVR_ATmega168P__</td></tr>
++  <tr><td>avr5</td><td>atmega168pa</td><td>__AVR_ATmega168PA__</td></tr>
+   <tr><td>avr5</td><td>atmega169</td><td>__AVR_ATmega169__</td></tr>
+   <tr><td>avr5</td><td>atmega169a</td><td>__AVR_ATmega169A__</td></tr>
+   <tr><td>avr5</td><td>atmega169p</td><td>__AVR_ATmega169P__</td></tr>
+@@ -320,6 +334,7 @@ AVR will be defined as well when using t
+   <tr><td>avr5</td><td>atmega16m1</td><td>__AVR_ATmega16M1__</td></tr>
+   <tr><td>avr5</td><td>atmega16u4</td><td>__AVR_ATmega16U4__</td></tr>
+   <tr><td>avr5</td><td>atmega32</td><td>__AVR_ATmega32__</td></tr>
++  <tr><td>avr5</td><td>atmega32a</td><td>__AVR_ATmega32A__</td></tr>
+   <tr><td>avr5</td><td>atmega323</td><td>__AVR_ATmega323__</td></tr>
+   <tr><td>avr5</td><td>atmega324a</td><td>__AVR_ATmega324A__</td></tr>
+   <tr><td>avr5</td><td>atmega324p</td><td>__AVR_ATmega324P__</td></tr>
+@@ -327,9 +342,11 @@ AVR will be defined as well when using t
+   <tr><td>avr5</td><td>atmega325</td><td>__AVR_ATmega325__</td></tr>
+   <tr><td>avr5</td><td>atmega325a</td><td>__AVR_ATmega325A__</td></tr>
+   <tr><td>avr5</td><td>atmega325p</td><td>__AVR_ATmega325P__</td></tr>
++  <tr><td>avr5</td><td>atmega325pa</td><td>__AVR_ATmega325PA__</td></tr>
+   <tr><td>avr5</td><td>atmega3250</td><td>__AVR_ATmega3250__</td></tr>
+   <tr><td>avr5</td><td>atmega3250a</td><td>__AVR_ATmega3250A__</td></tr>
+   <tr><td>avr5</td><td>atmega3250p</td><td>__AVR_ATmega3250P__</td></tr>
++  <tr><td>avr5</td><td>atmega3250pa</td><td>__AVR_ATmega3250PA__</td></tr>
+   <tr><td>avr5</td><td>atmega328</td><td>__AVR_ATmega328__</td></tr>
+   <tr><td>avr5</td><td>atmega328p</td><td>__AVR_ATmega328P__</td></tr>
+   <tr><td>avr5</td><td>atmega329</td><td>__AVR_ATmega329__</td></tr>
+@@ -339,6 +356,7 @@ AVR will be defined as well when using t
+   <tr><td>avr5</td><td>atmega3290</td><td>__AVR_ATmega3290__</td></tr>
+   <tr><td>avr5</td><td>atmega3290a</td><td>__AVR_ATmega3290A__</td></tr>
+   <tr><td>avr5</td><td>atmega3290p</td><td>__AVR_ATmega3290P__</td></tr>
++  <tr><td>avr5</td><td>atmega3290pa</td><td>__AVR_ATmega3290PA__</td></tr>
+   <tr><td>avr5</td><td>atmega32c1</td><td>__AVR_ATmega32C1__</td></tr>
+   <tr><td>avr5</td><td>atmega32hvb</td><td>__AVR_ATmega32HVB__</td></tr>
+   <tr><td>avr5</td><td>atmega32hvbrevb</td><td>__AVR_ATmega32HVBREVB__</td></tr>
+@@ -347,6 +365,7 @@ AVR will be defined as well when using t
+   <tr><td>avr5</td><td>atmega32u6</td><td>__AVR_ATmega32U6__</td></tr>
+   <tr><td>avr5</td><td>atmega406</td><td>__AVR_ATmega406__</td></tr>
+   <tr><td>avr5</td><td>atmega64</td><td>__AVR_ATmega64__</td></tr>
++  <tr><td>avr5</td><td>atmega64a</td><td>__AVR_ATmega64A__</td></tr>
+   <tr><td>avr5</td><td>atmega640</td><td>__AVR_ATmega640__</td></tr>
+   <tr><td>avr5</td><td>atmega644</td><td>__AVR_ATmega644__</td></tr>
+   <tr><td>avr5</td><td>atmega644a</td><td>__AVR_ATmega644A__</td></tr>
+@@ -373,34 +392,59 @@ AVR will be defined as well when using t
+   <tr><td>avr5/avr51&nbsp;[3]</td><td>at90usb1286</td><td>__AVR_AT90USB1286__</td></tr>
+   <tr><td>avr5/avr51&nbsp;[3]</td><td>at90usb1287</td><td>__AVR_AT90USB1287__</td></tr>
+   <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega128</td><td>__AVR_ATmega128__</td></tr>
++  <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega128a</td><td>__AVR_ATmega128A__</td></tr>
+   <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega1280</td><td>__AVR_ATmega1280__</td></tr>
+   <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega1281</td><td>__AVR_ATmega1281__</td></tr>
++  <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega1284</td><td>__AVR_ATmega1284__</td></tr>
+   <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega1284p</td><td>__AVR_ATmega1284P__</td></tr>
+ 
+   <tr><td>avr6</td><td>atmega2560</td><td>__AVR_ATmega2560__</td></tr>
+   <tr><td>avr6</td><td>atmega2561</td><td>__AVR_ATmega2561__</td></tr>
+ 
+   <tr><td>avrxmega2</td><td>atxmega16a4</td><td>__AVR_ATxmega16A4__</td></tr>
++  <tr><td>avrxmega2</td><td>atxmega16a4u</td><td>__AVR_ATxmega16A4U__</td></tr>
++  <tr><td>avrxmega2</td><td>atxmega16c4</td><td>__AVR_ATxmega16C4__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega16d4</td><td>__AVR_ATxmega16D4__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega32a4</td><td>__AVR_ATxmega32A4__</td></tr>
++  <tr><td>avrxmega2</td><td>atxmega32a4u</td><td>__AVR_ATxmega32A4U__</td></tr>
++  <tr><td>avrxmega2</td><td>atxmega32c4</td><td>__AVR_ATxmega32C4__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega32d4</td><td>__AVR_ATxmega32D4__</td></tr>
+ 
+   <tr><td>avrxmega4</td><td>atxmega64a3</td><td>__AVR_ATxmega64A3__</td></tr>
++  <tr><td>avrxmega4</td><td>atxmega64a3u</td><td>__AVR_ATxmega64A3U__</td></tr>
++  <tr><td>avrxmega4</td><td>atxmega64a4u</td><td>__AVR_ATxmega64A4U__</td></tr>
++  <tr><td>avrxmega4</td><td>atxmega64b1</td><td>__AVR_ATxmega64B1__</td></tr>
++  <tr><td>avrxmega4</td><td>atxmega64b3</td><td>__AVR_ATxmega64B3__</td></tr>
++  <tr><td>avrxmega4</td><td>atxmega64c3</td><td>__AVR_ATxmega64C3__</td></tr>
+   <tr><td>avrxmega4</td><td>atxmega64d3</td><td>__AVR_ATxmega64D3__</td></tr>
++  <tr><td>avrxmega4</td><td>atxmega64d4</td><td>__AVR_ATxmega64D4__</td></tr>
+ 
+   <tr><td>avrxmega5</td><td>atxmega64a1</td><td>__AVR_ATxmega64A1__</td></tr>
+   <tr><td>avrxmega5</td><td>atxmega64a1u</td><td>__AVR_ATxmega64A1U__</td></tr>
+ 
+   <tr><td>avrxmega6</td><td>atxmega128a3</td><td>__AVR_ATxmega128A3__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega128a3u</td><td>__AVR_ATxmega128A3U__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega128b1</td><td>__AVR_ATxmega128B1__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega128b3</td><td>__AVR_ATxmega128B3__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega128c3</td><td>__AVR_ATxmega128C3__</td></tr>
+   <tr><td>avrxmega6</td><td>atxmega128d3</td><td>__AVR_ATxmega128D3__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega128d4</td><td>__AVR_ATxmega128D4__</td></tr>
+   <tr><td>avrxmega6</td><td>atxmega192a3</td><td>__AVR_ATxmega192A3__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega192a3u</td><td>__AVR_ATxmega192A3U__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega192c3</td><td>__AVR_ATxmega192C3__</td></tr>
+   <tr><td>avrxmega6</td><td>atxmega192d3</td><td>__AVR_ATxmega192D3__</td></tr>
+   <tr><td>avrxmega6</td><td>atxmega256a3</td><td>__AVR_ATxmega256A3__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega256a3u</td><td>__AVR_ATxmega256A3U__</td></tr>
+   <tr><td>avrxmega6</td><td>atxmega256a3b</td><td>__AVR_ATxmega256A3B__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega256a3bu</td><td>__AVR_ATxmega256A3BU__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega256c3</td><td>__AVR_ATxmega256C3__</td></tr>
+   <tr><td>avrxmega6</td><td>atxmega256d3</td><td>__AVR_ATxmega256D3__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega384c3</td><td>__AVR_ATxmega384C3__</td></tr>
++  <tr><td>avrxmega6</td><td>atxmega384d3</td><td>__AVR_ATxmega384D3__</td></tr>
+ 
+   <tr><td>avrxmega7</td><td>atxmega128a1</td><td>__AVR_ATxmega128A1__</td></tr>
+   <tr><td>avrxmega7</td><td>atxmega128a1u</td><td>__AVR_ATxmega128A1U__</td></tr>
++  <tr><td>avrxmega7</td><td>atxmega128a4u</td><td>__AVR_ATxmega128A4U__</td></tr>
+   
+   <tr><td>avrtiny10</td><td>attiny4</td><td>__AVR_ATtiny4__</td></tr>
+   <tr><td>avrtiny10</td><td>attiny5</td><td>__AVR_ATtiny5__</td></tr>
+diff -Naurp include/avr/eeprom.h include/avr/eeprom.h
+--- include/avr/eeprom.h	2012-11-05 12:21:09.000000000 +0530
++++ include/avr/eeprom.h	2012-11-05 12:23:27.000000000 +0530
+@@ -67,6 +67,8 @@
+ # define _EEPROM_SUFFIX _90pwm216
+ #elif defined (__AVR_AT90PWM316__)
+ # define _EEPROM_SUFFIX _90pwm316
++#elif defined (__AVR_AT90PWM161__)
++# define _EEPROM_SUFFIX _90pwm161
+ #elif defined (__AVR_AT90PWM81__)
+ # define _EEPROM_SUFFIX _90pwm81
+ #elif defined (__AVR_ATmega16M1__)
+@@ -93,10 +95,14 @@
+ # define _EEPROM_SUFFIX  _m64m1
+ #elif defined (__AVR_ATmega128__)
+ # define _EEPROM_SUFFIX  _m128
++#elif defined (__AVR_ATmega128A__)
++# define _EEPROM_SUFFIX  _m128a
+ #elif defined (__AVR_ATmega1280__)
+ # define _EEPROM_SUFFIX  _m1280
+ #elif defined (__AVR_ATmega1281__)
+ # define _EEPROM_SUFFIX  _m1281
++#elif defined (__AVR_ATmega1284__)
++# define _EEPROM_SUFFIX  _m1284
+ #elif defined (__AVR_ATmega1284P__)
+ # define _EEPROM_SUFFIX  _m1284p
+ #elif defined (__AVR_ATmega128RFA1__)
+@@ -125,6 +131,8 @@
+ # define _EEPROM_SUFFIX _usb1287
+ #elif defined (__AVR_ATmega64__)
+ # define _EEPROM_SUFFIX  _m64
++#elif defined (__AVR_ATmega64A__)
++# define _EEPROM_SUFFIX  _m64a
+ #elif defined (__AVR_ATmega640__)
+ # define _EEPROM_SUFFIX  _m640
+ #elif defined (__AVR_ATmega644__)
+@@ -163,6 +171,8 @@
+ # define _EEPROM_SUFFIX  _m103
+ #elif defined (__AVR_ATmega32__)
+ # define _EEPROM_SUFFIX  _m32
++#elif defined (__AVR_ATmega32A__)
++# define _EEPROM_SUFFIX  _m32a
+ #elif defined (__AVR_ATmega323__)
+ # define _EEPROM_SUFFIX  _m323
+ #elif defined (__AVR_ATmega324A__)
+@@ -177,12 +187,16 @@
+ # define _EEPROM_SUFFIX  _m325a
+ #elif defined (__AVR_ATmega325P__)
+ # define _EEPROM_SUFFIX  _m325p
++#elif defined (__AVR_ATmega325PA__)
++# define _EEPROM_SUFFIX  _m325pa 
+ #elif defined (__AVR_ATmega3250__)
+ # define _EEPROM_SUFFIX  _m3250
+ #elif defined (__AVR_ATmega3250A__)
+ # define _EEPROM_SUFFIX  _m3250a
+ #elif defined (__AVR_ATmega3250P__)
+ # define _EEPROM_SUFFIX  _m3250p
++#elif defined (__AVR_ATmega3250PA__)
++# define _EEPROM_SUFFIX  _m3250pa
+ #elif defined (__AVR_ATmega328__)
+ # define _EEPROM_SUFFIX  _m328
+ #elif defined (__AVR_ATmega328P__)
+@@ -201,6 +215,8 @@
+ # define _EEPROM_SUFFIX  _m3290a
+ #elif defined (__AVR_ATmega3290P__)
+ # define _EEPROM_SUFFIX  _m3290p
++#elif defined (__AVR_ATmega3290PA__)
++# define _EEPROM_SUFFIX  _m3290pa
+ #elif defined (__AVR_ATmega32HVB__)
+ # define _EEPROM_SUFFIX  _m32hvb
+ #elif defined (__AVR_ATmega32HVBREVB__)
+@@ -223,18 +239,24 @@
+ # define _EEPROM_SUFFIX  _m164
+ #elif defined (__AVR_ATmega164P__)
+ # define _EEPROM_SUFFIX  _m164p
++#elif defined (__AVR_ATmega164PA__)
++# define _EEPROM_SUFFIX  _m164pa
+ #elif defined (__AVR_ATmega165__)
+ # define _EEPROM_SUFFIX  _m165
+ #elif defined (__AVR_ATmega165A__)
+ # define _EEPROM_SUFFIX  _m165a
+ #elif defined (__AVR_ATmega165P__)
+ # define _EEPROM_SUFFIX  _m165p
++#elif defined (__AVR_ATmega165PA__)
++# define _EEPROM_SUFFIX  _m165pa
+ #elif defined (__AVR_ATmega168__)
+ # define _EEPROM_SUFFIX  _m168
+ #elif defined (__AVR_ATmega168A__)
+ # define _EEPROM_SUFFIX  _m168a
+ #elif defined (__AVR_ATmega168P__)
+ # define _EEPROM_SUFFIX  _m168p
++#elif defined (__AVR_ATmega168PA__)
++# define _EEPROM_SUFFIX  _m168pa
+ #elif defined (__AVR_ATmega169__)
+ # define _EEPROM_SUFFIX  _m169
+ #elif defined (__AVR_ATmega169A__)
+@@ -255,10 +277,14 @@
+ # define _EEPROM_SUFFIX  _m16hvbrevb
+ #elif defined (__AVR_ATmega8__)
+ # define _EEPROM_SUFFIX  _m8
++#elif defined (__AVR_ATmega8A__)
++# define _EEPROM_SUFFIX  _m8a
+ #elif defined (__AVR_ATmega48__)
+ # define _EEPROM_SUFFIX  _m48
+ #elif defined (__AVR_ATmega48A__)
+ # define _EEPROM_SUFFIX  _m48a
++#elif defined (__AVR_ATmega48PA__)
++# define _EEPROM_SUFFIX  _m48pa
+ #elif defined (__AVR_ATmega48P__)
+ # define _EEPROM_SUFFIX  _m48p
+ #elif defined (__AVR_ATmega88__)
+@@ -341,20 +367,32 @@
+ # define _EEPROM_SUFFIX _tn43u
+ #elif defined (__AVR_ATtiny48__)
+ # define _EEPROM_SUFFIX _tn48
++#elif defined (__AVR_ATtiny828__)
++# define _EEPROM_SUFFIX _tn828
+ #elif defined (__AVR_ATtiny88__)
+ # define _EEPROM_SUFFIX _tn88
+ #elif defined (__AVR_ATtiny87__)
+ # define _EEPROM_SUFFIX _tn87
+ #elif defined (__AVR_ATtiny167__)
+ # define _EEPROM_SUFFIX _tn167
++#elif defined (__AVR_ATtiny1634__)
++# define _EEPROM_SUFFIX _tn1634
+ #elif defined (__AVR_AT90SCR100__)
+ # define _EEPROM_SUFFIX _90scr100
+ #elif defined (__AVR_ATxmega16A4__)
+ # define _EEPROM_SUFFIX   _x16a4
++#elif defined (__AVR_ATxmega16A4U__)
++# define _EEPROM_SUFFIX   _x16a4u
++#elif defined (__AVR_ATxmega16C4__)
++# define _EEPROM_SUFFIX   _x16c4
+ #elif defined (__AVR_ATxmega16D4__)
+ # define _EEPROM_SUFFIX   _x16d4
+ #elif defined (__AVR_ATxmega32A4__)
+ # define _EEPROM_SUFFIX   _x32a4
++#elif defined (__AVR_ATxmega32A4U__)
++# define _EEPROM_SUFFIX   _x32a4u
++#elif defined (__AVR_ATxmega32C4__)
++# define _EEPROM_SUFFIX   _x32c4
+ #elif defined (__AVR_ATxmega32D4__)
+ # define _EEPROM_SUFFIX   _x32d4
+ #elif defined (__AVR_ATxmega64A1__)
+@@ -363,28 +401,78 @@
+ # define _EEPROM_SUFFIX   _x64a1u
+ #elif defined (__AVR_ATxmega64A3__)
+ # define _EEPROM_SUFFIX   _x64a3
++#elif defined (__AVR_ATxmega64A3U__)
++# define _EEPROM_SUFFIX   _x64a3u
++#elif defined (__AVR_ATxmega64A4U__)
++# define _EEPROM_SUFFIX   _x64a4u
++#elif defined (__AVR_ATxmega64B1__)
++# define _EEPROM_SUFFIX   _x64b1
++#elif defined (__AVR_ATxmega64B3__)
++# define _EEPROM_SUFFIX   _x64b3
++#elif defined (__AVR_ATxmega64C3__)
++# define _EEPROM_SUFFIX   _x64c3
+ #elif defined (__AVR_ATxmega64D3__)
+ # define _EEPROM_SUFFIX   _x64d3
++#elif defined (__AVR_ATxmega64D4__)
++# define _EEPROM_SUFFIX   _x64d4
+ #elif defined (__AVR_ATxmega128A1__)
+ # define _EEPROM_SUFFIX   _x128a1
+ #elif defined (__AVR_ATxmega128A1U__)
+ # define _EEPROM_SUFFIX   _x128a1u
++#elif defined (__AVR_ATxmega128A4U__)
++# define _EEPROM_SUFFIX   _x128a4u
+ #elif defined (__AVR_ATxmega128A3__)
+ # define _EEPROM_SUFFIX   _x128a3
++#elif defined (__AVR_ATxmega128A3U__)
++# define _EEPROM_SUFFIX   _x128a3u
++#elif defined (__AVR_ATxmega128B1__)
++# define _EEPROM_SUFFIX   _x128b1
++#elif defined (__AVR_ATxmega128B3__)
++# define _EEPROM_SUFFIX   _x128b3
++#elif defined (__AVR_ATxmega128C3__)
++# define _EEPROM_SUFFIX   _x128c3
+ #elif defined (__AVR_ATxmega128D3__)
+ # define _EEPROM_SUFFIX   _x128d3
++#elif defined (__AVR_ATxmega128D4__)
++# define _EEPROM_SUFFIX   _x128d4
+ #elif defined (__AVR_ATxmega192A3__)
+ # define _EEPROM_SUFFIX   _x192a3
++#elif defined (__AVR_ATxmega192A3U__)
++# define _EEPROM_SUFFIX   _x192a3u
++#elif defined (__AVR_ATxmega192C3__)
++# define _EEPROM_SUFFIX   _x192c3
+ #elif defined (__AVR_ATxmega192D3__)
+ # define _EEPROM_SUFFIX   _x192d3
+ #elif defined (__AVR_ATxmega256A3__)
+ # define _EEPROM_SUFFIX   _x256a3
++#elif defined (__AVR_ATxmega256A3U__)
++# define _EEPROM_SUFFIX   _x256a3u
+ #elif defined (__AVR_ATxmega256A3B__)
+ # define _EEPROM_SUFFIX   _x256a3b
++#elif defined (__AVR_ATxmega256A3BU__)
++# define _EEPROM_SUFFIX   _x256a3bu
++#elif defined (__AVR_ATxmega256C3__)
++# define _EEPROM_SUFFIX   _x256c3
+ #elif defined (__AVR_ATxmega256D3__)
+ # define _EEPROM_SUFFIX   _x256d3
++#elif defined (__AVR_ATxmega384C3__)
++# define _EEPROM_SUFFIX   _x384c3
++#elif defined (__AVR_ATxmega384D3__)
++# define _EEPROM_SUFFIX   _x384d3
++#elif defined (__AVR_ATA5505__)
++# define _EEPROM_SUFFIX _a5505
++#elif defined (__AVR_ATA5272__)
++# define _EEPROM_SUFFIX _a5272
++#elif defined (__AVR_ATA6285__)
++# define _EEPROM_SUFFIX _a6285
++#elif defined (__AVR_ATA6286__)
++# define _EEPROM_SUFFIX _a6286
+ #elif defined (__AVR_ATA6289__)
+ # define _EEPROM_SUFFIX _a6289
++#elif defined (__AVR_ATA5790__)
++# define _EEPROM_SUFFIX _a5790
++#elif defined (__AVR_ATA5795__)
++# define _EEPROM_SUFFIX _a5795
+ /* avr1: the following only supported for assembler programs */
+ #elif defined (__AVR_ATtiny28__)
+ # define _EEPROM_SUFFIX _tn28
+diff -Naurp include/avr/io.h include/avr/io.h
+--- include/avr/io.h	2012-11-05 12:21:09.000000000 +0530
++++ include/avr/io.h	2012-11-05 12:23:27.000000000 +0530
+@@ -122,6 +122,8 @@
+ #  include <avr/io90pwm216.h>
+ #elif defined (__AVR_AT90PWM316__)
+ #  include <avr/io90pwm316.h>
++#elif defined (__AVR_AT90PWM161__)
++#  include <avr/io90pwm161.h>
+ #elif defined (__AVR_AT90PWM81__)
+ #  include <avr/io90pwm81.h>
+ #elif defined (__AVR_ATmega8U2__)
+@@ -148,10 +150,14 @@
+ #  include <avr/iom64m1.h>
+ #elif defined (__AVR_ATmega128__)
+ #  include <avr/iom128.h>
++#elif defined (__AVR_ATmega128A__)
++#  include <avr/iom128a.h>
+ #elif defined (__AVR_ATmega1280__)
+ #  include <avr/iom1280.h>
+ #elif defined (__AVR_ATmega1281__)
+ #  include <avr/iom1281.h>
++#elif defined (__AVR_ATmega1284__)
++#  include <avr/iom1284.h>
+ #elif defined (__AVR_ATmega1284P__)
+ #  include <avr/iom1284p.h>
+ #elif defined (__AVR_ATmega128RFA1__)
+@@ -180,6 +186,8 @@
+ #  include <avr/iousb1287.h>
+ #elif defined (__AVR_ATmega64__)
+ #  include <avr/iom64.h>
++#elif defined (__AVR_ATmega64A__)
++#  include <avr/iom64a.h>
+ #elif defined (__AVR_ATmega640__)
+ #  include <avr/iom640.h>
+ #elif defined (__AVR_ATmega644__) || defined (__AVR_ATmega644A__)
+@@ -204,6 +212,8 @@
+ #  include <avr/iom103.h>
+ #elif defined (__AVR_ATmega32__)
+ #  include <avr/iom32.h>
++#elif defined (__AVR_ATmega32A__)
++#  include <avr/iom32a.h>
+ #elif defined (__AVR_ATmega323__)
+ #  include <avr/iom323.h>
+ #elif defined (__AVR_ATmega324P__) || defined (__AVR_ATmega324A__)
+@@ -214,10 +224,14 @@
+ #  include <avr/iom325.h>
+ #elif defined (__AVR_ATmega325P__)
+ #  include <avr/iom325.h>
++#elif defined (__AVR_ATmega325PA__)
++#  include <avr/iom325pa.h>  
+ #elif defined (__AVR_ATmega3250__) || defined (__AVR_ATmega3250A__)
+ #  include <avr/iom3250.h>
+ #elif defined (__AVR_ATmega3250P__)
+ #  include <avr/iom3250.h>
++#elif defined (__AVR_ATmega3250PA__)
++#  include <avr/iom3250pa.h>  
+ #elif defined (__AVR_ATmega328P__) || defined (__AVR_ATmega328__)
+ #  include <avr/iom328p.h>
+ #elif defined (__AVR_ATmega329__) || defined (__AVR_ATmega329A__)
+@@ -228,6 +242,8 @@
+ #  include <avr/iom3290.h>
+ #elif defined (__AVR_ATmega3290P__)
+ #  include <avr/iom3290.h>
++#elif defined (__AVR_ATmega3290PA__)
++#  include <avr/iom3290pa.h> 
+ #elif defined (__AVR_ATmega32HVB__)
+ #  include <avr/iom32hvb.h>
+ #elif defined (__AVR_ATmega32HVBREVB__)
+@@ -246,14 +262,20 @@
+ #  include <avr/iom163.h>
+ #elif defined (__AVR_ATmega164P__) || defined (__AVR_ATmega164A__)
+ #  include <avr/iom164.h>
++#elif defined (__AVR_ATmega164PA__)
++#  include <avr/iom164pa.h>
+ #elif defined (__AVR_ATmega165__) || defined (__AVR_ATmega165A__)
+ #  include <avr/iom165.h>
+ #elif defined (__AVR_ATmega165P__)
+ #  include <avr/iom165p.h>
++#elif defined (__AVR_ATmega165PA__)
++#  include <avr/iom165pa.h>
+ #elif defined (__AVR_ATmega168__) || defined (__AVR_ATmega168A__)
+ #  include <avr/iom168.h>
+ #elif defined (__AVR_ATmega168P__)
+ #  include <avr/iom168p.h>
++#elif defined (__AVR_ATmega168PA__)
++#  include <avr/iom168pa.h>
+ #elif defined (__AVR_ATmega169__) || defined (__AVR_ATmega169A__)
+ #  include <avr/iom169.h>
+ #elif defined (__AVR_ATmega169P__)
+@@ -272,8 +294,12 @@
+ #  include <avr/iom16hvbrevb.h>
+ #elif defined (__AVR_ATmega8__)
+ #  include <avr/iom8.h>
++#elif defined (__AVR_ATmega8A__)
++#  include <avr/iom8a.h>
+ #elif defined (__AVR_ATmega48__) || defined (__AVR_ATmega48A__)
+ #  include <avr/iom48.h>
++#elif defined (__AVR_ATmega48PA__)
++#  include <avr/iom48pa.h>
+ #elif defined (__AVR_ATmega48P__)
+ #  include <avr/iom48p.h>
+ #elif defined (__AVR_ATmega88__) || defined (__AVR_ATmega88A__)
+@@ -368,18 +394,30 @@
+ #  include <avr/iotn48.h>
+ #elif defined (__AVR_ATtiny88__)
+ #  include <avr/iotn88.h>
++#elif defined (__AVR_ATtiny828__)
++#  include <avr/iotn828.h>
+ #elif defined (__AVR_ATtiny87__)
+ #  include <avr/iotn87.h>
+ #elif defined (__AVR_ATtiny167__)
+ #  include <avr/iotn167.h>
++#elif defined (__AVR_ATtiny1634__)
++#  include <avr/iotn1634.h>
+ #elif defined (__AVR_AT90SCR100__)
+ #  include <avr/io90scr100.h>
+ #elif defined (__AVR_ATxmega16A4__)
+ #  include <avr/iox16a4.h>
++#elif defined (__AVR_ATxmega16A4U__)
++#  include <avr/iox16a4u.h>
++#elif defined (__AVR_ATxmega16C4__)
++#  include <avr/iox16c4.h>
+ #elif defined (__AVR_ATxmega16D4__)
+ #  include <avr/iox16d4.h>
+ #elif defined (__AVR_ATxmega32A4__)
+ #  include <avr/iox32a4.h>
++#elif defined (__AVR_ATxmega32A4U__)
++#  include <avr/iox32a4u.h>
++#elif defined (__AVR_ATxmega32C4__)
++#  include <avr/iox32c4.h>
+ #elif defined (__AVR_ATxmega32D4__)
+ #  include <avr/iox32d4.h>
+ #elif defined (__AVR_ATxmega64A1__)
+@@ -388,26 +426,76 @@
+ #  include <avr/iox64a1u.h>
+ #elif defined (__AVR_ATxmega64A3__)
+ #  include <avr/iox64a3.h>
++#elif defined (__AVR_ATxmega64A3U__)
++#  include <avr/iox64a3u.h>
++#elif defined (__AVR_ATxmega64A4U__)
++#  include <avr/iox64a4u.h>
++#elif defined (__AVR_ATxmega64B1__)
++#  include <avr/iox64b1.h>
++#elif defined (__AVR_ATxmega64B3__)
++#  include <avr/iox64b3.h>
++#elif defined (__AVR_ATxmega64C3__)
++#  include <avr/iox64c3.h>
+ #elif defined (__AVR_ATxmega64D3__)
+ #  include <avr/iox64d3.h>
++#elif defined (__AVR_ATxmega64D4__)
++#  include <avr/iox64d4.h>
+ #elif defined (__AVR_ATxmega128A1__)
+ #  include <avr/iox128a1.h>
+ #elif defined (__AVR_ATxmega128A1U__)
+ #  include <avr/iox128a1u.h>
++#elif defined (__AVR_ATxmega128A4U__)
++#  include <avr/iox128a4u.h>
+ #elif defined (__AVR_ATxmega128A3__)
+ #  include <avr/iox128a3.h>
++#elif defined (__AVR_ATxmega128A3U__)
++#  include <avr/iox128a3u.h>
++#elif defined (__AVR_ATxmega128B1__)
++#  include <avr/iox128b1.h>
++#elif defined (__AVR_ATxmega128B3__)
++#  include <avr/iox128b3.h>
++#elif defined (__AVR_ATxmega128C3__)
++#  include <avr/iox128c3.h>
+ #elif defined (__AVR_ATxmega128D3__)
+ #  include <avr/iox128d3.h>
++#elif defined (__AVR_ATxmega128D4__)
++#  include <avr/iox128d4.h>
+ #elif defined (__AVR_ATxmega192A3__)
+ #  include <avr/iox192a3.h>
++#elif defined (__AVR_ATxmega192A3U__)
++#  include <avr/iox192a3u.h>
++#elif defined (__AVR_ATxmega192C3__)
++#  include <avr/iox192c3.h>
+ #elif defined (__AVR_ATxmega192D3__)
+ #  include <avr/iox192d3.h>
+ #elif defined (__AVR_ATxmega256A3__)
+ #  include <avr/iox256a3.h>
++#elif defined (__AVR_ATxmega256A3U__)
++#  include <avr/iox256a3u.h>
+ #elif defined (__AVR_ATxmega256A3B__)
+ #  include <avr/iox256a3b.h>
++#elif defined (__AVR_ATxmega256A3BU__)
++#  include <avr/iox256a3bu.h>
++#elif defined (__AVR_ATxmega256C3__)
++#  include <avr/iox256c3.h>
+ #elif defined (__AVR_ATxmega256D3__)
+ #  include <avr/iox256d3.h>
++#elif defined (__AVR_ATxmega384C3__)
++#  include <avr/iox384c3.h>
++#elif defined (__AVR_ATxmega384D3__)
++#  include <avr/iox384d3.h>
++#elif defined (__AVR_ATA5790__)
++#  include <avr/ioa5790.h>
++#elif defined (__AVR_ATA5272__)
++#  include <avr/ioa5272.h>
++#elif defined (__AVR_ATA5505__)
++#  include <avr/ioa5505.h>
++#elif defined (__AVR_ATA5795__)
++#  include <avr/ioa5795.h>
++#elif defined (__AVR_ATA6285__)
++#  include <avr/ioa6285.h>
++#elif defined (__AVR_ATA6286__)
++#  include <avr/ioa6286.h>
+ #elif defined (__AVR_ATA6289__)
+ #  include <avr/ioa6289.h>
+ /* avr1: the following only supported for assembler programs */
+diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
+--- include/avr/Makefile.am	2012-11-05 12:21:09.000000000 +0530
++++ include/avr/Makefile.am	2012-11-05 12:23:27.000000000 +0530
+@@ -61,8 +61,15 @@ avr_HEADERS = \
+     io90pwm216.h \
+     io90pwm3b.h \
+     io90pwm316.h \
++    io90pwm161.h \
+     io90pwm81.h \
+     io90scr100.h \
++    ioa5505.h \
++    ioa5272.h \
++    ioa5790.h \
++    ioa5795.h \
++    ioa6285.h \
++    ioa6286.h \
+     ioa6289.h \
+     ioat94k.h \
+     iocan32.h \
+@@ -71,8 +78,10 @@ avr_HEADERS = \
+     iocanxx.h \
+     iom103.h \
+     iom128.h \
++    iom128a.h \
+     iom1280.h \
+     iom1281.h \
++    iom1284.h \
+     iom1284p.h \
+     iom128rfa1.h \
+     iom16.h \
+@@ -81,10 +90,13 @@ avr_HEADERS = \
+     iom162.h \
+     iom163.h \
+     iom164.h \
++    iom164pa.h \
+     iom165.h \
+     iom165p.h \
++    iom165pa.h \
+     iom168.h \
+     iom168p.h \
++    iom168pa.h \
+     iom169.h \
+     iom169p.h \
+     iom169pa.h \
+@@ -99,14 +111,18 @@ avr_HEADERS = \
+     iom2561.h \
+     iom3000.h \
+     iom32.h \
++    iom32a.h \
+     iom323.h \
+     iom324.h \
+     iom324pa.h \
+     iom325.h \
++    iom325pa.h \
+     iom3250.h \
++    iom3250pa.h \
+     iom328p.h \
+     iom329.h \
+     iom3290.h \
++    iom3290pa.h \
+     iom32hvb.h \
+     iom32hvbrevb.h \
+     iom32c1.h \
+@@ -115,9 +131,11 @@ avr_HEADERS = \
+     iom32u4.h \
+     iom32u6.h \
+     iom48.h \
++    iom48pa.h \
+     iom48p.h \
+     iom406.h \
+     iom64.h \
++    iom64a.h \
+     iom640.h \
+     iom644.h \
+     iom644p.h \
+@@ -131,6 +149,7 @@ avr_HEADERS = \
+     iom64hve.h \
+     iom64m1.h \
+     iom8.h \
++    iom8a.h \
+     iom8515.h \
+     iom8535.h \
+     iom88.h \
+@@ -152,8 +171,10 @@ avr_HEADERS = \
+     iotn13a.h \
+     iotn15.h \
+     iotn167.h \
++    iotn1634.h \
+     iotn20.h \
+     iotn22.h \
++    iotn828.h \
+     iotn2313.h \
+     iotn2313a.h \
+     iotn24.h \
+@@ -191,22 +212,45 @@ avr_HEADERS = \
+     iousb647.h \
+     iousbxx6_7.h \
+     iox64d3.h \
++    iox64d4.h \
+     iox128a1.h \
+     iox128a1u.h \
++    iox128a4u.h \
+     iox128a3.h \
++    iox128a3u.h \
++    iox128b1.h \
++    iox128b3.h \
++    iox128c3.h \
+     iox128d3.h \
++    iox128d4.h \
+     iox16a4.h \
++    iox16a4u.h \
++    iox16c4.h \
+     iox16d4.h \
+     iox192a3.h \
++    iox192a3u.h \
++    iox192c3.h \
+     iox192d3.h \
+     iox256a3.h \
++    iox256a3u.h \
+     iox256a3b.h \
++    iox256a3bu.h \
++    iox256c3.h \
+     iox256d3.h \
++    iox384c3.h \
++    iox384d3.h \
+     iox32a4.h \
++    iox32a4u.h \
++    iox32c4.h \
+     iox32d4.h \
+     iox64a1.h \
+     iox64a1u.h \
+     iox64a3.h \
++    iox64a3u.h \
++    iox64a4u.h \
++    iox64b1.h \
++    iox64b3.h \
++    iox64c3.h \
+     lock.h \
+     parity.h \
+     pgmspace.h \
+diff -Naurp include/avr/power.h include/avr/power.h
+--- include/avr/power.h	2012-11-05 12:24:33.000000000 +0530
++++ include/avr/power.h	2012-11-05 12:23:32.000000000 +0530
+@@ -74,25 +74,25 @@ find out which macros are applicable to 
+   <tr>
+     <td>power_adc_enable()</td>
+     <td>Enable the Analog to Digital Converter module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_adc_disable()</td>
+     <td>Disable the Analog to Digital Converter module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_lcd_enable()</td>
+     <td>Enable the LCD module.</td>
+-    <td>ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490</td>
++    <td>ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+     <td>power_lcd_disable().</td>
+     <td>Disable the LCD module.</td>
+-    <td>ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490</td>
++    <td>ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3</td>
+   </tr>
+ 
+   <tr>
+@@ -146,43 +146,43 @@ find out which macros are applicable to 
+   <tr>
+     <td>power_spi_enable()</td>
+     <td>Enable the Serial Peripheral Interface module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_spi_disable()</td>
+     <td>Disable the Serial Peripheral Interface module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_timer0_enable()</td>
+     <td>Enable the Timer 0 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM216, AT90PWM316, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM216, AT90PWM316, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_timer0_disable()</td>
+     <td>Disable the Timer 0 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_timer1_enable()</td>
+     <td>Enable the Timer 1 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_timer1_disable()</td>
+     <td>Disable the Timer 1 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, AT90PWM81, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_timer2_enable()</td>
+     <td>Enable the Timer 2 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168</td>
+   </tr>
+ 
+   <tr>
+@@ -194,13 +194,13 @@ find out which macros are applicable to 
+   <tr>
+     <td>power_timer3_enable()</td>
+     <td>Enable the Timer 3 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287</td>
+   </tr>
+ 
+   <tr>
+     <td>power_timer3_disable()</td>
+     <td>Disable the Timer 3 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287</td>
+   </tr>
+ 
+   <tr>
+@@ -230,13 +230,13 @@ find out which macros are applicable to 
+   <tr>
+     <td>power_twi_enable()</td>
+     <td>Enable the Two Wire Interface module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_twi_disable()</td>
+     <td>Disable the Two Wire Interface module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+@@ -254,25 +254,25 @@ find out which macros are applicable to 
+   <tr>
+     <td>power_usart0_enable()</td>
+     <td>Enable the USART 0 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_usart0_disable()</td>
+     <td>Disable the USART 0 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega3250A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega1284, ATmega128RFA1, ATmega2560, ATmega2561, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega48, ATmega88, ATmega168, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_usart1_enable()</td>
+     <td>Enable the USART 1 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_usart1_disable()</td>
+     <td>Disable the USART 1 module.</td>
+-    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644</td>
++    <td>ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATmega164P, ATmega324P, ATmega644, ATxmega16A4U, ATxmega32A4U</td>
+   </tr>
+ 
+   <tr>
+@@ -302,13 +302,13 @@ find out which macros are applicable to 
+   <tr>
+     <td>power_usb_enable()</td>
+     <td>Enable the USB module.</td>
+-    <td>AT90USB646, AT90USB647, AT90USB1286, AT90USB1287</td>
++    <td>AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3, ATxmega16A4U, ATxmega32A4U, ATxmega128c3, ATxmega256c3, ATxmega16c4, ATxmega32c4</td>
+   </tr>
+ 
+   <tr>
+     <td>power_usb_disable()</td>
+     <td>Disable the USB module.</td>
+-    <td>AT90USB646, AT90USB647, AT90USB1286, AT90USB1287</td>
++    <td>AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3, ATxmega16A4U, ATxmega32A4U,ATxmega128c3, ATxmega256c3, ATxmega16c4, ATxmega32c4</td>
+   </tr>
+ 
+   <tr>
+@@ -338,13 +338,13 @@ find out which macros are applicable to 
+   <tr>
+     <td>power_all_enable()</td>
+     <td>Enable all modules.</td>
+-    <td>ATxmega6A4, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmegaA1, ATxmegaA1U, ATxmega128A3, ATxmega192A3, ATxmega256A3, ATxmegaA3B, ATxmega16D4, ATxmega32D4, ATxmega64D3, ATxmega128D3, ATxmega192D3, ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega325A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++    <td>ATxmega6A4, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmegaA1, ATxmegaA1U, ATxmega128A3, ATxmega192A3, ATxmega256A3, ATxmegaA3B, ATxmega16D4, ATxmega32D4, ATxmega64D3, ATxmega128D3, ATxmega192D3, ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega128A3U, ATxmega192A3U, ATxmega256A3U</td>
+   </tr>
+ 
+   <tr>
+     <td>power_all_disable()</td>
+     <td>Disable all modules.</td>
+-    <td>ATxmega6A4, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmegaA1, ATxmegaA1U, ATxmega128A3, ATxmega192A3, ATxmega256A3, ATxmegaA3B, ATxmega16D4, ATxmega32D4, ATxmega64D3, ATxmega128D3,ATxmega192D3, ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega3250, ATmega325A, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861</td>
++    <td>ATxmega6A4, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmegaA1, ATxmegaA1U, ATxmega128A3, ATxmega192A3, ATxmega256A3, ATxmegaA3B, ATxmega16D4, ATxmega32D4, ATxmega64D3, ATxmega128D3,ATxmega192D3, ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega128A3U, ATxmega192A3U, ATxmega256A3U</td>
+   </tr>
+ </table>
+ </center>
+@@ -355,16 +355,27 @@ find out which macros are applicable to 
+ // Xmega A series has AES, EBI and DMA bits
+ // Include any other device on need basis
+ #if defined(__AVR_ATxmega16A4__) \
++|| defined(__AVR_ATxmega16A4U__) \
++|| defined(__AVR_ATxmega32A4U__) \
+ || defined(__AVR_ATxmega32A4__) \
+ || defined(__AVR_ATxmega64A1__) \
+ || defined(__AVR_ATxmega64A1U__) \
+ || defined(__AVR_ATxmega64A3__) \
++|| defined(__AVR_ATxmega64A3U__) \
++|| defined(__AVR_ATxmega64A4U__) \
+ || defined(__AVR_ATxmega128A1__) \
+ || defined(__AVR_ATxmega128A1U__) \
+ || defined(__AVR_ATxmega128A3__) \
++|| defined(__AVR_ATxmega128A3U__) \
++|| defined(__AVR_ATxmega128A4U__) \
+ || defined(__AVR_ATxmega192A3__) \
++|| defined(__AVR_ATxmega192A3U__) \
+ || defined(__AVR_ATxmega256A3__) \
+-|| defined(__AVR_ATxmega256A3B__)
++|| defined(__AVR_ATxmega256A3U__) \
++|| defined(__AVR_ATxmega256A3B__) \
++|| defined(__AVR_ATxmega256A3BU__) \
++|| defined(__AVR_ATxmega384C3__)
++
+ 
+ #define power_aes_enable()  (PR_PRGEN &= (uint8_t)~(PR_AES_bm))
+ #define power_aes_disable() (PR_PRGEN |= (uint8_t)PR_AES_bm)
+@@ -389,6 +400,44 @@ find out which macros are applicable to 
+ #define power_usartf1_enable()  (PR_PRPF &= (uint8_t)~(PR_USART1_bm))
+ #define power_usartf1_disable() (PR_PRPF |= (uint8_t)PR_USART1_bm)
+ 
++#if defined(__AVR_ATxmega384C3__) \
++|| defined(__AVR_ATxmega256A3BU__) \
++|| defined(__AVR_ATxmega16A4U__) \
++|| defined(__AVR_ATxmega32A4U__) \
++|| defined(__AVR_ATxmega64A3U__) \
++|| defined(__AVR_ATxmega64A4U__) \
++|| defined(__AVR_ATxmega128A3U__) \
++|| defined(__AVR_ATxmega128A4U__) \
++|| defined(__AVR_ATxmega192A3U__) \
++|| defined(__AVR_ATxmega256A3U__) 
++
++#define power_usb_enable()   (PR_PRGEN &= (uint8_t)~(PR_USB_bm))
++#define power_usb_disable()  (PR_PRGEN &= (uint8_t)(PR_USB_bm))
++
++#define power_all_enable() \
++do { \
++    PR_PRGEN &= (uint8_t)~(PR_AES_bm|PR_EBI_bm|PR_RTC_bm|PR_EVSYS_bm|PR_DMA_bm|PR_USB_bm); \
++    PR_PRPA &= (uint8_t)~(PR_DAC_bm|PR_ADC_bm|PR_AC_bm); \
++    PR_PRPB &= (uint8_t)~(PR_DAC_bm|PR_ADC_bm|PR_AC_bm); \
++    PR_PRPC &= (uint8_t)~(PR_TWI_bm|PR_USART1_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPD &= (uint8_t)~(PR_TWI_bm|PR_USART1_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPE &= (uint8_t)~(PR_TWI_bm|PR_USART1_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPF &= (uint8_t)~(PR_TWI_bm|PR_USART1_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++} while(0)
++
++#define power_all_disable() \
++do { \
++    PR_PRGEN |= (uint8_t)(PR_AES_bm|PR_EBI_bm|PR_RTC_bm|PR_EVSYS_bm|PR_DMA_bm|PR_USB_bm); \
++    PR_PRPA |= (uint8_t)(PR_DAC_bm|PR_ADC_bm|PR_AC_bm); \
++    PR_PRPB |= (uint8_t)(PR_DAC_bm|PR_ADC_bm|PR_AC_bm); \
++    PR_PRPC |= (uint8_t)(PR_TWI_bm|PR_USART1_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPD |= (uint8_t)(PR_TWI_bm|PR_USART1_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPE |= (uint8_t)(PR_TWI_bm|PR_USART1_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPF |= (uint8_t)(PR_TWI_bm|PR_USART1_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++} while(0)
++
++#else
++
+ #define power_all_enable() \
+ do { \
+     PR_PRGEN &= (uint8_t)~(PR_AES_bm|PR_EBI_bm|PR_RTC_bm|PR_EVSYS_bm|PR_DMA_bm); \
+@@ -413,22 +462,121 @@ do { \
+ } while(0)
+ #endif
+ 
++#endif
++
++#if defined(__AVR_ATxmega16C4__) \
++|| defined(__AVR_ATxmega32C4__) \
++|| defined(__AVR_ATxmega64C3__) \
++|| defined(__AVR_ATxmega128C3__) \
++|| defined(__AVR_ATxmega192C3__) \
++|| defined(__AVR_ATxmega256C3__) 
++
++#define power_usb_enable()   (PR_PRGEN &= (uint8_t)~(PR_USB_bm))
++#define power_usb_disable()  (PR_PRGEN &= (uint8_t)(PR_USB_bm))
++
++#define power_aes_enable()  (PR_PRGEN &= (uint8_t)~(PR_AES_bm))
++#define power_aes_disable() (PR_PRGEN |= (uint8_t)PR_AES_bm)
++
++#define power_rtc_enable()  (PR_PRGEN &= (uint8_t)~(PR_RTC_bm))
++#define power_rtc_disable() (PR_PRGEN |= (uint8_t)PR_RTC_bm)
++
++#define power_evsys_enable()    (PR_PRGEN &= (uint8_t)~(PR_EVSYS_bm))
++#define power_evsys_disable()   (PR_PRGEN |= (uint8_t)PR_EVSYS_bm)
++
++#define power_dma_enable()    (PR_PRGEN &= (uint8_t)~(PR_DMA_bm))
++#define power_dma_disable()   (PR_PRGEN |= (uint8_t)PR_DMA_bm)
++
++#define power_adca_enable()     (PR_PRPA &= (uint8_t)~(PR_ADC_bm))
++#define power_adca_disable()    (PR_PRPA |= (uint8_t)PR_ADC_bm)
++
++#define power_aca_enable()      (PR_PRPA &= (uint8_t)~(PR_AC_bm))
++#define power_aca_disable()     (PR_PRPA |= (uint8_t)PR_AC_bm)
++
++#define power_twic_enable()     (PR_PRPC &= (uint8_t)~(PR_TWI_bm))
++#define power_twic_disable()    (PR_PRPC |= (uint8_t)PR_TWI_bm)
++#define power_twie_enable()     (PR_PRPE &= (uint8_t)~(PR_TWI_bm))
++#define power_twie_disable()    (PR_PRPE |= (uint8_t)PR_TWI_bm)
++
++#define power_usartc1_enable()  (PR_PRPC &= (uint8_t)~(PR_USART1_bm))
++#define power_usartc1_disable() (PR_PRPC |= (uint8_t)PR_USART1_bm)
++
++#define power_usartc0_enable()  (PR_PRPC &= (uint8_t)~(PR_USART0_bm))
++#define power_usartc0_disable() (PR_PRPC |= (uint8_t)PR_USART0_bm)
++#define power_usartd0_enable()  (PR_PRPD &= (uint8_t)~(PR_USART0_bm))
++#define power_usartd0_disable() (PR_PRPD |= (uint8_t)PR_USART0_bm)
++#define power_usarte0_enable()  (PR_PRPE &= (uint8_t)~(PR_USART0_bm))
++#define power_usarte0_disable() (PR_PRPE |= (uint8_t)PR_USART0_bm)
++#define power_usartf0_enable()  (PR_PRPF &= (uint8_t)~(PR_USART0_bm))
++#define power_usartf0_disable() (PR_PRPF |= (uint8_t)PR_USART0_bm)
++
++#define power_spic_enable()     (PR_PRPC &= (uint8_t)~(PR_SPI_bm))
++#define power_spic_disable()    (PR_PRPC |= (uint8_t)PR_SPI_bm)
++#define power_spid_enable()     (PR_PRPD &= (uint8_t)~(PR_SPI_bm))
++#define power_spid_disable()    (PR_PRPD |= (uint8_t)PR_SPI_bm)
++
++#define power_hiresc_enable()   (PR_PRPC &= (uint8_t)~(PR_HIRES_bm))
++#define power_hiresc_disable()  (PR_PRPC |= (uint8_t)PR_HIRES_bm)
++
++#define power_tc1c_enable()     (PR_PRPC &= (uint8_t)~(PR_TC1_bm))
++#define power_tc1c_disable()    (PR_PRPC |= (uint8_t)PR_TC1_bm)
++
++#define power_tc0c_enable()     (PR_PRPC &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0c_disable()    (PR_PRPC |= (uint8_t)PR_TC0_bm)
++#define power_tc0d_enable()     (PR_PRPD &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0d_disable()    (PR_PRPD |= (uint8_t)PR_TC0_bm)
++#define power_tc0e_enable()     (PR_PRPE &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0e_disable()    (PR_PRPE |= (uint8_t)PR_TC0_bm)
++#define power_tc0f_enable()     (PR_PRPF &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0f_disable()    (PR_PRPF |= (uint8_t)PR_TC0_bm)
++
++#define power_all_enable() \
++do { \
++    PR_PRGEN &= (uint8_t)~(PR_USB_bm|PR_AES_bm|PR_DMA_bm|PR_RTC_bm|PR_EVSYS_bm); \
++    PR_PRPA &= (uint8_t)~(PR_ADC_bm|PR_AC_bm); \
++    PR_PRPC &= (uint8_t)~(PR_TWI_bm|PR_USART0_bm|PR_USART1_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPD &= (uint8_t)~(PR_USART0_bm|PR_SPI_bm|PR_TC0_bm); \
++    PR_PRPE &= (uint8_t)~(PR_TWI_bm|PR_USART0_bm|PR_TC0_bm); \
++    PR_PRPF &= (uint8_t)~(PR_USART0_bm|PR_TC0_bm); \
++    } while(0)
++
++#define power_all_disable() \
++do { \
++    PR_PRGEN |= (uint8_t)(PR_USB_bm|PR_AES_bm|PR_DMA_bm|PR_RTC_bm|PR_EVSYS_bm); \
++    PR_PRPA |= (uint8_t)(PR_ADC_bm|PR_AC_bm); \
++    PR_PRPC |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_USART1_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPD |= (uint8_t)(PR_USART0_bm|PR_SPI_bm|PR_TC0_bm); \
++    PR_PRPE |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_TC0_bm); \
++    PR_PRPF |= (uint8_t)(PR_USART0_bm|PR_TC0_bm); \
++    } while(0)
++
++#endif
++
+ #if defined(__AVR_ATxmega16A4__) \
++|| defined(__AVR_ATxmega16A4U__) \
+ || defined(__AVR_ATxmega16D4__) \
+ || defined(__AVR_ATxmega32A4__) \
++|| defined(__AVR_ATxmega32A4U__) \
+ || defined(__AVR_ATxmega32D4__) \
+ || defined(__AVR_ATxmega64A1__) \
+ || defined(__AVR_ATxmega64A1U__) \
+ || defined(__AVR_ATxmega64A3__) \
++|| defined(__AVR_ATxmega64A3U__) \
++|| defined(__AVR_ATxmega64A4U__) \
+ || defined(__AVR_ATxmega64D3__) \
+ || defined(__AVR_ATxmega128A1__) \
+ || defined(__AVR_ATxmega128A1U__) \
+ || defined(__AVR_ATxmega128A3__) \
++|| defined(__AVR_ATxmega128A3U__) \
++|| defined(__AVR_ATxmega128A4U__) \
+ || defined(__AVR_ATxmega128D3__) \
+ || defined(__AVR_ATxmega192A3__) \
++|| defined(__AVR_ATxmega192A3U__) \
+ || defined(__AVR_ATxmega192D3__) \
+ || defined(__AVR_ATxmega256A3__) \
+-|| defined(__AVR_ATxmega256A3B__)
++|| defined(__AVR_ATxmega256A3U__) \
++|| defined(__AVR_ATxmega256A3B__) \
++|| defined(__AVR_ATxmega256A3BU__) \
++|| defined(__AVR_ATxmega384C3__)
+ 
+ 
+ #define power_rtc_enable()  (PR_PRGEN &= (uint8_t)~(PR_RTC_bm))
+@@ -503,6 +651,77 @@ do { \
+ 
+ #endif
+ 
++#if defined(__AVR_ATxmega64D4__) \
++|| defined(__AVR_ATxmega128D4__) 
++
++#define power_rtc_enable()  (PR_PRGEN &= (uint8_t)~(PR_RTC_bm))
++#define power_rtc_disable() (PR_PRGEN |= (uint8_t)PR_RTC_bm)
++
++#define power_evsys_enable()    (PR_PRGEN &= (uint8_t)~(PR_EVSYS_bm))
++#define power_evsys_disable()   (PR_PRGEN |= (uint8_t)PR_EVSYS_bm)
++
++#define power_adca_enable()     (PR_PRPA &= (uint8_t)~(PR_ADC_bm))
++#define power_adca_disable()    (PR_PRPA |= (uint8_t)PR_ADC_bm)
++
++#define power_aca_enable()      (PR_PRPA &= (uint8_t)~(PR_AC_bm))
++#define power_aca_disable()     (PR_PRPA |= (uint8_t)PR_AC_bm)
++
++#define power_twic_enable()     (PR_PRPC &= (uint8_t)~(PR_TWI_bm))
++#define power_twic_disable()    (PR_PRPC |= (uint8_t)PR_TWI_bm)
++#define power_twie_enable()     (PR_PRPE &= (uint8_t)~(PR_TWI_bm))
++#define power_twie_disable()    (PR_PRPE |= (uint8_t)PR_TWI_bm)
++
++#define power_usartc0_enable()  (PR_PRPC &= (uint8_t)~(PR_USART0_bm))
++#define power_usartc0_disable() (PR_PRPC |= (uint8_t)PR_USART0_bm)
++#define power_usartd0_enable()  (PR_PRPD &= (uint8_t)~(PR_USART0_bm))
++#define power_usartd0_disable() (PR_PRPD |= (uint8_t)PR_USART0_bm)
++#define power_usarte0_enable()  (PR_PRPE &= (uint8_t)~(PR_USART0_bm))
++#define power_usarte0_disable() (PR_PRPE |= (uint8_t)PR_USART0_bm)
++#define power_usartf0_enable()  (PR_PRPF &= (uint8_t)~(PR_USART0_bm))
++#define power_usartf0_disable() (PR_PRPF |= (uint8_t)PR_USART0_bm)
++
++#define power_spic_enable()     (PR_PRPC &= (uint8_t)~(PR_SPI_bm))
++#define power_spic_disable()    (PR_PRPC |= (uint8_t)PR_SPI_bm)
++#define power_spid_enable()     (PR_PRPD &= (uint8_t)~(PR_SPI_bm))
++#define power_spid_disable()    (PR_PRPD |= (uint8_t)PR_SPI_bm)
++
++#define power_hiresc_enable()   (PR_PRPC &= (uint8_t)~(PR_HIRES_bm))
++#define power_hiresc_disable()  (PR_PRPC |= (uint8_t)PR_HIRES_bm)
++
++#define power_tc1c_enable()     (PR_PRPC &= (uint8_t)~(PR_TC1_bm))
++#define power_tc1c_disable()    (PR_PRPC |= (uint8_t)PR_TC1_bm)
++
++#define power_tc0c_enable()     (PR_PRPC &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0c_disable()    (PR_PRPC |= (uint8_t)PR_TC0_bm)
++#define power_tc0d_enable()     (PR_PRPD &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0d_disable()    (PR_PRPD |= (uint8_t)PR_TC0_bm)
++#define power_tc0e_enable()     (PR_PRPE &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0e_disable()    (PR_PRPE |= (uint8_t)PR_TC0_bm)
++#define power_tc0f_enable()     (PR_PRPF &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0f_disable()    (PR_PRPF |= (uint8_t)PR_TC0_bm)
++
++#define power_all_enable() \
++do { \
++    PR_PRGEN &= (uint8_t)~(PR_RTC_bm|PR_EVSYS_bm); \
++    PR_PRPA &= (uint8_t)~(PR_ADC_bm|PR_AC_bm); \
++    PR_PRPC &= (uint8_t)~(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPD &= (uint8_t)~(PR_USART0_bm|PR_SPI_bm|PR_TC0_bm); \
++    PR_PRPE &= (uint8_t)~(PR_TWI_bm|PR_USART0_bm|PR_TC0_bm); \
++    PR_PRPF &= (uint8_t)~(PR_USART0_bm|PR_TC0_bm); \
++    } while(0)
++
++#define power_all_disable() \
++do { \
++    PR_PRGEN |= (uint8_t)(PR_RTC_bm|PR_EVSYS_bm); \
++    PR_PRPA |= (uint8_t)(PR_ADC_bm|PR_AC_bm); \
++    PR_PRPC |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPD |= (uint8_t)(PR_USART0_bm|PR_SPI_bm|PR_TC0_bm); \
++    PR_PRPE |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_TC0_bm); \
++    PR_PRPF |= (uint8_t)(PR_USART0_bm|PR_TC0_bm); \
++    } while(0)
++
++#endif
++
+ #if defined(__AVR_ATxmega16D4__) \
+ || defined(__AVR_ATxmega32D4__) \
+ || defined(__AVR_ATxmega64D3__) \
+@@ -532,6 +751,78 @@ do { \
+     PR_PRPF |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
+ } while(0)
+ 
++#elif defined (__AVR_ATxmega64B1__) \
++|| defined (__AVR_ATxmega64B3__) \
++|| defined (__AVR_ATxmega128B1__) \
++|| defined (__AVR_ATxmega128B3__) 
++#define power_lcd_enable()  (PR_PRGEN &= (uint8_t)~(PR_LCD_bm))
++#define power_lcd_disable() (PR_PRGEN |= (uint8_t)PR_LCD_bm)
++
++#define power_usb_enable()  (PR_PRGEN &= (uint8_t)~(PR_USB_bm))
++#define power_usb_disable() (PR_PRGEN |= (uint8_t)PR_USB_bm)
++
++#define power_aes_enable()  (PR_PRGEN &= (uint8_t)~(PR_AES_bm))
++#define power_aes_disable() (PR_PRGEN |= (uint8_t)PR_AES_bm)
++
++#define power_rtc_enable()  (PR_PRGEN &= (uint8_t)~(PR_RTC_bm))
++#define power_rtc_disable() (PR_PRGEN |= (uint8_t)PR_RTC_bm)
++
++#define power_evsys_enable()    (PR_PRGEN &= (uint8_t)~(PR_EVSYS_bm))
++#define power_evsys_disable()   (PR_PRGEN |= (uint8_t)PR_EVSYS_bm)
++
++#define power_dma_enable()    (PR_PRGEN &= (uint8_t)~(PR_DMA_bm))
++#define power_dma_disable()   (PR_PRGEN |= (uint8_t)PR_DMA_bm)
++
++#define power_adca_enable()     (PR_PRPA &= (uint8_t)~(PR_ADC_bm))
++#define power_adca_disable()    (PR_PRPA |= (uint8_t)PR_ADC_bm)
++#define power_adcb_enable()     (PR_PRPB &= (uint8_t)~(PR_ADC_bm))
++#define power_adcb_disable()    (PR_PRPB |= (uint8_t)PR_ADC_bm)
++
++#define power_aca_enable()      (PR_PRPA &= (uint8_t)~(PR_AC_bm))
++#define power_aca_disable()     (PR_PRPA |= (uint8_t)PR_AC_bm)
++#define power_acb_enable()      (PR_PRPB &= (uint8_t)~(PR_AC_bm))
++#define power_acb_disable()     (PR_PRPB |= (uint8_t)PR_AC_bm)
++
++#define power_twic_enable()     (PR_PRPC &= (uint8_t)~(PR_TWI_bm))
++#define power_twic_disable()    (PR_PRPC |= (uint8_t)PR_TWI_bm)
++
++#define power_usartc0_enable()  (PR_PRPC &= (uint8_t)~(PR_USART0_bm))
++#define power_usartc0_disable() (PR_PRPC |= (uint8_t)PR_USART0_bm)
++#define power_usarte0_enable()  (PR_PRPE &= (uint8_t)~(PR_USART0_bm))
++#define power_usarte0_disable() (PR_PRPE |= (uint8_t)PR_USART0_bm)
++
++#define power_spic_enable()     (PR_PRPC &= (uint8_t)~(PR_SPI_bm))
++#define power_spic_disable()    (PR_PRPC |= (uint8_t)PR_SPI_bm)
++
++#define power_hiresc_enable()     (PR_PRPC &= (uint8_t)~(PR_HIRES_bm))
++#define power_hiresc_disable()    (PR_PRPC |= (uint8_t)PR_HIRES_bm)
++
++#define power_tc1c_enable()     (PR_PRPC &= (uint8_t)~(PR_TC1_bm))
++#define power_tc1c_disable()    (PR_PRPC |= (uint8_t)PR_TC1_bm)
++
++#define power_tc0c_enable()  (PR_PRPC &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0c_disable() (PR_PRPC |= (uint8_t)PR_TC0_bm)
++#define power_tc0e_enable()  (PR_PRPE &= (uint8_t)~(PR_TC0_bm))
++#define power_tc0e_disable() (PR_PRPE |= (uint8_t)PR_TC0_bm)
++
++#define power_all_enable() \
++do { \
++    PR_PRGEN &= (uint8_t)~(PR_LCD_bm|PR_USB_bm|PR_AES_bm|PR_RTC_bm|PR_EVSYS_bm|PR_DMA_bm); \
++    PR_PRPA &= (uint8_t)~(PR_ADC_bm|PR_AC_bm); \
++    PR_PRPB &= (uint8_t)~(PR_ADC_bm|PR_AC_bm); \
++    PR_PRPC &= (uint8_t)~(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPE &= (uint8_t)~(PR_USART0_bm|PR_TC0_bm); \
++    } while(0)
++
++#define power_all_disable() \
++do { \
++    PR_PRGEN |= (uint8_t)(PR_LCD_bm|PR_USB_bm|PR_AES_bm|PR_RTC_bm|PR_EVSYS_bm|PR_DMA_bm); \
++    PR_PRPA |= (uint8_t)(PR_ADC_bm|PR_AC_bm); \
++    PR_PRPB |= (uint8_t)(PR_ADC_bm|PR_AC_bm); \
++    PR_PRPC |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
++    PR_PRPE |= (uint8_t)(PR_USART0_bm|PR_TC0_bm); \
++    } while(0)
++
+ #elif defined(__AVR_ATmega640__) \
+ || defined(__AVR_ATmega1280__) \
+ || defined(__AVR_ATmega1281__) \
+@@ -841,7 +1132,8 @@ do{ \
+ #define power_all_disable()     (PRR |= (uint8_t)((1<<PRADC)|(1<<PRSPI)|(1<<PRUSART)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRPSC0)|(1<<PRPSC1)|(1<<PRPSC2)))
+ 
+ 
+-#elif defined(__AVR_AT90PWM81__)
++#elif defined(__AVR_AT90PWM81__) \
++|| defined(__AVR_AT90PWM161__)
+ 
+ #define power_adc_enable()      (PRR &= (uint8_t)~(1 << PRADC))
+ #define power_adc_disable()     (PRR |= (uint8_t)(1 << PRADC))
+@@ -867,10 +1159,13 @@ do{ \
+ #elif defined(__AVR_ATmega165__) \
+ || defined(__AVR_ATmega165A__) \
+ || defined(__AVR_ATmega165P__) \
++|| defined(__AVR_ATmega165PA__) \
+ || defined(__AVR_ATmega325__) \
+ || defined(__AVR_ATmega325A__) \
++|| defined(__AVR_ATmega325PA__) \
+ || defined(__AVR_ATmega3250__) \
+ || defined(__AVR_ATmega3250A__) \
++|| defined(__AVR_ATmega3250PA__) \
+ || defined(__AVR_ATmega645__) \
+ || defined(__AVR_ATmega645A__) \
+ || defined(__AVR_ATmega645P__) \
+@@ -905,6 +1200,7 @@ do{ \
+ || defined(__AVR_ATmega3290__) \
+ || defined(__AVR_ATmega3290A__) \
+ || defined(__AVR_ATmega3290P__) \
++|| defined(__AVR_ATmega3290PA__) \
+ || defined(__AVR_ATmega649__) \
+ || defined(__AVR_ATmega649A__) \
+ || defined(__AVR_ATmega649P__) \
+@@ -968,7 +1264,8 @@ do{ \
+ #define power_all_disable()     (PRR0 |= (uint8_t)((1<<PRADC)|(1<<PRSPI)|(1<<PRUSART0)|(1<<PRUSART1)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRTIM2)|(1<<PRTWI)))
+ 
+ 
+-#elif defined(__AVR_ATmega644__)
++#elif defined(__AVR_ATmega644__) \
++|| defined(__AVR_ATmega164PA__)
+ 
+ #define power_adc_enable()      (PRR0 &= (uint8_t)~(1 << PRADC))
+ #define power_adc_disable()     (PRR0 |= (uint8_t)(1 << PRADC))
+@@ -1016,6 +1313,7 @@ do{ \
+ 
+ #elif defined(__AVR_ATmega48__) \
+ || defined(__AVR_ATmega48A__) \
++|| defined(__AVR_ATmega48PA__) \
+ || defined(__AVR_ATmega48P__) \
+ || defined(__AVR_ATmega88__) \
+ || defined(__AVR_ATmega88A__) \
+@@ -1024,10 +1322,12 @@ do{ \
+ || defined(__AVR_ATmega168__) \
+ || defined(__AVR_ATmega168A__) \
+ || defined(__AVR_ATmega168P__) \
++|| defined(__AVR_ATmega168PA__) \
+ || defined(__AVR_ATmega328__) \
+ || defined(__AVR_ATmega328P__) \
+ || defined(__AVR_ATtiny48__) \
+-|| defined(__AVR_ATtiny88__)
++|| defined(__AVR_ATtiny88__) \
++|| defined(__AVR_ATtiny828__)
+ 
+ #define power_adc_enable()      (PRR &= (uint8_t)~(1 << PRADC))
+ #define power_adc_disable()     (PRR |= (uint8_t)(1 << PRADC))
+@@ -1044,15 +1344,27 @@ do{ \
+ #define power_timer1_enable()   (PRR &= (uint8_t)~(1 << PRTIM1))
+ #define power_timer1_disable()  (PRR |= (uint8_t)(1 << PRTIM1))
+ 
++#if !defined(__AVR_ATtiny828__)
++
+ #define power_timer2_enable()   (PRR &= (uint8_t)~(1 << PRTIM2))
+ #define power_timer2_disable()  (PRR |= (uint8_t)(1 << PRTIM2))
+ 
++#endif
++
+ #define power_twi_enable()      (PRR &= (uint8_t)~(1 << PRTWI))
+ #define power_twi_disable()     (PRR |= (uint8_t)(1 << PRTWI))
+ 
++#if defined(__AVR_ATtiny828__)
++
++#define power_all_enable()      (PRR &= (uint8_t)~((1<<PRADC)|(1<<PRSPI)|(1<<PRUSART0)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRTWI)))
++#define power_all_disable()     (PRR |= (uint8_t)((1<<PRADC)|(1<<PRSPI)|(1<<PRUSART0)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRTWI)))
++
++#else
++
+ #define power_all_enable()      (PRR &= (uint8_t)~((1<<PRADC)|(1<<PRSPI)|(1<<PRUSART0)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRTIM2)|(1<<PRTWI)))
+ #define power_all_disable()     (PRR |= (uint8_t)((1<<PRADC)|(1<<PRSPI)|(1<<PRUSART0)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRTIM2)|(1<<PRTWI)))
+ 
++#endif
+ 
+ #elif defined(__AVR_ATtiny24__) \
+ || defined(__AVR_ATtiny24A__) \
+@@ -1087,6 +1399,43 @@ do{ \
+ #define power_all_enable()      (PRR &= (uint8_t)~((1<<PRADC)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRUSI)))
+ #define power_all_disable()     (PRR |= (uint8_t)((1<<PRADC)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRUSI)))
+ 
++#elif defined(__AVR_ATmega1284__)
++
++#define power_adc_enable()      (PRR0 &= (uint8_t)~(1 << PRADC))
++#define power_adc_disable()     (PRR0 |= (uint8_t)(1 << PRADC))
++
++#define power_spi_enable()      (PRR0 &= (uint8_t)~(1 << PRSPI))
++#define power_spi_disable()     (PRR0 |= (uint8_t)(1 << PRSPI))
++
++#define power_twi_enable()      (PRR0 &= (uint8_t)~(1 << PRTWI))
++#define power_twi_disable()     (PRR0 |= (uint8_t)(1 << PRTWI))
++
++#define power_timer0_enable()   (PRR0 &= (uint8_t)~(1 << PRTIM0))
++#define power_timer0_disable()  (PRR0 |= (uint8_t)(1 << PRTIM0))
++
++#define power_timer1_enable()   (PRR0 &= (uint8_t)~(1 << PRTIM1))
++#define power_timer1_disable()  (PRR0 |= (uint8_t)(1 << PRTIM1))
++
++#define power_timer2_enable()   (PRR0 &= (uint8_t)~(1 << PRTIM2))
++#define power_timer2_disable()  (PRR0 |= (uint8_t)(1 << PRTIM2))
++
++#define power_timer3_enable()   (PRR1 &= (uint8_t)~(1 << PRTIM3))
++#define power_timer3_disable()  (PRR1 |= (uint8_t)(1 << PRTIM3))
++
++#define power_usart0_enable()   (PRR0 &= (uint8_t)~(1 << PRUSART0))
++#define power_usart0_disable()  (PRR0 |= (uint8_t)(1 << PRUSART0))
++
++#define power_all_enable() \
++do{ \
++    PRR0 &= (uint8_t)~((1<<PRADC)|(1<<PRSPI)|(1<<PRTWI)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRTIM2)|(1<<PRUSART0)); \
++    PRR1 &= (uint8_t)~(1<<PRTIM3); \
++}while(0)
++
++#define power_all_disable() \
++do{ \
++    PRR0 |= (uint8_t)((1<<PRADC)|(1<<PRSPI)|(1<<PRTWI)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRTIM2)|(1<<PRUSART0)); \
++    PRR1 |= (uint8_t)(1<<PRTIM3); \
++}while(0)
+ 
+ #elif defined(__AVR_ATmega1284P__)
+ 
+@@ -1160,6 +1509,70 @@ do{ \
+ #define power_all_disable()     (PRR0 |= (uint8_t)((1<<PRTWI)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRVADC)|(1<<PRSPI)|(1<<PRVRM)))
+ 
+ 
++#elif defined (__AVR_ATA5790__) \
++|| defined (__AVR_ATA5795__)
++
++// Enable the voltage monitor 
++#define power_vmonitor_enable()          (PRR0 &= (uint8_t)~(1 << PRVM))
++#define power_vmonitor_disable()         (PRR0 |= (uint8_t)(1 << PRVM))
++
++#define power_irdriver_enable()          (PRR0 &= (uint8_t)~(1 << PRDS))
++#define power_irdriver_disable()         (PRR0 |= (uint8_t)(1 << PRDS))
++
++#define power_crypto_enable()            (PRR0 &= (uint8_t)~(1 << PRCU))
++#define power_crypto_disable()           (PRR0 |= (uint8_t)(1 << PRCU))
++
++#define power_timermodulator_enable()    (PRR0 &= (uint8_t)~(1 << PRTM))
++#define power_timermodulator_disable()   (PRR0 |= (uint8_t)(1 << PRTM))
++
++#define power_timer1_enable()            (PRR0 &= (uint8_t)~(1 << PRT1))
++#define power_timer1_disable()           (PRR0 |= (uint8_t)(1 << PRT1))
++
++#define power_timer2_enable()            (PRR0 &= (uint8_t)~(1 << PRT2))
++#define power_timer2_disable()           (PRR0 |= (uint8_t)(1 << PRT2))
++
++#define power_timer3_enable()            (PRR0 &= (uint8_t)~(1 << PRT3))
++#define power_timer3_disable()           (PRR0 |= (uint8_t)(1 << PRT3))
++
++#define power_spi_enable()               (PRR1 &= (uint8_t)~(1 << PRSPI))
++#define power_spi_disable()              (PRR1 |= (uint8_t)(1 << PRSPI))
++
++#define power_cinterface_enable()        (PRR1 &= (uint8_t)~(1 << PRCI))
++#define power_cinterface_disable()       (PRR1 |= (uint8_t)(1 << PRCI))
++
++#if defined(__AVR_ATA5790__) 
++
++#define power_lfreceiver_enable()        (PRR0 &= (uint8_t)~(1 << PRLFR))            
++#define power_lfreceiver_disable()       (PRR0 |= (uint8_t)(1 << PRLFR))            
++
++#define power_all_enable() \
++do{ \
++    PRR0 &= (uint8_t)~((1<<PRVM)|(1<<PRDS)|(1<<PRCU)|(1<<PRTM)|(1<<PRT3)|(1<<PRT2)|(1<<PRT1)|(1<<PRLFR)); \
++    PRR1 &= (uint8_t)~((1<<PRSPI)|(1<<PRCI)); \
++}while(0)
++
++#define power_all_disable() \
++do{ \
++    PRR0 |= (uint8_t)((1<<PRVM)|(1<<PRDS)|(1<<PRCU)|(1<<PRTM)|(1<<PRT3)|(1<<PRT2)|(1<<PRT1)|(1<<PRLFR)); \
++    PRR1 |= (uint8_t)((1<<PRSPI)|(1<<PRCI)); \
++}while(0)
++
++#elif defined(__AVR_ATA5795__)
++
++#define power_all_enable() \
++do{ \
++    PRR0 &= (uint8_t)~((1<<PRVM)|(1<<PRDS)|(1<<PRCU)|(1<<PRTM)|(1<<PRT3)|(1<<PRT2)|(1<<PRT1)); \
++    PRR1 &= (uint8_t)~((1<<PRSPI)|(1<<PRCI)); \
++}while(0)
++
++#define power_all_disable() \
++do{ \
++    PRR0 |= (uint8_t)((1<<PRVM)|(1<<PRDS)|(1<<PRCU)|(1<<PRTM)|(1<<PRT3)|(1<<PRT2)|(1<<PRT1)); \
++    PRR1 |= (uint8_t)((1<<PRSPI)|(1<<PRCI)); \
++}while(0)
++
++#endif
++
+ #elif defined(__AVR_ATmega16M1__) \
+ || defined(__AVR_ATmega32C1__) \
+ || defined(__AVR_ATmega32M1__) \
+@@ -1192,8 +1605,9 @@ do{ \
+ 
+ 
+ #elif defined(__AVR_ATtiny167__) \
+-|| defined(__AVR_ATtiny87__)
+-
++|| defined(__AVR_ATtiny87__) \
++|| defined(__AVR_ATA5505__) \
++|| defined(__AVR_ATA5272__)
+ 
+ #define power_adc_enable()      (PRR &= (uint8_t)~(1 << PRADC))
+ #define power_adc_disable()     (PRR |= (uint8_t)(1 << PRADC))
+@@ -1217,6 +1631,33 @@ do{ \
+ #define power_all_disable()     (PRR |= (uint8_t)((1<<PRADC)|(1<<PRUSI)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRSPI)|(1<<PRLIN)))
+ 
+ 
++#elif defined(__AVR_ATtiny1634__)
++
++#define power_adc_enable()      (PRR &= (uint8_t)~(1 << PRADC))
++#define power_adc_disable()     (PRR |= (uint8_t)(1 << PRADC))
++
++#define power_usart0_enable()      (PRR &= (uint8_t)~(1 << PRUSART0))
++#define power_usart0_disable()     (PRR |= (uint8_t)(1 << PRUSART0))
++
++#define power_usart1_enable()      (PRR &= (uint8_t)~(1 << PRUSART1))
++#define power_usart1_disable()     (PRR |= (uint8_t)(1 << PRUSART1))
++
++#define power_usi_enable()      (PRR &= (uint8_t)~(1 << PRUSI))
++#define power_usi_disable()     (PRR |= (uint8_t)(1 << PRUSI))
++
++#define power_timer0_enable()   (PRR &= (uint8_t)~(1 << PRTIM0))
++#define power_timer0_disable()  (PRR |= (uint8_t)(1 << PRTIM0))
++
++#define power_timer1_enable()   (PRR &= (uint8_t)~(1 << PRTIM1))
++#define power_timer1_disable()  (PRR |= (uint8_t)(1 << PRTIM1))
++
++#define power_twi_enable()      (PRR &= (uint8_t)~(1 << PRTWI))
++#define power_twi_disable()     (PRR |= (uint8_t)(1 << PRTWI))
++
++#define power_all_enable()      (PRR &= (uint8_t)~((1 << PRTWI)|(1 << PRUSI)|(1 << PRTIM0)|(1 << PRTIM1)|(1 << PRUSART0)|(1 << PRUSART1)|(1 << PRADC)))
++#define power_all_disable()     (PRR |= (uint8_t)((1 << PRTWI)|(1 << PRUSI)|(1 << PRTIM0)|(1 << PRTIM1)|(1 << PRUSART0)|(1 << PRUSART1)|(1 << PRADC)))
++
++
+ #elif defined(__AVR_AT90USB82__) \
+ || defined(__AVR_AT90USB162__) \
+ || defined(__AVR_ATmega8U2__) \
+@@ -1350,6 +1791,8 @@ do{ \
+ || defined(__AVR_AT90PWM2B__) \
+ || defined(__AVR_AT90PWM3__) \
+ || defined(__AVR_AT90PWM3B__) \
++|| defined(__AVR_AT90PWM81__) \
++|| defined(__AVR_AT90PWM161__) \
+ || defined(__AVR_AT90PWM216__) \
+ || defined(__AVR_AT90PWM316__) \
+ || defined(__AVR_AT90SCR100__) \
+@@ -1359,18 +1802,24 @@ do{ \
+ || defined(__AVR_AT90USB1286__) \
+ || defined(__AVR_AT90USB1287__) \
+ || defined(__AVR_AT90USB162__) \
++|| defined(__AVR_ATA5505__) \
++|| defined(__AVR_ATA5272__) \
+ || defined(__AVR_ATmega1280__) \
+ || defined(__AVR_ATmega1281__) \
++|| defined(__AVR_ATmega1284__) \
+ || defined(__AVR_ATmega128RFA1__) \
+ || defined(__AVR_ATmega1284P__) \
+ || defined(__AVR_ATmega162__) \
+ || defined(__AVR_ATmega164A__) \
+ || defined(__AVR_ATmega164P__) \
++|| defined(__AVR_ATmega164PA__) \
+ || defined(__AVR_ATmega165__) \
+ || defined(__AVR_ATmega165A__) \
+ || defined(__AVR_ATmega165P__) \
++|| defined(__AVR_ATmega165PA__) \
+ || defined(__AVR_ATmega168__) \
+ || defined(__AVR_ATmega168P__) \
++|| defined(__AVR_ATmega168PA__) \
+ || defined(__AVR_ATmega169__) \
+ || defined(__AVR_ATmega169A__) \
+ || defined(__AVR_ATmega169P__) \
+@@ -1382,8 +1831,10 @@ do{ \
+ || defined(__AVR_ATmega324P__) \
+ || defined(__AVR_ATmega325__) \
+ || defined(__AVR_ATmega325A__) \
++|| defined(__AVR_ATmega325PA__) \
+ || defined(__AVR_ATmega3250__) \
+ || defined(__AVR_ATmega3250A__) \
++|| defined(__AVR_ATmega3250PA__) \
+ || defined(__AVR_ATmega328__) \
+ || defined(__AVR_ATmega328P__) \
+ || defined(__AVR_ATmega329__) \
+@@ -1392,12 +1843,15 @@ do{ \
+ || defined(__AVR_ATmega329PA__) \
+ || defined(__AVR_ATmega3290__) \
+ || defined(__AVR_ATmega3290A__) \
++|| defined(__AVR_ATmega3290PA__) \
+ || defined(__AVR_ATmega32C1__) \
+ || defined(__AVR_ATmega32M1__) \
+ || defined(__AVR_ATmega32U2__) \
+ || defined(__AVR_ATmega32U4__) \
+ || defined(__AVR_ATmega32U6__) \
+ || defined(__AVR_ATmega48__) \
++|| defined(__AVR_ATmega48A__) \
++|| defined(__AVR_ATmega48PA__) \
+ || defined(__AVR_ATmega48P__) \
+ || defined(__AVR_ATmega640__) \
+ || defined(__AVR_ATmega649P__) \
+@@ -1541,6 +1995,158 @@ void clock_prescale_set(clock_div_t __x)
+ 
+ #define clock_prescale_get()  (clock_div_t)(CLKPR & (uint8_t)((1<<CLKPS0)|(1<<CLKPS1)))
+ 
++#elif defined(__AVR_ATA5790__) \
++|| defined (__AVR_ATA5795__)
++
++typedef enum
++{
++    clock_div_1 = 0,
++    clock_div_2 = 1,
++    clock_div_4 = 2,
++    clock_div_8 = 3,
++    clock_div_16 = 4,
++    clock_div_32 = 5,
++    clock_div_64 = 6,
++    clock_div_128 = 7,
++} clock_div_t;
++
++static __inline__ void system_clock_prescale_set(clock_div_t) __attribute__((__always_inline__));
++
++void system_clock_prescale_set(clock_div_t __x)
++{
++    uint8_t __tmp = _BV(CLKPCE);
++    __asm__ __volatile__ (
++        "in __tmp_reg__,__SREG__" "\n\t"
++        "cli" "\n\t"
++        "out %1, %0" "\n\t"
++        "out %1, %2" "\n\t"
++        "out __SREG__, __tmp_reg__"
++        : /* no outputs */
++        : "d" (__tmp),
++          "I" (_SFR_IO_ADDR(CLKPR)),
++          "d" (__x)
++        : "r0");
++}
++
++#define system_clock_prescale_get()  (clock_div_t)(CLKPR & (uint8_t)((1<<CLKPS0)|(1<<CLKPS1)|(1<<CLKPS2)))
++
++typedef enum
++{
++    timer_clock_div_reset = 0,
++    timer_clock_div_1 = 1,
++    timer_clock_div_2 = 2,
++    timer_clock_div_4 = 3,
++    timer_clock_div_8 = 4,
++    timer_clock_div_16 = 5,
++    timer_clock_div_32 = 6,
++    timer_clock_div_64 = 7
++} timer_clock_div_t;
++
++static __inline__ void timer_clock_prescale_set(timer_clock_div_t) __attribute__((__always_inline__));
++
++void timer_clock_prescale_set(timer_clock_div_t __x)
++{
++    uint8_t __t;
++    __asm__ __volatile__ (
++        "in __tmp_reg__,__SREG__" "\n\t"
++        "cli" "\n\t"
++        "in %[temp],%[clkpr]" "\n\t"
++        "out %[clkpr],%[enable]" "\n\t"
++        "andi %[temp],%[not_CLTPS]" "\n\t"
++        "or %[temp], %[set_value]" "\n\t"
++        "out %[clkpr],%[temp]" "\n\t"
++        "sei" "\n\t"
++        "out __SREG__,__tmp_reg__" "\n\t"
++        : /* no outputs */
++        : [temp] "r" (__t),
++          [clkpr] "I" (_SFR_IO_ADDR(CLKPR)),
++          [enable] "r" (_BV(CLKPCE)),
++          [not_CLTPS] "M" (0xFF & (~ ((1 << CLTPS2) | (1 << CLTPS1) | (1 << CLTPS0)))),
++          [set_value] "r" ((__x & 7) << 3)
++        : "r0");
++}
++
++#define timer_clock_prescale_get()  (timer_clock_div_t)(CLKPR & (uint8_t)((1<<CLTPS0)|(1<<CLTPS1)|(1<<CLTPS2)))
++
++#elif defined(__AVR_ATA6285__) \
++|| defined(__AVR_ATA6286__)
++
++typedef enum
++{
++    clock_div_1 = 0,
++    clock_div_2 = 1,
++    clock_div_4 = 2,
++    clock_div_8 = 3,
++    clock_div_16 = 4,
++    clock_div_32 = 5,
++    clock_div_64 = 6,
++    clock_div_128 = 7
++} clock_div_t;
++
++static __inline__ void system_clock_prescale_set(clock_div_t) __attribute__((__always_inline__));
++
++void system_clock_prescale_set(clock_div_t __x)
++{
++    uint8_t __t;
++    __asm__ __volatile__ (
++        "in __tmp_reg__,__SREG__" "\n\t"
++        "cli" "\n\t"
++        "in %[temp],%[clpr]" "\n\t"
++        "out %[clpr],%[enable]" "\n\t"
++        "andi %[temp],%[not_CLKPS]" "\n\t"
++        "or %[temp], %[set_value]" "\n\t"
++        "out %[clpr],%[temp]" "\n\t"
++        "sei" "\n\t"
++        "out __SREG__,__tmp_reg__" "\n\t"
++        : /* no outputs */
++        : [temp] "r" (__t),
++          [clpr] "I" (_SFR_IO_ADDR(CLKPR)),
++          [enable] "r" _BV(CLPCE),
++          [not_CLKPS] "M" (0xFF & (~ ((1 << CLKPS2) | (1 << CLKPS1) | (1 << CLKPS0)))),
++          [set_value] "r" (__x & 7)
++        : "r0");
++}
++
++#define system_clock_prescale_get()  (clock_div_t)(CLKPR & (uint8_t)((1<<CLKPS0)|(1<<CLKPS1)|(1<<CLKPS2)))
++
++typedef enum
++{
++    timer_clock_div_reset = 0,
++    timer_clock_div_1 = 1,
++    timer_clock_div_2 = 2,
++    timer_clock_div_4 = 3,
++    timer_clock_div_8 = 4,
++    timer_clock_div_16 = 5,
++    timer_clock_div_32 = 6,
++    timer_clock_div_64 = 7
++} timer_clock_div_t;
++
++static __inline__ void timer_clock_prescale_set(timer_clock_div_t) __attribute__((__always_inline__));
++
++void timer_clock_prescale_set(timer_clock_div_t __x)
++{
++    uint8_t __t;
++    __asm__ __volatile__ (
++        "in __tmp_reg__,__SREG__" "\n\t"
++        "cli" "\n\t"
++        "in %[temp],%[clpr]" "\n\t"
++        "out %[clpr],%[enable]" "\n\t"
++        "andi %[temp],%[not_CLTPS]" "\n\t"
++        "or %[temp], %[set_value]" "\n\t"
++        "out %[clpr],%[temp]" "\n\t"
++        "sei" "\n\t"
++        "out __SREG__,__tmp_reg__" "\n\t"
++        : /* no outputs */
++        : [temp] "r" (__t),
++          [clpr] "I" (_SFR_IO_ADDR(CLKPR)),
++          [enable] "r" (_BV(CLPCE)),	  
++          [not_CLTPS] "M" (0xFF & (~ ((1 << CLTPS2) | (1 << CLTPS1) | (1 << CLTPS0)))),
++          [set_value] "r" ((__x & 7) << 3)
++        : "r0");
++}
++
++#define timer_clock_prescale_get()  (timer_clock_div_t)(CLKPR & (uint8_t)((1<<CLTPS0)|(1<<CLTPS1)|(1<<CLTPS2)))
++
+ #elif defined(__AVR_ATtiny24__) \
+ || defined(__AVR_ATtiny24A__) \
+ || defined(__AVR_ATtiny44__) \
+diff -Naurp include/avr/sleep.h include/avr/sleep.h
+--- include/avr/sleep.h	2012-11-05 12:24:33.000000000 +0530
++++ include/avr/sleep.h	2012-11-05 12:23:27.000000000 +0530
+@@ -210,7 +210,8 @@
+     } while(0)
+ 
+ #elif defined(__AVR_ATtiny167__) \
+-|| defined(__AVR_ATtiny87__)
++|| defined(__AVR_ATtiny87__) \
++|| defined(__AVR_ATtiny828__)
+ 
+     #define SLEEP_MODE_IDLE         0
+     #define SLEEP_MODE_ADC          _BV(SM0)
+@@ -222,6 +223,8 @@
+     } while(0)
+ 
+ #elif defined(__AVR_AT90S4434__) \
++|| defined(__AVR_ATA5505__) \
++|| defined(__AVR_ATA5272__) \
+ || defined(__AVR_AT76C711__) \
+ || defined(__AVR_AT90S8535__) \
+ || defined(__AVR_ATmega103__) \
+@@ -287,7 +290,8 @@
+ || defined(__AVR_ATtiny461A__) \
+ || defined(__AVR_ATtiny861__) \
+ || defined(__AVR_ATtiny861A__) \
+-|| defined(__AVR_ATtiny43U__)
++|| defined(__AVR_ATtiny43U__) \
++|| defined(__AVR_ATtiny1634__)
+ 
+     #define SLEEP_MODE_IDLE         0
+     #define SLEEP_MODE_ADC          _BV(SM0)
+@@ -301,6 +305,7 @@
+ 
+ #elif defined(__AVR_AT90PWM216__) \
+ || defined(__AVR_AT90PWM316__) \
++|| defined(__AVR_AT90PWM161__) \
+ || defined(__AVR_AT90PWM81__)
+ 
+     #define SLEEP_MODE_IDLE         0
+@@ -328,8 +333,10 @@
+ || defined(__AVR_AT90USB646__) \
+ || defined(__AVR_AT90USB647__) \
+ || defined(__AVR_ATmega128__) \
++|| defined(__AVR_ATmega128A__) \
+ || defined(__AVR_ATmega1280__) \
+ || defined(__AVR_ATmega1281__) \
++|| defined(__AVR_ATmega1284__) \
+ || defined(__AVR_ATmega1284P__) \
+ || defined(__AVR_ATmega128RFA1__) \
+ || defined(__AVR_ATmega16__) \
+@@ -337,12 +344,15 @@
+ || defined(__AVR_ATmega162__) \
+ || defined(__AVR_ATmega164A__) \
+ || defined(__AVR_ATmega164P__) \
++|| defined(__AVR_ATmega164PA__) \
+ || defined(__AVR_ATmega165__) \
+ || defined(__AVR_ATmega165A__) \
+ || defined(__AVR_ATmega165P__) \
++|| defined(__AVR_ATmega165PA__) \
+ || defined(__AVR_ATmega168__) \
+ || defined(__AVR_ATmega168A__) \
+ || defined(__AVR_ATmega168P__) \
++|| defined(__AVR_ATmega168PA__) \
+ || defined(__AVR_ATmega169__) \
+ || defined(__AVR_ATmega169A__) \
+ || defined(__AVR_ATmega169P__) \
+@@ -355,14 +365,17 @@
+ || defined(__AVR_ATmega2560__) \
+ || defined(__AVR_ATmega2561__) \
+ || defined(__AVR_ATmega32__) \
++|| defined(__AVR_ATmega32A__) \
+ || defined(__AVR_ATmega323__) \
+ || defined(__AVR_ATmega324A__) \
+ || defined(__AVR_ATmega324P__) \
+ || defined(__AVR_ATmega324PA__) \
+ || defined(__AVR_ATmega325__) \
+ || defined(__AVR_ATmega325A__) \
++|| defined(__AVR_ATmega325PA__) \
+ || defined(__AVR_ATmega3250__) \
+ || defined(__AVR_ATmega3250A__) \
++|| defined(__AVR_ATmega3250PA__) \
+ || defined(__AVR_ATmega328__) \
+ || defined(__AVR_ATmega328P__) \
+ || defined(__AVR_ATmega329__) \
+@@ -372,6 +385,7 @@
+ || defined(__AVR_ATmega3290__) \
+ || defined(__AVR_ATmega3290A__) \
+ || defined(__AVR_ATmega3290P__) \
++|| defined(__AVR_ATmega3290PA__) \
+ || defined(__AVR_ATmega32C1__) \
+ || defined(__AVR_ATmega32M1__) \
+ || defined(__AVR_ATmega32U2__) \
+@@ -380,8 +394,10 @@
+ || defined(__AVR_ATmega406__) \
+ || defined(__AVR_ATmega48__) \
+ || defined(__AVR_ATmega48A__) \
++|| defined(__AVR_ATmega48PA__) \
+ || defined(__AVR_ATmega48P__) \
+ || defined(__AVR_ATmega64__) \
++|| defined(__AVR_ATmega64A__) \
+ || defined(__AVR_ATmega640__) \
+ || defined(__AVR_ATmega644__) \
+ || defined(__AVR_ATmega644A__) \
+@@ -426,23 +442,60 @@
+         _SLEEP_CONTROL_REG = ((_SLEEP_CONTROL_REG & ~(_BV(SM0) | _BV(SM1) | _BV(SM2))) | (mode)); \
+     } while(0)
+ 
++#elif defined(__AVR_ATmega8A__)
++
++    #define SLEEP_MODE_IDLE         (0)
++    #define SLEEP_MODE_ADC          _BV(SM0)
++    #define SLEEP_MODE_PWR_DOWN     _BV(SM1)
++    #define SLEEP_MODE_PWR_SAVE     (_BV(SM0) | _BV(SM1))
++    #define SLEEP_MODE_STANDBY      (_BV(SM1) | _BV(SM2))
++
++
++    #define set_sleep_mode(mode) \
++    do { \
++        _SLEEP_CONTROL_REG = ((_SLEEP_CONTROL_REG & ~(_BV(SM0) | _BV(SM1) | _BV(SM2))) | (mode)); \
++    } while(0)
++
+ #elif defined(__AVR_ATxmega16A4__) \
++|| defined(__AVR_ATxmega16A4U__) \
++|| defined(__AVR_ATxmega16C4__) \
+ || defined(__AVR_ATxmega16D4__) \
+ || defined(__AVR_ATxmega32A4__) \
++|| defined(__AVR_ATxmega32A4U__) \
++|| defined(__AVR_ATxmega32C4__) \
+ || defined(__AVR_ATxmega32D4__) \
+ || defined(__AVR_ATxmega64A1__) \
+ || defined(__AVR_ATxmega64A1U__) \
+ || defined(__AVR_ATxmega64A3__) \
++|| defined(__AVR_ATxmega64A3U__) \
++|| defined(__AVR_ATxmega64A4U__) \
++|| defined(__AVR_ATxmega64B1__) \
++|| defined(__AVR_ATxmega64B3__) \
++|| defined(__AVR_ATxmega64C3__) \
+ || defined(__AVR_ATxmega64D3__) \
++|| defined(__AVR_ATxmega64D4__) \
+ || defined(__AVR_ATxmega128A1__) \
+ || defined(__AVR_ATxmega128A1U__) \
+ || defined(__AVR_ATxmega128A3__) \
++|| defined(__AVR_ATxmega128A3U__) \
++|| defined(__AVR_ATxmega128A4U__) \
++|| defined(__AVR_ATxmega128B1__) \
++|| defined(__AVR_ATxmega128B3__) \
++|| defined(__AVR_ATxmega128C3__) \
+ || defined(__AVR_ATxmega128D3__) \
++|| defined(__AVR_ATxmega128D4__) \
+ || defined(__AVR_ATxmega192A3__) \
++|| defined(__AVR_ATxmega192A3U__) \
++|| defined(__AVR_ATxmega192C3__) \
+ || defined(__AVR_ATxmega192D3__) \
+ || defined(__AVR_ATxmega256A3__) \
++|| defined(__AVR_ATxmega256A3U__) \
++|| defined(__AVR_ATxmega256C3__) \
+ || defined(__AVR_ATxmega256D3__) \
+-|| defined(__AVR_ATxmega256A3B__)
++|| defined(__AVR_ATxmega256A3B__) \
++|| defined(__AVR_ATxmega256A3BU__) \
++|| defined(__AVR_ATxmega384C3__) \
++|| defined(__AVR_ATxmega384D3__)
+ 
+     #define SLEEP_MODE_IDLE         (0)
+     #define SLEEP_MODE_PWR_DOWN     (SLEEP_SMODE1_bm)
+@@ -468,7 +521,9 @@
+         _SLEEP_CONTROL_REG = ((_SLEEP_CONTROL_REG & ~(_BV(SM0) | _BV(SM1) | _BV(SM2))) | (mode)); \
+     } while(0)
+ 
+-#elif defined(__AVR_ATA6289__)
++#elif defined(__AVR_ATA6285__) \
++|| defined(__AVR_ATA6286__) \
++|| defined(__AVR_ATA6289__)
+ 
+     #define SLEEP_MODE_IDLE                     (0)
+     #define SLEEP_MODE_SENSOR_NOISE_REDUCTION   (_BV(SM0))
+@@ -479,6 +534,19 @@
+         _SLEEP_CONTROL_REG = ((_SLEEP_CONTROL_REG & ~(_BV(SM0) | _BV(SM1) | _BV(SM2))) | (mode)); \
+     } while(0)
+ 
++#elif defined (__AVR_ATA5790__) \
++|| defined (__AVR_ATA5795__)
++
++    #define SLEEP_MODE_IDLE           (0)
++    #define SLEEP_MODE_EXT_PWR_SAVE   (_BV(SM0))
++    #define SLEEP_MODE_PWR_DOWN       (_BV(SM1))
++    #define SLEEP_MODE_PWR_SAVE       (_BV(SM1) | _BV(SM0))     
++    
++    #define set_sleep_mode(mode) \
++    do { \
++        _SLEEP_CONTROL_REG = ((_SLEEP_CONTROL_REG & ~(_BV(SM0) | _BV(SM1) | _BV(SM2))) | (mode)); \
++    } while(0)
++
+ #elif defined(__AVR_ATtiny4__) \
+ || defined(__AVR_ATtiny5__) \
+ || defined(__AVR_ATtiny9__) \
+diff -Naurp include/avr/wdt.h include/avr/wdt.h
+--- include/avr/wdt.h	2012-11-05 12:21:09.000000000 +0530
++++ include/avr/wdt.h	2012-11-05 12:23:27.000000000 +0530
+@@ -131,21 +131,44 @@
+ 
+ 
+ #if defined(__AVR_ATxmega16A4__) \
++|| defined(__AVR_ATxmega16A4U__) \
++|| defined(__AVR_ATxmega16C4__) \
+ || defined(__AVR_ATxmega16D4__) \
+ || defined(__AVR_ATxmega32A4__) \
++|| defined(__AVR_ATxmega32A4U__) \
++|| defined(__AVR_ATxmega32C4__) \
+ || defined(__AVR_ATxmega32D4__) \
+ || defined(__AVR_ATxmega64A1U__) \
+ || defined(__AVR_ATxmega64A3__) \
++|| defined(__AVR_ATxmega64A3U__) \
++|| defined(__AVR_ATxmega64A4U__) \
++|| defined(__AVR_ATxmega64B1__) \
++|| defined(__AVR_ATxmega64B3__) \
++|| defined(__AVR_ATxmega64C3__) \
+ || defined(__AVR_ATxmega64D3__) \
++|| defined(__AVR_ATxmega64D4__) \
+ || defined(__AVR_ATxmega128A1__) \
+ || defined(__AVR_ATxmega128A1U__) \
+ || defined(__AVR_ATxmega128A3__) \
++|| defined(__AVR_ATxmega128A3U__) \
++|| defined(__AVR_ATxmega128A4U__) \
++|| defined(__AVR_ATxmega128B1__) \
++|| defined(__AVR_ATxmega128B3__) \
++|| defined(__AVR_ATxmega128C3__) \
+ || defined(__AVR_ATxmega128D3__) \
++|| defined(__AVR_ATxmega128D4__) \
+ || defined(__AVR_ATxmega192A3__) \
++|| defined(__AVR_ATxmega192A3U__) \
++|| defined(__AVR_ATxmega192C3__) \
+ || defined(__AVR_ATxmega192D3__) \
+ || defined(__AVR_ATxmega256A3__) \
++|| defined(__AVR_ATxmega256A3U__) \
++|| defined(__AVR_ATxmega256C3__) \
+ || defined(__AVR_ATxmega256D3__) \
+-|| defined(__AVR_ATxmega256A3B__)
++|| defined(__AVR_ATxmega256A3B__) \
++|| defined(__AVR_ATxmega256A3BU__) \
++|| defined(__AVR_ATxmega384C3__) \
++|| defined(__AVR_ATxmega384D3__)
+ 
+ /*
+     wdt_enable(WDT_PER_8KCLK_gc);
+@@ -177,6 +200,7 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_AT90PWM3__) \
+ || defined(__AVR_AT90PWM316__) \
+ || defined(__AVR_AT90PWM3B__) \
++|| defined(__AVR_AT90PWM161__) \
+ || defined(__AVR_AT90PWM81__) \
+ || defined(__AVR_AT90USB1286__) \
+ || defined(__AVR_AT90USB1287__) \
+@@ -184,19 +208,24 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_AT90USB646__) \
+ || defined(__AVR_AT90USB647__) \
+ || defined(__AVR_AT90USB82__) \
++|| defined(__AVR_ATmega128A__) \
+ || defined(__AVR_ATmega1280__) \
+ || defined(__AVR_ATmega1281__) \
++|| defined(__AVR_ATmega1284__) \
+ || defined(__AVR_ATmega1284P__) \
+ || defined(__AVR_ATmega128RFA1__) \
+ || defined(__AVR_ATmega164__) \
+ || defined(__AVR_ATmega164A__) \
+ || defined(__AVR_ATmega164P__) \
++|| defined(__AVR_ATmega164PA__) \
+ || defined(__AVR_ATmega165__) \
+ || defined(__AVR_ATmega165A__) \
+ || defined(__AVR_ATmega165P__) \
++|| defined(__AVR_ATmega165PA__) \
+ || defined(__AVR_ATmega168__) \
+ || defined(__AVR_ATmega168A__) \
+ || defined(__AVR_ATmega168P__) \
++|| defined(__AVR_ATmega168PA__) \
+ || defined(__AVR_ATmega169__) \
+ || defined(__AVR_ATmega169A__) \
+ || defined(__AVR_ATmega169P__) \
+@@ -210,6 +239,7 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATmega16U4__) \
+ || defined(__AVR_ATmega2560__) \
+ || defined(__AVR_ATmega2561__) \
++|| defined(__AVR_ATmega32A__) \
+ || defined(__AVR_ATmega324__) \
+ || defined(__AVR_ATmega324A__) \
+ || defined(__AVR_ATmega324P__) \
+@@ -217,9 +247,11 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATmega325__) \
+ || defined(__AVR_ATmega325A__) \
+ || defined(__AVR_ATmega325P__) \
++|| defined(__AVR_ATmega325PA__) \
+ || defined(__AVR_ATmega3250__) \
+ || defined(__AVR_ATmega3250A__) \
+ || defined(__AVR_ATmega3250P__) \
++|| defined(__AVR_ATmega3250PA__) \
+ || defined(__AVR_ATmega328__) \
+ || defined(__AVR_ATmega328P__) \
+ || defined(__AVR_ATmega329__) \
+@@ -229,6 +261,7 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATmega3290__) \
+ || defined(__AVR_ATmega3290A__) \
+ || defined(__AVR_ATmega3290P__) \
++|| defined(__AVR_ATmega3290PA__) \
+ || defined(__AVR_ATmega32C1__) \
+ || defined(__AVR_ATmega32HVB__) \
+ || defined(__AVR_ATmega32HVBREVB__) \
+@@ -239,7 +272,9 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATmega406__) \
+ || defined(__AVR_ATmega48__) \
+ || defined(__AVR_ATmega48A__) \
++|| defined(__AVR_ATmega48PA__) \
+ || defined(__AVR_ATmega48P__) \
++|| defined(__AVR_ATmega64A__) \
+ || defined(__AVR_ATmega640__) \
+ || defined(__AVR_ATmega644__) \
+ || defined(__AVR_ATmega644A__) \
+@@ -260,6 +295,7 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATmega64C1__) \
+ || defined(__AVR_ATmega64HVE__) \
+ || defined(__AVR_ATmega64M1__) \
++|| defined(__AVR_ATmega8A__) \
+ || defined(__AVR_ATmega88__) \
+ || defined(__AVR_ATmega88A__) \
+ || defined(__AVR_ATmega88P__) \
+@@ -271,7 +307,13 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATtiny87__) \
+ || defined(__AVR_ATtiny167__) \
+ || defined(__AVR_AT90SCR100__) \
+-|| defined(__AVR_ATA6289__)
++|| defined(__AVR_ATA6285__) \
++|| defined(__AVR_ATA6286__) \
++|| defined(__AVR_ATA6289__) \
++|| defined(__AVR_ATA5272__) \
++|| defined(__AVR_ATA5505__) \
++|| defined(__AVR_ATA5790__) \
++|| defined(__AVR_ATA5795__)
+ 
+ /* Use STS instruction. */
+  
+@@ -416,7 +458,7 @@ __asm__ __volatile__ (  \
+     ATmega8HVA, ATmega16HVA, ATmega32HVB,
+     ATmega406, ATmega1284P,
+     AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316,
+-    AT90PWM81,
++    AT90PWM81, AT90PWM161,
+     AT90USB82, AT90USB162,
+     AT90USB646, AT90USB647, AT90USB1286, AT90USB1287,
+     ATtiny48, ATtiny88.
+@@ -430,17 +472,20 @@ __asm__ __volatile__ (  \
+     ATtiny24, ATtiny44, ATtiny84, ATtiny84A,
+     ATtiny25, ATtiny45, ATtiny85, 
+     ATtiny261, ATtiny461, ATtiny861, 
+-    ATmega48, ATmega88, ATmega168,
++    ATmega48, ATmega48A, ATmega48PA, ATmega88, ATmega168,
+     ATmega48P, ATmega88P, ATmega168P, ATmega328P,
+     ATmega164P, ATmega324P, ATmega644P, ATmega644,
+     ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561,
+     ATmega8HVA, ATmega16HVA, ATmega32HVB,
+     ATmega406, ATmega1284P,
+     AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316,
+-    AT90PWM81,
++    AT90PWM81, AT90PWM161,
+     AT90USB82, AT90USB162,
+     AT90USB646, AT90USB647, AT90USB1286, AT90USB1287,
+-    ATtiny48, ATtiny88.
++    ATtiny48, ATtiny88,
++    ATxmega16a4u, ATxmega32a4u,
++    ATxmega16c4, ATxmega32c4,
++    ATxmega128c3, ATxmega192c3, ATxmega256c3.
+     */
+ #define WDTO_8S     9
+ 

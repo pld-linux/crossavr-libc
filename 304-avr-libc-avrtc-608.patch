@@ -1,0 +1,68 @@
+diff -Naurp libc/misc/eerd_block.S libc/misc/eerd_block.S
+--- libc/misc/eerd_block.S	2011-12-29 14:21:55.000000000 +0530
++++ libc/misc/eerd_block.S	2012-10-16 15:55:45.000000000 +0530
+@@ -62,6 +62,7 @@ ENTRY eeprom_read_block
+ 
+ #if  __AVR_XMEGA__	/* --------------------------------------------	*/
+ 
++#if 	defined (NVM_EEMAPEN_bm)
+   ; Load base address of NVM.
+ 	ldi	ZL, lo8(NVM_BASE)
+ 	ldi	ZH, hi8(NVM_BASE)
+@@ -75,6 +76,7 @@ ENTRY eeprom_read_block
+ 	ldd	XL, Z + NVM_CTRLB - NVM_BASE
+ 	ori	XL, NVM_EEMAPEN_bm
+ 	std	Z + NVM_CTRLB - NVM_BASE, XL
++#endif
+ 
+   ; Correct EEPROM address to read from data space.
+ 	subi	eepr_lo, lo8(-MAPPED_EEPROM_START)
+diff -Naurp libc/misc/eerd_byte.S libc/misc/eerd_byte.S
+--- libc/misc/eerd_byte.S	2011-12-29 14:21:55.000000000 +0530
++++ libc/misc/eerd_byte.S	2012-10-16 15:55:45.000000000 +0530
+@@ -55,6 +55,7 @@ ENTRY	eeprom_read_byte
+ 
+ ENTRY	eeprom_mapen
+ 
++#if 	defined (NVM_EEMAPEN_bm)
+   ; Load base address of NVM.
+ 	ldi	ZL, lo8(NVM_BASE)
+ 	ldi	ZH, hi8(NVM_BASE)
+@@ -68,6 +69,7 @@ ENTRY	eeprom_mapen
+ 	ldd	r19, Z + NVM_CTRLB - NVM_BASE
+ 	ori	r19, NVM_EEMAPEN_bm
+ 	std	Z + NVM_CTRLB - NVM_BASE, r19
++#endif
+ 
+   ; Load Z with correct EEPROM address to read from data space.
+ 	movw	ZL, addr_lo
+diff -Naurp libc/misc/eewr_byte.S libc/misc/eewr_byte.S
+--- libc/misc/eewr_byte.S	2011-12-29 14:21:55.000000000 +0530
++++ libc/misc/eewr_byte.S	2012-10-16 16:27:09.000000000 +0530
+@@ -70,6 +70,7 @@ ENTRY	eeprom_write_r18
+ 	sbrc	r19, NVM_NVMBUSY_bp
+ 	rjmp	1b
+ 
++#if     defined (NVM_EEMAPEN_bm)
+   ; Disable EEPROM mapping into data space.
+ 	ldd	r19, Z + NVM_CTRLB - NVM_BASE
+ 	andi	r19, ~NVM_EEMAPEN_bm
+@@ -103,10 +104,18 @@ ENTRY	eeprom_write_r18
+   ; Issue EEPROM Buffer Load command.
+ 3:	ldi	r19, NVM_CMD_LOAD_EEPROM_BUFFER_gc
+ 	std	Z + NVM_CMD - NVM_BASE, r19
++#endif
+ 	std	Z + NVM_ADDR0 - NVM_BASE, addr_lo
+ 	std	Z + NVM_ADDR1 - NVM_BASE, addr_hi
+ 	std	Z + NVM_ADDR2 - NVM_BASE, __zero_reg__
++#if     defined (NVM_EEMAPEN_bm)
+ 	std	Z + NVM_DATA0 - NVM_BASE, r18
++#else
++  	movw 	XL, addr_lo
++	subi	XL, lo8(-MAPPED_EEPROM_START)
++	sbci	XH, hi8(-MAPPED_EEPROM_START)
++	st	X, r18
++#endif
+ 
+   ; Issue EEPROM Erase & Write command.
+ 	ldi	r18, NVM_CMD_ERASE_WRITE_EEPROM_PAGE_gc

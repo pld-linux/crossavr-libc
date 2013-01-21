@@ -1,0 +1,386 @@
+diff -Naurp configure.ac configure.ac
+--- configure.ac	2012-11-02 22:59:30.224478546 +0530
++++ configure.ac	2012-11-02 23:45:09.850063607 +0530
+@@ -853,6 +853,9 @@ AM_CONDITIONAL(HAS_atmega32u6, test "x$H
+ CHECK_AVR_DEVICE(atmega406)
+ AM_CONDITIONAL(HAS_atmega406, test "x$HAS_atmega406" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega64rfr2)
++AM_CONDITIONAL(HAS_atmega64rfr2, test "x$HAS_atmega64rfr2" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega64)
+ AM_CONDITIONAL(HAS_atmega64, test "x$HAS_atmega64" = "xyes")
+ 
+@@ -957,6 +960,9 @@ AM_CONDITIONAL(HAS_at90usb1286, test "x$
+ CHECK_AVR_DEVICE(at90usb1287)
+ AM_CONDITIONAL(HAS_at90usb1287, test "x$HAS_at90usb1287" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega128rfr2)
++AM_CONDITIONAL(HAS_atmega128rfr2, test "x$HAS_atmega128rfr2" = "xyes")
++
+ 
+ # avr6
+ CHECK_AVR_DEVICE(avr6)
+@@ -968,6 +974,9 @@ AM_CONDITIONAL(HAS_atmega2560, test "x$H
+ CHECK_AVR_DEVICE(atmega2561)
+ AM_CONDITIONAL(HAS_atmega2561, test "x$HAS_atmega2561" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega256rfr2)
++AM_CONDITIONAL(HAS_atmega256rfr2, test "x$HAS_atmega256rfr2" = "xyes")
++
+ 
+ # avrxmega2
+ CHECK_AVR_DEVICE(avrxmega2)
+@@ -1366,6 +1375,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr5/atmega32u4/Makefile
+ 	avr/lib/avr5/atmega32u6/Makefile
+ 	avr/lib/avr5/atmega406/Makefile
++	avr/lib/avr5/atmega64rfr2/Makefile
+ 	avr/lib/avr5/atmega64/Makefile
+ 	avr/lib/avr5/atmega64a/Makefile
+ 	avr/lib/avr5/atmega640/Makefile
+@@ -1406,6 +1416,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr51/atmega1284/Makefile
+ 	avr/lib/avr51/atmega1284p/Makefile
+ 	avr/lib/avr51/atmega128rfa1/Makefile
++	avr/lib/avr51/atmega128rfr2/Makefile
+ 	avr/lib/avr51/at90can128/Makefile
+ 	avr/lib/avr51/at90usb1286/Makefile
+ 	avr/lib/avr51/at90usb1287/Makefile
+@@ -1416,6 +1427,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr6/Makefile
+ 	avr/lib/avr6/atmega2560/Makefile
+ 	avr/lib/avr6/atmega2561/Makefile
++	avr/lib/avr6/atmega256rfr2/Makefile
+ ])
+ 
+ # avrxmega2
+diff -Naurp devtools/gen-avr-lib-tree.sh devtools/gen-avr-lib-tree.sh
+--- devtools/gen-avr-lib-tree.sh	2012-11-02 22:59:30.236478603 +0530
++++ devtools/gen-avr-lib-tree.sh	2012-11-02 23:45:48.582255665 +0530
+@@ -233,6 +233,7 @@ atmega32m1:crtm32m1.o:${DEV_DEFS}:${CFLA
+ atmega32u4:crtm32u4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega32u6:crtm32u6.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega406:crtm406.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega64rfr2:crtm64rfr2.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega64:crtm64.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega64a:crtm64a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega640:crtm640.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -271,6 +272,7 @@ atmega1281:crtm1281.o:${DEV_DEFS}:${CFLA
+ atmega1284:crtm1284.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atmega1284p:crtm1284p.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ atmega128rfa1:crtm128rfa1.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atmega128rfr2:crtm128rfr2.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ at90can128:crtcan128.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ at90usb1286:crtusb1286.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ at90usb1287:crtusb1287.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS}\
+@@ -278,7 +280,8 @@ at90usb1287:crtusb1287.o:${DEV_DEFS}:${C
+ 
+ AVR6_DEV_INFO="\
+ atmega2560:crtm2560.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+-atmega2561:crtm2561.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS}\
++atmega2561:crtm2561.o:${DEV_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++atmega256rfr2:crtm256rfr2.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
+ "
+ 
+ AVRXMEGA2_DEV_INFO="\
+diff -Naurp doc/api/main_page.dox doc/api/main_page.dox
+--- doc/api/main_page.dox	2012-11-02 22:59:30.232478582 +0530
++++ doc/api/main_page.dox	2012-11-02 23:46:18.278402927 +0530
+@@ -321,6 +321,13 @@ compile-time.
+ - atxmega384c3
+ - atxmega384d3
+ 
++\par Wireless AVR devices:
++
++-atmega64rfr2
++-atmega128rfa1
++-atmega128rfr2
++-atmega256rfr2
++
+ \par Miscellaneous Devices:
+ 
+ - at94K \ref supp_dev_footnote_two "[2]"
+diff -Naurp doc/api/using-tools.dox doc/api/using-tools.dox
+--- doc/api/using-tools.dox	2012-11-02 22:59:30.236478603 +0530
++++ doc/api/using-tools.dox	2012-11-02 23:46:51.298566654 +0530
+@@ -364,6 +364,7 @@ AVR will be defined as well when using t
+   <tr><td>avr5</td><td>atmega32u4</td><td>__AVR_ATmega32U4__</td></tr>
+   <tr><td>avr5</td><td>atmega32u6</td><td>__AVR_ATmega32U6__</td></tr>
+   <tr><td>avr5</td><td>atmega406</td><td>__AVR_ATmega406__</td></tr>
++  <tr><td>avr5</td><td>atmega64rfr2</td><td>__AVR_ATmega64RFR2__</td></tr>
+   <tr><td>avr5</td><td>atmega64</td><td>__AVR_ATmega64__</td></tr>
+   <tr><td>avr5</td><td>atmega64a</td><td>__AVR_ATmega64A__</td></tr>
+   <tr><td>avr5</td><td>atmega640</td><td>__AVR_ATmega640__</td></tr>
+@@ -397,9 +398,11 @@ AVR will be defined as well when using t
+   <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega1281</td><td>__AVR_ATmega1281__</td></tr>
+   <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega1284</td><td>__AVR_ATmega1284__</td></tr>
+   <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega1284p</td><td>__AVR_ATmega1284P__</td></tr>
++  <tr><td>avr5/avr51&nbsp;[3]</td><td>atmega128rfr2</td><td>__AVR_ATmega128RFR2__</td></tr>
+ 
+   <tr><td>avr6</td><td>atmega2560</td><td>__AVR_ATmega2560__</td></tr>
+   <tr><td>avr6</td><td>atmega2561</td><td>__AVR_ATmega2561__</td></tr>
++  <tr><td>avr6</td><td>atmega256rfr2</td><td>__AVR_ATmega256RFR2__</td></tr>
+ 
+   <tr><td>avrxmega2</td><td>atxmega16a4</td><td>__AVR_ATxmega16A4__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega16a4u</td><td>__AVR_ATxmega16A4U__</td></tr>
+diff -Naurp include/avr/eeprom.h include/avr/eeprom.h
+--- include/avr/eeprom.h	2012-11-02 22:59:30.248478663 +0530
++++ include/avr/eeprom.h	2012-11-02 23:47:37.218794374 +0530
+@@ -107,6 +107,10 @@
+ # define _EEPROM_SUFFIX  _m1284p
+ #elif defined (__AVR_ATmega128RFA1__)
+ # define _EEPROM_SUFFIX  _m128rfa1
++#elif defined (__AVR_ATmega128RFR2__)
++# define _EEPROM_SUFFIX  _m128rfr2
++#elif defined (__AVR_ATmega256RFA2__)
++# define _EEPROM_SUFFIX  _m256rfr2
+ #elif defined (__AVR_ATmega2560__)
+ # define _EEPROM_SUFFIX  _m2560
+ #elif defined (__AVR_ATmega2561__)
+@@ -129,6 +133,8 @@
+ # define _EEPROM_SUFFIX _usb1286
+ #elif defined (__AVR_AT90USB1287__)
+ # define _EEPROM_SUFFIX _usb1287
++#elif defined (__AVR_ATmega64RFR2__)
++# define _EEPROM_SUFFIX  _m64rfr2
+ #elif defined (__AVR_ATmega64__)
+ # define _EEPROM_SUFFIX  _m64
+ #elif defined (__AVR_ATmega64A__)
+diff -Naurp include/avr/io.h include/avr/io.h
+--- include/avr/io.h	2012-11-02 22:59:30.240478629 +0530
++++ include/avr/io.h	2012-11-02 23:48:29.531053784 +0530
+@@ -162,6 +162,10 @@
+ #  include <avr/iom1284p.h>
+ #elif defined (__AVR_ATmega128RFA1__)
+ #  include <avr/iom128rfa1.h>
++#elif defined (__AVR_ATmega128RFR2__)
++#  include <avr/iom128rfr2.h>
++#elif defined (__AVR_ATmega256RFR2__)
++#  include <avr/iom256rfr2.h>
+ #elif defined (__AVR_ATmega2560__)
+ #  include <avr/iom2560.h>
+ #elif defined (__AVR_ATmega2561__)
+@@ -184,6 +188,8 @@
+ #  include <avr/iousb1286.h>
+ #elif defined (__AVR_AT90USB1287__)
+ #  include <avr/iousb1287.h>
++#elif defined (__AVR_ATmega64RFR2__)
++#  include <avr/iom64rfr2.h>
+ #elif defined (__AVR_ATmega64__)
+ #  include <avr/iom64.h>
+ #elif defined (__AVR_ATmega64A__)
+diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
+--- include/avr/Makefile.am	2012-11-02 22:59:30.252478685 +0530
++++ include/avr/Makefile.am	2012-11-02 23:49:01.439212007 +0530
+@@ -84,6 +84,7 @@ avr_HEADERS = \
+     iom1284.h \
+     iom1284p.h \
+     iom128rfa1.h \
++    iom128rfr2.h \
+     iom16.h \
+     iom16a.h \
+     iom161.h \
+@@ -109,6 +110,7 @@ avr_HEADERS = \
+     iom16u4.h \
+     iom2560.h \
+     iom2561.h \
++    iom256rfr2.h \
+     iom3000.h \
+     iom32.h \
+     iom32a.h \
+@@ -148,6 +150,7 @@ avr_HEADERS = \
+     iom64c1.h \
+     iom64hve.h \
+     iom64m1.h \
++    iom64rfr2.h \
+     iom8.h \
+     iom8a.h \
+     iom8515.h \
+diff -Naurp include/avr/power.h include/avr/power.h
+--- include/avr/power.h	2012-11-02 22:59:30.248478663 +0530
++++ include/avr/power.h	2012-11-02 23:50:37.735689521 +0530
+@@ -928,6 +928,74 @@ do{ \
+     PRR1 |= (uint8_t)((1<<PRTIM3)|(1<<PRTIM4)|(1<<PRTIM5)|(1<<PRTIM5)|(1<<PRUSART1)); \
+ }while(0)
+ 
++#elif defined(__AVR_ATmega256RFR2__) \
++|| defined(__AVR_ATmega128RFR2__) \
++|| defined(__AVR_ATmega64RFR2__)
++
++#define power_adc_enable()           (PRR0 &= (uint8_t)~(1 << PRADC))
++#define power_adc_disable()          (PRR0 |= (uint8_t)(1 << PRADC))
++
++#define power_usart0_enable()        (PRR0 &= (uint8_t)~(1 << PRUSART0))
++#define power_usart0_disable()       (PRR0 |= (uint8_t)(1 << PRUSART0))
++
++#define power_spi_enable()           (PRR0 &= (uint8_t)~(1 << PRSPI))
++#define power_spi_disable()          (PRR0 |= (uint8_t)(1 << PRSPI))
++
++#define power_timer1_enable()        (PRR0 &= (uint8_t)~(1 << PRTIM1))
++#define power_timer1_disable()       (PRR0 |= (uint8_t)(1 << PRTIM1))
++
++#define power_pga_enable()           (PRR0 &= (uint8_t)~(1 << PRPGA))
++#define power_pga_disable()          (PRR0 |= (uint8_t)(1 << PRPGA))
++
++#define power_timer0_enable()        (PRR0 &= (uint8_t)~(1 << PRTIM0))
++#define power_timer0_disable()       (PRR0 |= (uint8_t)(1 << PRTIM0))
++
++#define power_timer2_enable()        (PRR0 &= (uint8_t)~(1 << PRTIM2))
++#define power_timer2_disable()       (PRR0 |= (uint8_t)(1 << PRTIM2))
++
++#define power_twi_enable()           (PRR0 &= (uint8_t)~(1 << PRTWI))
++#define power_twi_disable()          (PRR0 |= (uint8_t)(1 << PRTWI))
++
++#define power_usart1_enable()        (PRR1 &= (uint8_t)~(1 << PRUSART1))
++#define power_usart1_disable()       (PRR1 |= (uint8_t)(1 << PRUSART1))
++
++#define power_timer3_enable()        (PRR1 &= (uint8_t)~(1 << PRTIM3))
++#define power_timer3_disable()       (PRR1 |= (uint8_t)(1 << PRTIM3))
++
++#define power_timer4_enable()        (PRR1 &= (uint8_t)~(1 << PRTIM4))
++#define power_timer4_disable()       (PRR1 |= (uint8_t)(1 << PRTIM4))
++
++#define power_timer5_enable()        (PRR1 &= (uint8_t)~(1 << PRTIM5))
++#define power_timer5_disable()       (PRR1 |= (uint8_t)(1 << PRTIM5))
++
++#define power_transceiver_enable()   (PRR1 &= (uint8_t)~(1 << PRTRX24))
++#define power_transceiver_disable()  (PRR1 |= (uint8_t)(1 << PRTRX24))
++
++#define power_ram0_enable()          (PRR2 &= (uint8_t)~(1 << PRRAM0))
++#define power_ram0_disable()         (PRR2 |= (uint8_t)(1 << PRRAM0))
++
++#define power_ram1_enable()          (PRR2 &= (uint8_t)~(1 << PRRAM1))
++#define power_ram1_disable()         (PRR2 |= (uint8_t)(1 << PRRAM1))
++
++#define power_ram2_enable()          (PRR2 &= (uint8_t)~(1 << PRRAM2))
++#define power_ram2_disable()         (PRR2 |= (uint8_t)(1 << PRRAM2))
++
++#define power_ram3_enable()          (PRR2 &= (uint8_t)~(1 << PRRAM3))
++#define power_ram3_disable()         (PRR2 |= (uint8_t)(1 << PRRAM3))
++
++#define power_all_enable() \
++do{ \
++    PRR0 &= (uint8_t)~((1<<PRADC)|(1<<PRSPI)|(1<<PRTWI)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRTIM2)|(1<<PRUSART0)); \
++    PRR1 &= (uint8_t)~((1<<PRUSART1)|(1<<PRTIM3)|(1<<PRTIM4)|(1<<PRTIM5)|(1<<PRTRX24)); \
++    PRR2 &= (uint8_t)~((1<<PRRAM0)|(1<<PRRAM1)|(1<<PRRAM2)|(1<<PRRAM3)); \
++}while(0)
++
++#define power_all_disable() \
++do{ \
++    PRR0 |= (uint8_t)((1<<PRADC)|(1<<PRSPI)|(1<<PRTWI)|(1<<PRTIM0)|(1<<PRTIM1)|(1<<PRTIM2)|(1<<PRUSART0)); \
++    PRR1 |= (uint8_t)((1<<PRUSART1)|(1<<PRTIM3)|(1<<PRTIM4)|(1<<PRTIM5)|(1<<PRTRX24)); \
++    PRR2 |= (uint8_t)((1<<PRRAM0)|(1<<PRRAM1)|(1<<PRRAM2)|(1<<PRRAM3)); \
++}while(0)
+ 
+ #elif defined(__AVR_AT90USB646__) \
+ || defined(__AVR_AT90USB647__) \
+@@ -1808,6 +1876,7 @@ do{ \
+ || defined(__AVR_ATmega1281__) \
+ || defined(__AVR_ATmega1284__) \
+ || defined(__AVR_ATmega128RFA1__) \
++|| defined(__AVR_ATmega128RFR2__) \
+ || defined(__AVR_ATmega1284P__) \
+ || defined(__AVR_ATmega162__) \
+ || defined(__AVR_ATmega164A__) \
+@@ -1827,6 +1896,7 @@ do{ \
+ || defined(__AVR_ATmega16U4__) \
+ || defined(__AVR_ATmega2560__) \
+ || defined(__AVR_ATmega2561__) \
++|| defined(__AVR_ATmega256RFR2__) \
+ || defined(__AVR_ATmega324A__) \
+ || defined(__AVR_ATmega324P__) \
+ || defined(__AVR_ATmega325__) \
+@@ -1870,6 +1940,7 @@ do{ \
+ || defined(__AVR_ATmega6490__) \
+ || defined(__AVR_ATmega6490A__) \
+ || defined(__AVR_ATmega6490P__) \
++|| defined(__AVR_ATmega64RFR2__) \
+ || defined(__AVR_ATmega88__) \
+ || defined(__AVR_ATmega88P__) \
+ || defined(__AVR_ATmega8U2__) \
+@@ -1922,7 +1993,10 @@ typedef enum
+     clock_div_64 = 6,
+     clock_div_128 = 7,
+     clock_div_256 = 8
+-#if defined(__AVR_ATmega128RFA1__)
++#if defined(__AVR_ATmega128RFA1__) \
++|| defined(__AVR_ATmega256RFR2__) \
++|| defined(__AVR_ATmega128RFR2__) \
++|| defined(__AVR_ATmega64RFR2__)
+     , clock_div_1_rc = 15
+ #endif
+ } clock_div_t;
+diff -Naurp include/avr/sleep.h include/avr/sleep.h
+--- include/avr/sleep.h	2012-11-02 22:59:30.244478644 +0530
++++ include/avr/sleep.h	2012-11-02 23:51:16.847883478 +0530
+@@ -339,6 +339,7 @@
+ || defined(__AVR_ATmega1284__) \
+ || defined(__AVR_ATmega1284P__) \
+ || defined(__AVR_ATmega128RFA1__) \
++|| defined(__AVR_ATmega128RFR2__) \
+ || defined(__AVR_ATmega16__) \
+ || defined(__AVR_ATmega16A__) \
+ || defined(__AVR_ATmega162__) \
+@@ -364,6 +365,7 @@
+ || defined(__AVR_ATmega16U4__) \
+ || defined(__AVR_ATmega2560__) \
+ || defined(__AVR_ATmega2561__) \
++|| defined(__AVR_ATmega256RFR2__) \
+ || defined(__AVR_ATmega32__) \
+ || defined(__AVR_ATmega32A__) \
+ || defined(__AVR_ATmega323__) \
+@@ -418,6 +420,7 @@
+ || defined(__AVR_ATmega64C1__) \
+ || defined(__AVR_ATmega64HVE__) \
+ || defined(__AVR_ATmega64M1__) \
++|| defined(__AVR_ATmega64RFR2__) \
+ || defined(__AVR_ATmega8__) \
+ || defined(__AVR_ATmega8515__) \
+ || defined(__AVR_ATmega8535__) \
+diff -Naurp include/avr/wdt.h include/avr/wdt.h
+--- include/avr/wdt.h	2012-11-02 22:59:30.252478685 +0530
++++ include/avr/wdt.h	2012-11-02 23:41:05.480851849 +0530
+@@ -214,6 +214,8 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATmega1284__) \
+ || defined(__AVR_ATmega1284P__) \
+ || defined(__AVR_ATmega128RFA1__) \
++|| defined(__AVR_ATmega128RFA2__) \
++|| defined(__AVR_ATmega128RFR2__) \
+ || defined(__AVR_ATmega164__) \
+ || defined(__AVR_ATmega164A__) \
+ || defined(__AVR_ATmega164P__) \
+@@ -239,6 +241,8 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATmega16U4__) \
+ || defined(__AVR_ATmega2560__) \
+ || defined(__AVR_ATmega2561__) \
++|| defined(__AVR_ATmega256RFA2__) \
++|| defined(__AVR_ATmega256RFR2__) \
+ || defined(__AVR_ATmega32A__) \
+ || defined(__AVR_ATmega324__) \
+ || defined(__AVR_ATmega324A__) \
+@@ -275,6 +279,8 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATmega48PA__) \
+ || defined(__AVR_ATmega48P__) \
+ || defined(__AVR_ATmega64A__) \
++|| defined(__AVR_ATmega64RFA2__) \
++|| defined(__AVR_ATmega64RFR2__) \
+ || defined(__AVR_ATmega640__) \
+ || defined(__AVR_ATmega644__) \
+ || defined(__AVR_ATmega644A__) \
+@@ -457,6 +463,7 @@ __asm__ __volatile__ (  \
+     ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561,
+     ATmega8HVA, ATmega16HVA, ATmega32HVB,
+     ATmega406, ATmega1284P,
++    ATmega256RFA2, ATmega256RFR2, ATmega128RFA2, ATmega128RFR2, ATmega64RFA2, ATmega64RFR2,
+     AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316,
+     AT90PWM81, AT90PWM161,
+     AT90USB82, AT90USB162,
+@@ -478,6 +485,7 @@ __asm__ __volatile__ (  \
+     ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561,
+     ATmega8HVA, ATmega16HVA, ATmega32HVB,
+     ATmega406, ATmega1284P,
++    ATmega256RFA2, ATmega256RFR2, ATmega128RFA2, ATmega128RFR2, ATmega64RFA2, ATmega64RFR2,
+     AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316,
+     AT90PWM81, AT90PWM161,
+     AT90USB82, AT90USB162,

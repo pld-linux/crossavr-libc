@@ -1,0 +1,219 @@
+diff -Naurp configure.ac configure.ac
+--- configure.ac	2012-11-05 11:57:38.000000000 +0530
++++ configure.ac	2012-11-05 11:58:43.000000000 +0530
+@@ -1005,7 +1005,15 @@ AM_CONDITIONAL(HAS_atxmega32c4, test "x$
+ 
+ CHECK_AVR_DEVICE(atxmega32d4)
+ AM_CONDITIONAL(HAS_atxmega32d4, test "x$HAS_atxmega32d4" = "xyes")
++ 
++CHECK_AVR_DEVICE(atxmega8e5)
++AM_CONDITIONAL(HAS_atxmega8e5, test "x$HAS_atxmega8e5" = "xyes")
+ 
++CHECK_AVR_DEVICE(atxmega16e5)
++AM_CONDITIONAL(HAS_atxmega16e5, test "x$HAS_atxmega16e5" = "xyes")
++
++CHECK_AVR_DEVICE(atxmega32e5)
++AM_CONDITIONAL(HAS_atxmega32e5, test "x$HAS_atxmega32e5" = "xyes")
+ 
+ # avrxmega4
+ CHECK_AVR_DEVICE(avrxmega4)
+@@ -1441,6 +1449,9 @@ AC_CONFIG_FILES([
+ 	avr/lib/avrxmega2/atxmega32a4u/Makefile
+ 	avr/lib/avrxmega2/atxmega32c4/Makefile
+ 	avr/lib/avrxmega2/atxmega32d4/Makefile
++	avr/lib/avrxmega2/atxmega8e5/Makefile
++	avr/lib/avrxmega2/atxmega16e5/Makefile
++	avr/lib/avrxmega2/atxmega32e5/Makefile
+ ])
+ 
+ # avrxmega4
+diff -Naurp devtools/gen-avr-lib-tree.sh devtools/gen-avr-lib-tree.sh
+--- devtools/gen-avr-lib-tree.sh	2012-11-05 11:57:38.000000000 +0530
++++ devtools/gen-avr-lib-tree.sh	2012-11-05 12:17:35.000000000 +0530
+@@ -292,7 +292,10 @@ atxmega16d4:crtx16d4.o:${DEV_DEFS}:${CFL
+ atxmega32a4:crtx32a4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atxmega32a4u:crtx32a4u.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atxmega32c4:crtx32c4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+-atxmega32d4:crtx32d4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
++atxmega32d4:crtx32d4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atxmega8e5:crtx8e5.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atxmega16e5:crtx16e5.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atxmega32e5:crtx32e5.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
+ "
+ 
+ AVRXMEGA4_DEV_INFO="\
+diff -Naurp doc/api/main_page.dox doc/api/main_page.dox
+--- doc/api/main_page.dox	2012-11-05 11:57:38.000000000 +0530
++++ doc/api/main_page.dox	2012-11-05 11:58:43.000000000 +0530
+@@ -288,6 +288,9 @@ compile-time.
+ - atxmega32a4u
+ - atxmega32c4
+ - atxmega32d4
++- atxmega8e5
++- atxmega16e5
++- atxmega32e5
+ - atxmega64a1
+ - atxmega64a1u
+ - atxmega64a3
+diff -Naurp doc/api/using-tools.dox doc/api/using-tools.dox
+--- doc/api/using-tools.dox	2012-11-05 11:57:38.000000000 +0530
++++ doc/api/using-tools.dox	2012-11-05 11:58:43.000000000 +0530
+@@ -408,6 +408,9 @@ AVR will be defined as well when using t
+   <tr><td>avrxmega2</td><td>atxmega16a4u</td><td>__AVR_ATxmega16A4U__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega16c4</td><td>__AVR_ATxmega16C4__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega16d4</td><td>__AVR_ATxmega16D4__</td></tr>
++  <tr><td>avrxmega2</td><td>atxmega8e5</td><td>__AVR_ATxmega8E5__</td></tr>
++  <tr><td>avrxmega2</td><td>atxmega16e5</td><td>__AVR_ATxmega16E5__</td></tr>
++  <tr><td>avrxmega2</td><td>atxmega32e5</td><td>__AVR_ATxmega32E5__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega32a4</td><td>__AVR_ATxmega32A4__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega32a4u</td><td>__AVR_ATxmega32A4U__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega32c4</td><td>__AVR_ATxmega32C4__</td></tr>
+diff -Naurp include/avr/eeprom.h include/avr/eeprom.h
+--- include/avr/eeprom.h	2012-11-05 11:57:38.000000000 +0530
++++ include/avr/eeprom.h	2012-11-05 11:58:43.000000000 +0530
+@@ -401,6 +401,12 @@
+ # define _EEPROM_SUFFIX   _x32c4
+ #elif defined (__AVR_ATxmega32D4__)
+ # define _EEPROM_SUFFIX   _x32d4
++#elif defined (__AVR_ATxmega8E5__)
++#define _EEPROM_SUFFIX	  _x8e5
++#elif defined (__AVR_ATxmega16E5__)
++#define _EEPROM_SUFFIX	  _x16e5
++#elif defined (__AVR_ATxmega32E5__)
++# define _EEPROM_SUFFIX   _x32e5
+ #elif defined (__AVR_ATxmega64A1__)
+ # define _EEPROM_SUFFIX   _x64a1
+ #elif defined (__AVR_ATxmega64A1U__)
+diff -Naurp include/avr/io.h include/avr/io.h
+--- include/avr/io.h	2012-11-05 11:57:38.000000000 +0530
++++ include/avr/io.h	2012-11-05 11:58:43.000000000 +0530
+@@ -426,6 +426,12 @@
+ #  include <avr/iox32c4.h>
+ #elif defined (__AVR_ATxmega32D4__)
+ #  include <avr/iox32d4.h>
++#elif defined (__AVR_ATxmega8E5__)
++#  include <avr/iox8e5.h>
++#elif defined (__AVR_ATxmega16E5__)
++#  include <avr/iox16e5.h>
++#elif defined (__AVR_ATxmega32E5__)
++#  include <avr/iox32e5.h>
+ #elif defined (__AVR_ATxmega64A1__)
+ #  include <avr/iox64a1.h>
+ #elif defined (__AVR_ATxmega64A1U__)
+diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
+--- include/avr/Makefile.am	2012-11-05 11:57:38.000000000 +0530
++++ include/avr/Makefile.am	2012-11-05 11:58:43.000000000 +0530
+@@ -246,6 +246,9 @@ avr_HEADERS = \
+     iox32a4u.h \
+     iox32c4.h \
+     iox32d4.h \
++    iox8e5.h \
++    iox16e5.h \
++    iox32e5.h \
+     iox64a1.h \
+     iox64a1u.h \
+     iox64a3.h \
+diff -Naurp include/avr/power.h include/avr/power.h
+--- include/avr/power.h	2012-11-05 11:57:38.000000000 +0530
++++ include/avr/power.h	2012-11-05 11:58:43.000000000 +0530
+@@ -751,6 +751,74 @@ do { \
+     PR_PRPF |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC1_bm|PR_TC0_bm); \
+ } while(0)
+ 
++
++#elif defined(__AVR_ATxmega32E5__) \
++|| defined(__AVR_ATxmega16E5__) \
++|| defined(__AVR_ATxmega8E5__) 
++
++#define power_xcl_enable()      (PR_PRGEN &= (uint8_t)~(PR_XCL_bm))
++#define power_xcl_disable()     (PR_PRGEN |= (uint8_t)PR_XCL_bm)
++
++#define power_rtc_enable()      (PR_PRGEN &= (uint8_t)~(PR_RTC_bm)) 
++#define power_rtc_disable()     (PR_PRGEN |= (uint8_t)PR_RTC_bm)
++
++#define power_evsys_enable()    (PR_PRGEN &= (uint8_t)~(PR_EVSYS_bm)) 
++#define power_evsys_disable()   (PR_PRGEN |= (uint8_t)PR_EVSYS_bm)
++
++#define power_edma_enable()     (PR_PRGEN &= (uint8_t)~(PR_EDMA_bm))
++#define power_edma_disable()    (PR_PRGEN |= (uint8_t)PR_EDMA_bm)
++
++#define power_daca_enable()      (PR_PRPA  &= (uint8_t)~(PR_DAC_bm))
++#define power_daca_disable()     (PR_PRPA  |= (uint8_t)PR_DAC_bm)
++
++#define power_adca_enable()      (PR_PRPA  &= (uint8_t)~(PR_ADC_bm))
++#define power_adca_disable()     (PR_PRPA  |= (uint8_t)PR_ADC_bm)
++
++#define power_aca_enable()       (PR_PRPA  &= (uint8_t)~(PR_AC_bm))
++#define power_aca_disable()      (PR_PRPA  |= (uint8_t)PR_AC_bm)
++
++#define power_twic_enable()      (PR_PRPC  &= (uint8_t)~(PR_TWI_bm))
++#define power_twic_disable()     (PR_PRPC  |= (uint8_t)PR_TWI_bm)
++
++#define power_usartc0_enable()   (PR_PRPC  &= (uint8_t)~(PR_USART0_bm))
++#define power_usartc0_disable()  (PR_PRPC  |= (uint8_t)PR_USART0_bm)
++
++#define power_spic_enable()      (PR_PRPC  &= (uint8_t)~(PR_SPI_bm))
++#define power_spic_disable()     (PR_PRPC  |= (uint8_t)PR_SPI_bm)
++
++#define power_hiresc_enable()    (PR_PRPC  &= (uint8_t)~(PR_HIRES_bm))
++#define power_hiresc_disable()   (PR_PRPC  |= (uint8_t)PR_HIRES_bm)
++
++#define power_tc5c_enable()      (PR_PRPC  &= (uint8_t)~(PR_TC5_bm))
++#define power_tc5c_disable()     (PR_PRPC  |= (uint8_t)PR_TC5_bm)
++
++#define power_tc4c_enable()      (PR_PRPC  &= (uint8_t)~(PR_TC4_bm))
++#define power_tc4c_disable()     (PR_PRPC  |= (uint8_t)PR_TC4_bm)
++
++#define power_usartd0_enable()   (PR_PRPD  &= (uint8_t)~(PR_USART0_bm))  
++#define power_usartd0_disable()  (PR_PRPD  |= (uint8_t)PR_USART0_bm)
++
++#define power_tc5d_enable()      (PR_PRPC  &= (uint8_t)~(PR_TC5_bm)) 
++#define power_tc5d_disable()     (PR_PRPC  |= (uint8_t)PR_TC5_bm) 
++
++#define power_all_enable() \
++do { \
++    PR_PRGEN &= (uint8_t)~(PR_RTC_bm|PR_EVSYS_bm|PR_XCL_bm|PR_EDMA_bm); \
++    PR_PRPA  &= (uint8_t)~(PR_ADC_bm|PR_AC_bm|PR_DAC_bm); \
++    PR_PRPC  &= (uint8_t)~(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC5_bm|PR_TC4_bm); \
++    PR_PRPD  &= (uint8_t)~(PR_USART0_bm|PR_TC5_bm); \
++} while(0)
++
++
++#define power_all_disable() \
++do { \
++    PR_PRGEN|= (uint8_t)(PR_XCL_bm|PR_RTC_bm|PR_EVSYS_bm|PR_EDMA_bm); \
++    PR_PRPA |= (uint8_t)(PR_ADC_bm|PR_AC_bm|PR_DAC_bm); \
++    PR_PRPC |= (uint8_t)(PR_TWI_bm|PR_USART0_bm|PR_SPI_bm|PR_HIRES_bm|PR_TC5_bm|PR_TC4_bm); \
++    PR_PRPD |= (uint8_t)(PR_USART0_bm|PR_TC5_bm); \
++} while(0)
++
++
+ #elif defined (__AVR_ATxmega64B1__) \
+ || defined (__AVR_ATxmega64B3__) \
+ || defined (__AVR_ATxmega128B1__) \
+diff -Naurp include/avr/sleep.h include/avr/sleep.h
+--- include/avr/sleep.h	2012-11-05 11:57:38.000000000 +0530
++++ include/avr/sleep.h	2012-11-05 11:58:43.000000000 +0530
+@@ -467,6 +467,9 @@
+ || defined(__AVR_ATxmega32A4U__) \
+ || defined(__AVR_ATxmega32C4__) \
+ || defined(__AVR_ATxmega32D4__) \
++|| defined(__AVR_ATxmega8E5__) \
++|| defined(__AVR_ATxmega16E5__) \
++|| defined(__AVR_ATxmega32E5__) \
+ || defined(__AVR_ATxmega64A1__) \
+ || defined(__AVR_ATxmega64A1U__) \
+ || defined(__AVR_ATxmega64A3__) \
+diff -Naurp include/avr/wdt.h include/avr/wdt.h
+--- include/avr/wdt.h	2012-11-05 11:57:38.000000000 +0530
++++ include/avr/wdt.h	2012-11-05 11:58:43.000000000 +0530
+@@ -138,6 +138,9 @@
+ || defined(__AVR_ATxmega32A4U__) \
+ || defined(__AVR_ATxmega32C4__) \
+ || defined(__AVR_ATxmega32D4__) \
++|| defined(__AVR_ATxmega8E5__) \
++|| defined(__AVR_ATxmega16E5__) \
++|| defined(__AVR_ATxmega32E5__) \
+ || defined(__AVR_ATxmega64A1U__) \
+ || defined(__AVR_ATxmega64A3__) \
+ || defined(__AVR_ATxmega64A3U__) \
