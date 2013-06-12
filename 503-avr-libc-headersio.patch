@@ -1,7 +1,7 @@
 diff -Naurp include/avr/io.h include/avr/io.h
---- include/avr/io.h	2012-11-03 00:46:16.079399592 +0530
-+++ include/avr/io.h	2012-11-03 00:58:30.251040217 +0530
-@@ -196,20 +196,36 @@
+--- include/avr/io.h	2013-03-15 12:07:15.000000000 +0530
++++ include/avr/io.h	2013-03-15 12:24:15.000000000 +0530
+@@ -202,20 +202,36 @@
  #  include <avr/iom64a.h>
  #elif defined (__AVR_ATmega640__)
  #  include <avr/iom640.h>
@@ -43,7 +43,7 @@ diff -Naurp include/avr/io.h include/avr/io.h
  #elif defined (__AVR_ATmega649P__)
  #  include <avr/iom649p.h>
  #elif defined (__AVR_ATmega64HVE__)
-@@ -222,34 +238,48 @@
+@@ -230,34 +246,48 @@
  #  include <avr/iom32a.h>
  #elif defined (__AVR_ATmega323__)
  #  include <avr/iom323.h>
@@ -105,7 +105,7 @@ diff -Naurp include/avr/io.h include/avr/io.h
  #elif defined (__AVR_ATmega32HVB__)
  #  include <avr/iom32hvb.h>
  #elif defined (__AVR_ATmega32HVBREVB__)
-@@ -266,24 +296,32 @@
+@@ -274,24 +304,32 @@
  #  include <avr/iom162.h>
  #elif defined (__AVR_ATmega163__)
  #  include <avr/iom163.h>
@@ -143,7 +143,7 @@ diff -Naurp include/avr/io.h include/avr/io.h
  #elif defined (__AVR_ATmega169P__)
  #  include <avr/iom169p.h>
  #elif defined (__AVR_ATmega169PA__)
-@@ -302,14 +340,18 @@
+@@ -310,14 +348,18 @@
  #  include <avr/iom8.h>
  #elif defined (__AVR_ATmega8A__)
  #  include <avr/iom8a.h>
@@ -165,9 +165,9 @@ diff -Naurp include/avr/io.h include/avr/io.h
  #  include <avr/iom88p.h>
  #elif defined (__AVR_ATmega88PA__)
 diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
---- include/avr/Makefile.am	2012-11-03 00:46:16.079399592 +0530
-+++ include/avr/Makefile.am	2012-11-03 00:58:30.251040217 +0530
-@@ -91,14 +91,19 @@ avr_HEADERS = \
+--- include/avr/Makefile.am	2013-03-15 12:07:15.000000000 +0530
++++ include/avr/Makefile.am	2013-03-15 12:24:15.000000000 +0530
+@@ -94,14 +94,19 @@ avr_HEADERS = \
      iom162.h \
      iom163.h \
      iom164.h \
@@ -187,7 +187,7 @@ diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
      iom169p.h \
      iom169pa.h \
      iom16hva.h \
-@@ -115,15 +120,25 @@ avr_HEADERS = \
+@@ -119,15 +124,25 @@ avr_HEADERS = \
      iom32.h \
      iom32a.h \
      iom323.h \
@@ -214,7 +214,7 @@ diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
      iom3290pa.h \
      iom32hvb.h \
      iom32hvbrevb.h \
-@@ -132,6 +147,7 @@ avr_HEADERS = \
+@@ -136,6 +151,7 @@ avr_HEADERS = \
      iom32u2.h \
      iom32u4.h \
      iom32u6.h \
@@ -222,7 +222,7 @@ diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
      iom48.h \
      iom48pa.h \
      iom48p.h \
-@@ -140,13 +156,21 @@ avr_HEADERS = \
+@@ -144,13 +160,21 @@ avr_HEADERS = \
      iom64a.h \
      iom640.h \
      iom644.h \
@@ -243,8 +243,8 @@ diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
 +    iom6490p.h \
      iom64c1.h \
      iom64hve.h \
-     iom64m1.h \
-@@ -156,6 +180,7 @@ avr_HEADERS = \
+     iom64hve2.h \
+@@ -162,6 +186,7 @@ avr_HEADERS = \
      iom8515.h \
      iom8535.h \
      iom88.h \

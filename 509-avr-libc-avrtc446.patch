@@ -1,0 +1,69 @@
+diff -Naurp configure.ac configure.ac
+--- configure.ac	2013-03-15 12:30:01.000000000 +0530
++++ configure.ac	2013-03-15 12:30:13.000000000 +0530
+@@ -458,9 +458,6 @@ AM_CONDITIONAL(HAS_attiny26, true)
+ CHECK_AVR_DEVICE(avr25)
+ AM_CONDITIONAL(HAS_avr25, test "x$HAS_avr25" = "xyes")
+ 
+-CHECK_AVR_DEVICE(ata6289)
+-AM_CONDITIONAL(HAS_ata6289, test "x$HAS_ata6289" = "xyes")
+-
+ CHECK_AVR_DEVICE(ata5272)
+ AM_CONDITIONAL(HAS_ata5272, test "x$HAS_ata5272" = "xyes")
+ 
+@@ -597,6 +594,9 @@ AM_CONDITIONAL(HAS_ata6285, test "x$HAS_
+ CHECK_AVR_DEVICE(ata6286)
+ AM_CONDITIONAL(HAS_ata6286, test "x$HAS_ata6286" = "xyes")
+ 
++CHECK_AVR_DEVICE(ata6289)
++AM_CONDITIONAL(HAS_ata6289, test "x$HAS_ata6289" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega8a)
+ AM_CONDITIONAL(HAS_atmega8a, test "x$HAS_atmega8a" = "xyes")
+ 
+@@ -1246,7 +1246,6 @@ AC_CONFIG_FILES([
+ AC_CONFIG_FILES([
+ 	avr/lib/avr25/Makefile
+ 	avr/lib/avr25/at86rf401/Makefile
+-	avr/lib/avr25/ata6289/Makefile
+ 	avr/lib/avr25/ata5272/Makefile
+ 	avr/lib/avr25/attiny13/Makefile
+ 	avr/lib/avr25/attiny13a/Makefile
+@@ -1311,6 +1310,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr4/Makefile
+ 	avr/lib/avr4/ata6285/Makefile
+ 	avr/lib/avr4/ata6286/Makefile
++	avr/lib/avr4/ata6289/Makefile
+ 	avr/lib/avr4/atmega48/Makefile
+ 	avr/lib/avr4/atmega48a/Makefile
+ 	avr/lib/avr4/atmega48pa/Makefile
+diff -Naurp devtools/gen-avr-lib-tree.sh devtools/gen-avr-lib-tree.sh
+--- devtools/gen-avr-lib-tree.sh	2013-03-15 12:30:01.000000000 +0530
++++ devtools/gen-avr-lib-tree.sh	2013-03-15 12:30:13.000000000 +0530
+@@ -83,7 +83,6 @@ attiny861:crttn861.o:${DEV_DEFS}:${CFLAG
+ 
+ AVR25_DEV_INFO="\
+ at86rf401:crt86401.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+-ata6289:crta6289.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ ata5272:crta5272.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny13:crttn13.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ attiny13a:crttn13a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -140,6 +139,7 @@ attiny1634:crttn1634.o:${DEV_DEFS}:${CFL
+ AVR4_DEV_INFO="\
+ ata6285:crta6285.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ ata6286:crta6286.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++ata6289:crta6289.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega48:crtm48.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega48a:crtm48a.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega48pa:crtm48pa.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+diff -Naurp include/avr/power.h include/avr/power.h
+--- include/avr/power.h	2013-03-15 12:24:02.000000000 +0530
++++ include/avr/power.h	2013-03-15 12:31:49.000000000 +0530
+@@ -3295,6 +3295,7 @@ void timer_clock_prescale_set(timer_cloc
+ 
+ #elif defined(__AVR_ATA6285__) \
+ || defined(__AVR_ATA6286__) \
++|| defined(__AVR_ATA6289__) \
+ || defined(__AVR_ATA5831__) 
+ 
+ typedef enum

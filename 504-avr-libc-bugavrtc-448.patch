@@ -1,6 +1,6 @@
 diff -Naurp include/avr/wdt.h include/avr/wdt.h
---- include/avr/wdt.h	2012-11-03 00:46:16.083399618 +0530
-+++ include/avr/wdt.h	2012-11-03 01:02:09.340126553 +0530
+--- include/avr/wdt.h	2013-03-15 12:07:15.000000000 +0530
++++ include/avr/wdt.h	2013-03-15 12:25:20.000000000 +0530
 @@ -107,8 +107,10 @@
  
  #if defined(WDTCSR)
@@ -13,9 +13,9 @@ diff -Naurp include/avr/wdt.h include/avr/wdt.h
  #endif
  
  #if defined(WDTOE)
-@@ -355,8 +357,137 @@ __asm__ __volatile__ (  \
-     : "r0" \
+@@ -359,6 +361,137 @@ __asm__ __volatile__ (  \
  )
+ 
  
 +#elif defined(__AVR_ATtiny1634__) \
 +|| defined(__AVR_ATtiny828__)
@@ -140,8 +140,7 @@ diff -Naurp include/avr/wdt.h include/avr/wdt.h
 +      [WDVALUE] "r" ((uint8_t)((_BV(WDT_CEN_bp)))) \
 +    : "r0" \
 +) 
- 
--    
++
 +/**
 +Undefining explicitly so that it produces an error.
 + */
@@ -149,6 +148,6 @@ diff -Naurp include/avr/wdt.h include/avr/wdt.h
 +|| defined(__AVR_M3000__) 
 +    #undef wdt_enable
 +    #undef wdt_disale    
+     
  #else  
  
- /* Use OUT instruction. */

@@ -1,0 +1,150 @@
+diff -Naurp configure.ac configure.ac
+--- configure.ac	2012-12-12 13:24:34.000000000 +0530
++++ configure.ac	2012-12-12 13:25:18.000000000 +0530
+@@ -919,6 +919,9 @@ AM_CONDITIONAL(HAS_atmega64c1, test "x$H
+ CHECK_AVR_DEVICE(atmega64hve)
+ AM_CONDITIONAL(HAS_atmega64hve, test "x$HAS_atmega64hve" = "xyes")
+ 
++CHECK_AVR_DEVICE(atmega64hve2)
++AM_CONDITIONAL(HAS_atmega64hve2, test "x$HAS_atmega64hve2" = "xyes")
++
+ CHECK_AVR_DEVICE(atmega64m1)
+ AM_CONDITIONAL(HAS_atmega64m1, test "x$HAS_atmega64m1" = "xyes")
+ 
+@@ -1405,6 +1408,7 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr5/atmega6490p/Makefile
+ 	avr/lib/avr5/atmega64c1/Makefile
+ 	avr/lib/avr5/atmega64hve/Makefile
++	avr/lib/avr5/atmega64hve2/Makefile
+ 	avr/lib/avr5/atmega64m1/Makefile
+ 	avr/lib/avr5/atmega128/Makefile
+ 	avr/lib/avr5/atmega1280/Makefile
+diff -Naurp devtools/gen-avr-lib-tree.sh devtools/gen-avr-lib-tree.sh
+--- devtools/gen-avr-lib-tree.sh	2012-12-12 13:24:34.000000000 +0530
++++ devtools/gen-avr-lib-tree.sh	2012-12-12 13:26:38.000000000 +0530
+@@ -255,6 +255,7 @@ atmega6490a:crtm6490a.o:${DEV_DEFS}:${CF
+ atmega6490p:crtm6490p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega64c1:crtm64c1.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega64hve:crtm64hve.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
++atmega64hve2:crtm64hve2.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega64m1:crtm64m1.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega128:crtm128.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atmega1280:crtm1280.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+diff -Naurp doc/api/main_page.dox doc/api/main_page.dox
+--- doc/api/main_page.dox	2012-12-12 13:24:34.000000000 +0530
++++ doc/api/main_page.dox	2012-12-12 13:30:18.000000000 +0530
+@@ -261,6 +261,7 @@ compile-time.
+ - atmega32hvb
+ - atmega32hvbrevb
+ - atmega64hve
++- atmega64hve2
+ - atmega406
+ 
+ \par USB AVR Devices:
+diff -Naurp doc/api/using-tools.dox doc/api/using-tools.dox
+--- doc/api/using-tools.dox	2012-12-12 13:24:34.000000000 +0530
++++ doc/api/using-tools.dox	2012-12-12 13:30:52.000000000 +0530
+@@ -386,6 +386,7 @@ AVR will be defined as well when using t
+   <tr><td>avr5</td><td>atmega649p</td><td>__AVR_ATmega649P__</td></tr>
+   <tr><td>avr5</td><td>atmega64c1</td><td>__AVR_ATmega64C1__</td></tr>
+   <tr><td>avr5</td><td>atmega64hve</td><td>__AVR_ATmega64HVE__</td></tr>
++  <tr><td>avr5</td><td>atmega64hve2</td><td>__AVR_ATmega64HVE2__</td></tr>
+   <tr><td>avr5</td><td>atmega64m1</td><td>__AVR_ATmega64M1__</td></tr>
+   <tr><td>avr5</td><td>m3000</td><td>__AVR_M3000__</td></tr>
+ 
+diff -Naurp include/avr/eeprom.h include/avr/eeprom.h
+--- include/avr/eeprom.h	2012-12-12 13:24:34.000000000 +0530
++++ include/avr/eeprom.h	2012-12-12 13:29:02.000000000 +0530
+@@ -229,6 +229,8 @@
+ # define _EEPROM_SUFFIX  _m32hvbrevb
+ #elif defined (__AVR_ATmega64HVE__)
+ # define _EEPROM_SUFFIX  _m64hve
++#elif defined (__AVR_ATmega64HVE2__)
++# define _EEPROM_SUFFIX  _m64hve2
+ #elif defined (__AVR_ATmega406__)
+ # define _EEPROM_SUFFIX  _m406
+ #elif defined (__AVR_ATmega16__)
+diff -Naurp include/avr/io.h include/avr/io.h
+--- include/avr/io.h	2012-12-12 13:24:34.000000000 +0530
++++ include/avr/io.h	2012-12-12 13:29:49.000000000 +0530
+@@ -214,6 +214,8 @@
+ #  include <avr/iom649p.h>
+ #elif defined (__AVR_ATmega64HVE__)
+ #  include <avr/iom64hve.h>
++#elif defined (__AVR_ATmega64HVE2__)
++#  include <avr/iom64hve2.h>
+ #elif defined (__AVR_ATmega103__)
+ #  include <avr/iom103.h>
+ #elif defined (__AVR_ATmega32__)
+diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
+--- include/avr/Makefile.am	2012-12-12 13:24:34.000000000 +0530
++++ include/avr/Makefile.am	2012-12-12 13:27:11.000000000 +0530
+@@ -149,6 +149,7 @@ avr_HEADERS = \
+     iom6490.h \
+     iom64c1.h \
+     iom64hve.h \
++    iom64hve2.h \
+     iom64m1.h \
+     iom64rfr2.h \
+     iom8.h \
+diff -Naurp include/avr/power.h include/avr/power.h
+--- include/avr/power.h	2012-12-12 13:24:34.000000000 +0530
++++ include/avr/power.h	2012-12-13 11:02:12.000000000 +0530
+@@ -1709,6 +1709,23 @@ do{ \
+ 
+ #endif
+ 
++#elif defined(__AVR_ATmega64HVE2__) 
++
++#define power_lin_enable()      (PRR0 &= (uint8_t)~(1 << PRLIN))
++#define power_lin_disable()     (PRR0 |= (uint8_t)(1 << PRLIN))
++
++#define power_spi_enable()      (PRR0 &= (uint8_t)~(1 << PRSPI))
++#define power_spi_disable()     (PRR0 |= (uint8_t)(1 << PRSPI))
++
++#define power_timer0_enable()   (PRR0 &= (uint8_t)~(1 << PRTIM0))
++#define power_timer0_disable()  (PRR0 |= (uint8_t)(1 << PRTIM0))
++
++#define power_timer1_enable()   (PRR0 &= (uint8_t)~(1 << PRTIM1))
++#define power_timer1_disable()  (PRR0 |= (uint8_t)(1 << PRTIM1))
++
++#define power_all_enable()      (PRR0 &= (uint8_t)~((1<<PRLIN)|(1<<PRSPI)|(1<<PRTIM0)|(1<<PRTIM1)))
++#define power_all_disable()     (PRR0 |= (uint8_t)((1<<PRLIN)|(1<<PRSPI)|(1<<PRTIM0)|(1<<PRTIM1)))
++
+ #elif defined(__AVR_ATmega16M1__) \
+ || defined(__AVR_ATmega32C1__) \
+ || defined(__AVR_ATmega32M1__) \
+@@ -2107,7 +2107,8 @@ Gets and returns the clock prescaler reg
+ #elif defined(__AVR_ATmega16HVB__) \
+ || defined(__AVR_ATmega16HVBREVB__) \
+ || defined(__AVR_ATmega32HVB__) \
+-|| defined(__AVR_ATmega32HVBREVB__)
++|| defined(__AVR_ATmega32HVBREVB__) \
++|| defined(__AVR_ATmega64HVE2__)
+ 
+ typedef enum
+ {
+diff -Naurp include/avr/sleep.h include/avr/sleep.h
+--- include/avr/sleep.h	2012-12-12 13:24:34.000000000 +0530
++++ include/avr/sleep.h	2012-12-12 13:28:16.000000000 +0530
+@@ -300,7 +300,8 @@
+     } while(0)
+ 
+ #elif defined(__AVR_AT94K__) \
+-|| defined(__AVR_ATmega64HVE__)
++|| defined(__AVR_ATmega64HVE__) \
++|| defined(__AVR_ATmega64HVE2__)
+ 
+     #define SLEEP_MODE_IDLE         0
+     #define SLEEP_MODE_PWR_DOWN     _BV(SM1)
+diff -Naurp include/avr/wdt.h include/avr/wdt.h
+--- include/avr/wdt.h	2012-12-12 13:24:34.000000000 +0530
++++ include/avr/wdt.h	2012-12-12 13:29:22.000000000 +0530
+@@ -300,6 +300,7 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATmega649P__) \
+ || defined(__AVR_ATmega64C1__) \
+ || defined(__AVR_ATmega64HVE__) \
++|| defined(__AVR_ATmega64HVE2__) \
+ || defined(__AVR_ATmega64M1__) \
+ || defined(__AVR_ATmega8A__) \
+ || defined(__AVR_ATmega88__) \

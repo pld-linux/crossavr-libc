@@ -1,6 +1,30 @@
+diff -Naurp doc/api/main_page.dox doc/api/main_page.dox
+--- doc/api/main_page.dox	2013-03-15 12:07:15.000000000 +0530
++++ doc/api/main_page.dox	2013-03-15 12:27:25.000000000 +0530
+@@ -329,13 +329,13 @@ compile-time.
+ 
+ \par Wireless AVR devices:
+ 
+--atmega64rfr2
+--atmega644rfr2
+--atmega128rfa1
+--atmega128rfr2
+--atmega1284rfr2
+--atmega256rfr2
+--atmega2564rfr2
++- atmega64rfr2
++- atmega644rfr2
++- atmega128rfa1
++- atmega128rfr2
++- atmega1284rfr2
++- atmega256rfr2
++- atmega2564rfr2
+ 
+ \par Miscellaneous Devices:
+ 
 diff -Naurp doc/api/optimize.dox doc/api/optimize.dox
 --- doc/api/optimize.dox	1970-01-01 05:30:00.000000000 +0530
-+++ doc/api/optimize.dox	2012-07-25 14:29:02.000000000 +0530
++++ doc/api/optimize.dox	2013-03-15 12:27:25.000000000 +0530
 @@ -0,0 +1,137 @@
 +/* Copyright (c) 2010 Jan Waclawek
 +   Copyright (c) 2010 Joerg Wunsch

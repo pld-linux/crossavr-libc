@@ -1,15 +1,12 @@
 diff -Naurp include/avr/sleep.h include/avr/sleep.h
---- include/avr/sleep.h	2012-11-03 00:46:16.083399618 +0530
-+++ include/avr/sleep.h	2012-11-03 00:50:15.228585473 +0530
-@@ -374,9 +374,11 @@
- || defined(__AVR_ATmega324PA__) \
- || defined(__AVR_ATmega325__) \
- || defined(__AVR_ATmega325A__) \
+--- include/avr/sleep.h	2013-01-29 13:45:51.000000000 +0530
++++ include/avr/sleep.h	2013-01-29 18:05:21.000000000 +0530
+@@ -455,6 +455,8 @@
+ || defined(__AVR_ATmega48__) \
+ || defined(__AVR_ATmega88__) \
+ || defined(__AVR_ATmega168__) \
 +|| defined(__AVR_ATmega325P__) \
- || defined(__AVR_ATmega325PA__) \
- || defined(__AVR_ATmega3250__) \
- || defined(__AVR_ATmega3250A__) \
 +|| defined(__AVR_ATmega3250P__) \
- || defined(__AVR_ATmega3250PA__) \
- || defined(__AVR_ATmega328__) \
- || defined(__AVR_ATmega328P__) \
+ || defined(__AVR_ATmega325__) \
+ || defined(__AVR_ATmega3250__) \
+ || defined(__AVR_ATmega645__) \

@@ -1,7 +1,7 @@
 diff -Naurp include/avr/power.h include/avr/power.h
---- include/avr/power.h	2012-11-05 09:45:43.389789515 +0530
-+++ include/avr/power.h	2012-11-05 09:46:24.889995307 +0530
-@@ -2723,12 +2723,16 @@ do{ \
+--- include/avr/power.h	2013-03-15 12:19:39.000000000 +0530
++++ include/avr/power.h	2013-03-15 12:20:10.000000000 +0530
+@@ -2976,12 +2976,16 @@ do{ \
  || defined(__AVR_ATmega165P__) \
  || defined(__AVR_ATmega165PA__) \
  || defined(__AVR_ATmega168__) \
@@ -18,7 +18,7 @@ diff -Naurp include/avr/power.h include/avr/power.h
  || defined(__AVR_ATmega16U4__) \
  || defined(__AVR_ATmega2560__) \
  || defined(__AVR_ATmega2561__) \
-@@ -2749,6 +2753,7 @@ do{ \
+@@ -3003,6 +3007,7 @@ do{ \
  || defined(__AVR_ATmega329PA__) \
  || defined(__AVR_ATmega3290__) \
  || defined(__AVR_ATmega3290A__) \
@@ -26,7 +26,7 @@ diff -Naurp include/avr/power.h include/avr/power.h
  || defined(__AVR_ATmega3290PA__) \
  || defined(__AVR_ATmega32C1__) \
  || defined(__AVR_ATmega32M1__) \
-@@ -2773,6 +2778,10 @@ do{ \
+@@ -3027,6 +3032,10 @@ do{ \
  || defined(__AVR_ATmega6450P__) \
  || defined(__AVR_ATmega649__) \
  || defined(__AVR_ATmega649A__) \
@@ -37,7 +37,7 @@ diff -Naurp include/avr/power.h include/avr/power.h
  || defined(__AVR_ATmega6490__) \
  || defined(__AVR_ATmega6490A__) \
  || defined(__AVR_ATmega6490P__) \
-@@ -2783,6 +2792,8 @@ do{ \
+@@ -3038,6 +3047,8 @@ do{ \
  || defined(__AVR_ATmega16U2__) \
  || defined(__AVR_ATmega32U2__) \
  || defined(__AVR_ATtiny48__) \
@@ -46,7 +46,7 @@ diff -Naurp include/avr/power.h include/avr/power.h
  || defined(__AVR_ATtiny167__) \
  || defined(__DOXYGEN__)
  
-@@ -3113,10 +3124,47 @@ void clock_prescale_set(clock_div_t __x)
+@@ -3384,10 +3395,47 @@ void clock_prescale_set(clock_div_t __x)
  
  #define clock_prescale_get()  (clock_div_t)(CLKPR & (uint8_t)((1<<CLKPS0)|(1<<CLKPS1)|(1<<CLKPS2)|(1<<CLKPS3)))
  

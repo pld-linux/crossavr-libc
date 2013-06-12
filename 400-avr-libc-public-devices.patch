@@ -1,6 +1,6 @@
 diff -Naurp configure.ac configure.ac
---- configure.ac	2012-11-05 12:21:09.000000000 +0530
-+++ configure.ac	2012-11-05 12:23:27.000000000 +0530
+--- configure.ac	2011-12-29 14:21:55.000000000 +0530
++++ configure.ac	2012-11-22 19:48:48.000000000 +0530
 @@ -461,6 +461,9 @@ AM_CONDITIONAL(HAS_avr25, test "x$HAS_av
  CHECK_AVR_DEVICE(ata6289)
  AM_CONDITIONAL(HAS_ata6289, test "x$HAS_ata6289" = "xyes")
@@ -489,8 +489,8 @@ diff -Naurp configure.ac configure.ac
  
  
 diff -Naurp devtools/gen-avr-lib-tree.sh devtools/gen-avr-lib-tree.sh
---- devtools/gen-avr-lib-tree.sh	2012-11-05 12:21:09.000000000 +0530
-+++ devtools/gen-avr-lib-tree.sh	2012-11-05 12:23:27.000000000 +0530
+--- devtools/gen-avr-lib-tree.sh	2011-12-29 14:21:50.000000000 +0530
++++ devtools/gen-avr-lib-tree.sh	2012-11-22 19:48:48.000000000 +0530
 @@ -84,6 +84,7 @@ attiny861:crttn861.o:${DEV_DEFS}:${CFLAG
  AVR25_DEV_INFO="\
  at86rf401:crt86401.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
@@ -671,8 +671,8 @@ diff -Naurp devtools/gen-avr-lib-tree.sh devtools/gen-avr-lib-tree.sh
  
  AVRTINY10_DEV_INFO="\
 diff -Naurp doc/api/main_page.dox doc/api/main_page.dox
---- doc/api/main_page.dox	2012-11-05 12:21:09.000000000 +0530
-+++ doc/api/main_page.dox	2012-11-05 12:23:27.000000000 +0530
+--- doc/api/main_page.dox	2011-12-29 14:21:53.000000000 +0530
++++ doc/api/main_page.dox	2012-11-22 19:48:48.000000000 +0530
 @@ -94,8 +94,10 @@ compile-time.
  
  - atmega103
@@ -832,8 +832,8 @@ diff -Naurp doc/api/main_page.dox doc/api/main_page.dox
  - m3000 \ref supp_dev_footnote_four "[4]"
  
 diff -Naurp doc/api/using-tools.dox doc/api/using-tools.dox
---- doc/api/using-tools.dox	2012-11-05 12:21:09.000000000 +0530
-+++ doc/api/using-tools.dox	2012-11-05 12:23:27.000000000 +0530
+--- doc/api/using-tools.dox	2011-12-29 14:21:53.000000000 +0530
++++ doc/api/using-tools.dox	2012-11-22 19:48:48.000000000 +0530
 @@ -231,6 +231,7 @@ AVR will be defined as well when using t
  
    <tr><td>avr2/avr25&nbsp;[1]</td><td>at86rf401</td><td>__AVR_AT86RF401__</td></tr>
@@ -1001,8 +1001,8 @@ diff -Naurp doc/api/using-tools.dox doc/api/using-tools.dox
    <tr><td>avrtiny10</td><td>attiny4</td><td>__AVR_ATtiny4__</td></tr>
    <tr><td>avrtiny10</td><td>attiny5</td><td>__AVR_ATtiny5__</td></tr>
 diff -Naurp include/avr/eeprom.h include/avr/eeprom.h
---- include/avr/eeprom.h	2012-11-05 12:21:09.000000000 +0530
-+++ include/avr/eeprom.h	2012-11-05 12:23:27.000000000 +0530
+--- include/avr/eeprom.h	2011-12-29 14:21:50.000000000 +0530
++++ include/avr/eeprom.h	2012-11-22 19:48:48.000000000 +0530
 @@ -67,6 +67,8 @@
  # define _EEPROM_SUFFIX _90pwm216
  #elif defined (__AVR_AT90PWM316__)
@@ -1224,8 +1224,8 @@ diff -Naurp include/avr/eeprom.h include/avr/eeprom.h
  #elif defined (__AVR_ATtiny28__)
  # define _EEPROM_SUFFIX _tn28
 diff -Naurp include/avr/io.h include/avr/io.h
---- include/avr/io.h	2012-11-05 12:21:09.000000000 +0530
-+++ include/avr/io.h	2012-11-05 12:23:27.000000000 +0530
+--- include/avr/io.h	2011-12-29 14:21:50.000000000 +0530
++++ include/avr/io.h	2012-11-22 19:48:48.000000000 +0530
 @@ -122,6 +122,8 @@
  #  include <avr/io90pwm216.h>
  #elif defined (__AVR_AT90PWM316__)
@@ -1435,8 +1435,8 @@ diff -Naurp include/avr/io.h include/avr/io.h
  #  include <avr/ioa6289.h>
  /* avr1: the following only supported for assembler programs */
 diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
---- include/avr/Makefile.am	2012-11-05 12:21:09.000000000 +0530
-+++ include/avr/Makefile.am	2012-11-05 12:23:27.000000000 +0530
+--- include/avr/Makefile.am	2011-12-29 14:21:50.000000000 +0530
++++ include/avr/Makefile.am	2012-11-22 19:48:48.000000000 +0530
 @@ -61,8 +61,15 @@ avr_HEADERS = \
      io90pwm216.h \
      io90pwm3b.h \
@@ -1575,8 +1575,8 @@ diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
      parity.h \
      pgmspace.h \
 diff -Naurp include/avr/power.h include/avr/power.h
---- include/avr/power.h	2012-11-05 12:24:33.000000000 +0530
-+++ include/avr/power.h	2012-11-05 12:23:32.000000000 +0530
+--- include/avr/power.h	2012-11-22 19:55:00.000000000 +0530
++++ include/avr/power.h	2012-11-22 19:48:48.000000000 +0530
 @@ -74,25 +74,25 @@ find out which macros are applicable to 
    <tr>
      <td>power_adc_enable()</td>
@@ -2580,8 +2580,8 @@ diff -Naurp include/avr/power.h include/avr/power.h
  || defined(__AVR_ATtiny24A__) \
  || defined(__AVR_ATtiny44__) \
 diff -Naurp include/avr/sleep.h include/avr/sleep.h
---- include/avr/sleep.h	2012-11-05 12:24:33.000000000 +0530
-+++ include/avr/sleep.h	2012-11-05 12:23:27.000000000 +0530
+--- include/avr/sleep.h	2012-11-22 19:55:03.000000000 +0530
++++ include/avr/sleep.h	2012-11-22 19:58:10.000000000 +0530
 @@ -210,7 +210,8 @@
      } while(0)
  
@@ -2601,7 +2601,7 @@ diff -Naurp include/avr/sleep.h include/avr/sleep.h
  || defined(__AVR_AT76C711__) \
  || defined(__AVR_AT90S8535__) \
  || defined(__AVR_ATmega103__) \
-@@ -287,7 +290,8 @@
+@@ -315,7 +318,8 @@
  || defined(__AVR_ATtiny461A__) \
  || defined(__AVR_ATtiny861__) \
  || defined(__AVR_ATtiny861A__) \
@@ -2611,15 +2611,15 @@ diff -Naurp include/avr/sleep.h include/avr/sleep.h
  
      #define SLEEP_MODE_IDLE         0
      #define SLEEP_MODE_ADC          _BV(SM0)
-@@ -301,6 +305,7 @@
+@@ -329,6 +333,7 @@
  
  #elif defined(__AVR_AT90PWM216__) \
  || defined(__AVR_AT90PWM316__) \
 +|| defined(__AVR_AT90PWM161__) \
- || defined(__AVR_AT90PWM81__)
- 
-     #define SLEEP_MODE_IDLE         0
-@@ -328,8 +333,10 @@
+ || defined(__AVR_AT90PWM81__) \
+ || defined(__AVR_AT90PWM1__) \
+ || defined(__AVR_AT90PWM2__) \
+@@ -354,8 +359,10 @@
  || defined(__AVR_AT90USB646__) \
  || defined(__AVR_AT90USB647__) \
  || defined(__AVR_ATmega128__) \
@@ -2630,23 +2630,16 @@ diff -Naurp include/avr/sleep.h include/avr/sleep.h
  || defined(__AVR_ATmega1284P__) \
  || defined(__AVR_ATmega128RFA1__) \
  || defined(__AVR_ATmega16__) \
-@@ -337,12 +344,15 @@
+@@ -363,13 +370,16 @@
  || defined(__AVR_ATmega162__) \
  || defined(__AVR_ATmega164A__) \
  || defined(__AVR_ATmega164P__) \
 +|| defined(__AVR_ATmega164PA__) \
- || defined(__AVR_ATmega165__) \
- || defined(__AVR_ATmega165A__) \
- || defined(__AVR_ATmega165P__) \
-+|| defined(__AVR_ATmega165PA__) \
- || defined(__AVR_ATmega168__) \
  || defined(__AVR_ATmega168A__) \
  || defined(__AVR_ATmega168P__) \
 +|| defined(__AVR_ATmega168PA__) \
- || defined(__AVR_ATmega169__) \
- || defined(__AVR_ATmega169A__) \
- || defined(__AVR_ATmega169P__) \
-@@ -355,14 +365,17 @@
+ || defined(__AVR_ATmega16HVA2__) \
+ || defined(__AVR_ATmega16U4__) \
  || defined(__AVR_ATmega2560__) \
  || defined(__AVR_ATmega2561__) \
  || defined(__AVR_ATmega32__) \
@@ -2654,27 +2647,9 @@ diff -Naurp include/avr/sleep.h include/avr/sleep.h
  || defined(__AVR_ATmega323__) \
  || defined(__AVR_ATmega324A__) \
  || defined(__AVR_ATmega324P__) \
- || defined(__AVR_ATmega324PA__) \
- || defined(__AVR_ATmega325__) \
- || defined(__AVR_ATmega325A__) \
-+|| defined(__AVR_ATmega325PA__) \
- || defined(__AVR_ATmega3250__) \
- || defined(__AVR_ATmega3250A__) \
-+|| defined(__AVR_ATmega3250PA__) \
- || defined(__AVR_ATmega328__) \
- || defined(__AVR_ATmega328P__) \
- || defined(__AVR_ATmega329__) \
-@@ -372,6 +385,7 @@
- || defined(__AVR_ATmega3290__) \
- || defined(__AVR_ATmega3290A__) \
- || defined(__AVR_ATmega3290P__) \
-+|| defined(__AVR_ATmega3290PA__) \
- || defined(__AVR_ATmega32C1__) \
- || defined(__AVR_ATmega32M1__) \
- || defined(__AVR_ATmega32U2__) \
-@@ -380,8 +394,10 @@
- || defined(__AVR_ATmega406__) \
- || defined(__AVR_ATmega48__) \
+@@ -380,8 +390,10 @@
+ || defined(__AVR_ATmega32U4__) \
+ || defined(__AVR_ATmega32U6__) \
  || defined(__AVR_ATmega48A__) \
 +|| defined(__AVR_ATmega48PA__) \
  || defined(__AVR_ATmega48P__) \
@@ -2683,24 +2658,37 @@ diff -Naurp include/avr/sleep.h include/avr/sleep.h
  || defined(__AVR_ATmega640__) \
  || defined(__AVR_ATmega644__) \
  || defined(__AVR_ATmega644A__) \
-@@ -426,23 +442,60 @@
+@@ -407,21 +419,26 @@
          _SLEEP_CONTROL_REG = ((_SLEEP_CONTROL_REG & ~(_BV(SM0) | _BV(SM1) | _BV(SM2))) | (mode)); \
      } while(0)
  
-+#elif defined(__AVR_ATmega8A__)
-+
-+    #define SLEEP_MODE_IDLE         (0)
-+    #define SLEEP_MODE_ADC          _BV(SM0)
-+    #define SLEEP_MODE_PWR_DOWN     _BV(SM1)
-+    #define SLEEP_MODE_PWR_SAVE     (_BV(SM0) | _BV(SM1))
-+    #define SLEEP_MODE_STANDBY      (_BV(SM1) | _BV(SM2))
-+
-+
-+    #define set_sleep_mode(mode) \
-+    do { \
-+        _SLEEP_CONTROL_REG = ((_SLEEP_CONTROL_REG & ~(_BV(SM0) | _BV(SM1) | _BV(SM2))) | (mode)); \
-+    } while(0)
-+
+-#elif defined(__AVR_ATmega8__) \
++#elif defined(__AVR_ATmega8A__) \
++|| defined(__AVR_ATmega8__) \
+ || defined(__AVR_ATmega6450A__) \
+ || defined(__AVR_ATmega6450P__) \
+ || defined(__AVR_ATmega645A__) \
+ || defined(__AVR_ATmega645P__) \
+ || defined(__AVR_ATmega3250A__) \
++|| defined(__AVR_ATmega3250PA__) \
+ || defined(__AVR_ATmega325A__) \
++|| defined(__AVR_ATmega325PA__) \
+ || defined(__AVR_ATmega165A__) \
+ || defined(__AVR_ATmega165P__) \
++|| defined(__AVR_ATmega165PA__) \
+ || defined(__AVR_ATmega169A__) \
+ || defined(__AVR_ATmega169P__) \
+ || defined(__AVR_ATmega169PA__) \
+ || defined(__AVR_ATmega329A__) \
+ || defined(__AVR_ATmega329PA__) \
+ || defined(__AVR_ATmega3290A__) \
++|| defined(__AVR_ATmega3290PA__) \
+ || defined(__AVR_ATmega649A__) \
+ || defined(__AVR_ATmega649P__) \
+ || defined(__AVR_ATmega6490A__) \
+@@ -458,22 +475,45 @@
+     } while(0)
+ 
  #elif defined(__AVR_ATxmega16A4__) \
 +|| defined(__AVR_ATxmega16A4U__) \
 +|| defined(__AVR_ATxmega16C4__) \
@@ -2745,7 +2733,7 @@ diff -Naurp include/avr/sleep.h include/avr/sleep.h
  
      #define SLEEP_MODE_IDLE         (0)
      #define SLEEP_MODE_PWR_DOWN     (SLEEP_SMODE1_bm)
-@@ -468,7 +521,9 @@
+@@ -504,7 +544,9 @@
          _SLEEP_CONTROL_REG = ((_SLEEP_CONTROL_REG & ~(_BV(SM0) | _BV(SM1) | _BV(SM2))) | (mode)); \
      } while(0)
  
@@ -2756,7 +2744,7 @@ diff -Naurp include/avr/sleep.h include/avr/sleep.h
  
      #define SLEEP_MODE_IDLE                     (0)
      #define SLEEP_MODE_SENSOR_NOISE_REDUCTION   (_BV(SM0))
-@@ -479,6 +534,19 @@
+@@ -515,6 +557,19 @@
          _SLEEP_CONTROL_REG = ((_SLEEP_CONTROL_REG & ~(_BV(SM0) | _BV(SM1) | _BV(SM2))) | (mode)); \
      } while(0)
  
@@ -2777,8 +2765,8 @@ diff -Naurp include/avr/sleep.h include/avr/sleep.h
  || defined(__AVR_ATtiny5__) \
  || defined(__AVR_ATtiny9__) \
 diff -Naurp include/avr/wdt.h include/avr/wdt.h
---- include/avr/wdt.h	2012-11-05 12:21:09.000000000 +0530
-+++ include/avr/wdt.h	2012-11-05 12:23:27.000000000 +0530
+--- include/avr/wdt.h	2011-12-29 14:21:50.000000000 +0530
++++ include/avr/wdt.h	2012-11-22 19:48:48.000000000 +0530
 @@ -131,21 +131,44 @@
  
  

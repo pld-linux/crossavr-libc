@@ -1,0 +1,441 @@
+diff -Naurp configure.ac configure.ac
+--- configure.ac	2013-03-15 12:01:34.000000000 +0530
++++ configure.ac	2013-03-15 12:01:52.000000000 +0530
+@@ -993,6 +993,14 @@ CHECK_AVR_DEVICE(atmega2564rfr2)
+ AM_CONDITIONAL(HAS_atmega2564rfr2, test "x$HAS_atmega2564rfr2" = "xyes")
+ 
+ 
++# avr7
++CHECK_AVR_DEVICE(avr7)
++AM_CONDITIONAL(HAS_avr7, test "x$HAS_avr7" = "xyes")
++
++CHECK_AVR_DEVICE(ata5831)
++AM_CONDITIONAL(HAS_ata5831, test "x$HAS_ata5831" = "xyes")
++
++
+ # avrxmega2
+ CHECK_AVR_DEVICE(avrxmega2)
+ AM_CONDITIONAL(HAS_avrxmega2, test "x$HAS_avrxmega2" = "xyes")
+@@ -1458,6 +1466,12 @@ AC_CONFIG_FILES([
+ 	avr/lib/avr6/atmega2564rfr2/Makefile
+ ])
+ 
++#avr7
++AC_CONFIG_FILES([
++	avr/lib/avr7/Makefile
++	avr/lib/avr7/ata5831/Makefile
++])
++
+ # avrxmega2
+ AC_CONFIG_FILES([
+ 	avr/lib/avrxmega2/Makefile
+diff -Naurp devtools/gen-avr-lib-tree.sh devtools/gen-avr-lib-tree.sh
+--- devtools/gen-avr-lib-tree.sh	2013-03-15 12:01:34.000000000 +0530
++++ devtools/gen-avr-lib-tree.sh	2013-03-15 12:01:52.000000000 +0530
+@@ -289,6 +289,10 @@ atmega256rfr2:crtm256rfr2.o:${DEV_DEFS}:
+ atmega2564rfr2:crtm2564rfr2.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
+ "
+ 
++AVR7_DEV_INFO="\
++ata5831:crta5831.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
++"
++
+ AVRXMEGA2_DEV_INFO="\
+ atxmega16a4:crtx16a4.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ atxmega16a4u:crtx16a4u.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+@@ -369,6 +373,7 @@ avr4:AVR4_DEV_INFO:${LIB_DEFS}:${CFLAGS_
+ avr5:AVR5_DEV_INFO:${LIB_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ avr51:AVR51_DEV_INFO:${LIB_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ avr6:AVR6_DEV_INFO:${LIB_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
++avr7:AVR7_DEV_INFO:${LIB_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ avrxmega2:AVRXMEGA2_DEV_INFO:${LIB_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+ avrxmega4:AVRXMEGA4_DEV_INFO:${LIB_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+ avrxmega5:AVRXMEGA5_DEV_INFO:${LIB_DEFS}:${CFLAGS_BIG_MEMORY}:${DEV_ASFLAGS};\
+diff -Naurp doc/api/main_page.dox doc/api/main_page.dox
+--- doc/api/main_page.dox	2013-03-15 12:01:34.000000000 +0530
++++ doc/api/main_page.dox	2013-03-15 12:01:52.000000000 +0530
+@@ -212,6 +212,7 @@ compile-time.
+ - ata5790
+ - ata5790n
+ - ata5795
++- ata5831
+ 
+ \par CAN AVR Devices:
+ 
+diff -Naurp doc/api/using-tools.dox doc/api/using-tools.dox
+--- doc/api/using-tools.dox	2013-03-15 12:01:34.000000000 +0530
++++ doc/api/using-tools.dox	2013-03-15 12:03:29.000000000 +0530
+@@ -180,6 +180,20 @@ AVR will be defined as well when using t
+     </td>
+     <td>"Enhanced" CPU core, 256 KB of ROM</td>
+   </tr>
++  <tr>
++    <td>avr7&nbsp;[2]</td>
++    <td>
++    __AVR_ARCH__=7<BR>
++    __AVR_MEGA__&nbsp;[5]<BR>
++    __AVR_ENHANCED__&nbsp;[5]<BR>
++    __AVR_HAVE_JMP_CALL__&nbsp;[4]<BR>
++    __AVR_HAVE_MOVW__&nbsp;[1]<BR>
++    __AVR_HAVE_LPMX__&nbsp;[1]<BR>
++    __AVR_HAVE_MUL__&nbsp;[1]<BR>
++    __AVR_2_BYTE_PC__&nbsp;[2]
++    </td>
++    <td>"Enhanced" CPU core, 20K of Flash that starts at 0x8000</td>
++  </tr>
+   </table>
+   <p>
+   [1] New in GCC 4.2<BR>
+@@ -409,6 +423,8 @@ AVR will be defined as well when using t
+   <tr><td>avr6</td><td>atmega256rfr2</td><td>__AVR_ATmega256RFR2__</td></tr>
+   <tr><td>avr6</td><td>atmega2564rfr2</td><td>__AVR_ATmega2564RFR2__</td></tr>
+ 
++  <tr><td>avr7</td><td>ata5831</td><td>__AVR_ATA5831__</td></tr>
++
+   <tr><td>avrxmega2</td><td>atxmega16a4</td><td>__AVR_ATxmega16A4__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega16a4u</td><td>__AVR_ATxmega16A4U__</td></tr>
+   <tr><td>avrxmega2</td><td>atxmega16c4</td><td>__AVR_ATxmega16C4__</td></tr>
+diff -Naurp include/avr/eeprom.h include/avr/eeprom.h
+--- include/avr/eeprom.h	2013-03-15 12:01:34.000000000 +0530
++++ include/avr/eeprom.h	2013-03-15 12:01:52.000000000 +0530
+@@ -495,6 +495,8 @@
+ # define _EEPROM_SUFFIX _a5790n
+ #elif defined (__AVR_ATA5795__)
+ # define _EEPROM_SUFFIX _a5795
++#elif defined (__AVR_ATA5831__)
++# define _EEPROM_SUFFIX _a5831
+ /* avr1: the following only supported for assembler programs */
+ #elif defined (__AVR_ATtiny28__)
+ # define _EEPROM_SUFFIX _tn28
+diff -Naurp include/avr/io.h include/avr/io.h
+--- include/avr/io.h	2013-03-15 12:01:34.000000000 +0530
++++ include/avr/io.h	2013-03-15 12:01:52.000000000 +0530
+@@ -514,6 +514,8 @@
+ #  include <avr/ioa5505.h>
+ #elif defined (__AVR_ATA5795__)
+ #  include <avr/ioa5795.h>
++#elif defined (__AVR_ATA5831__)
++#  include <avr/ioa5831.h>
+ #elif defined (__AVR_ATA6285__)
+ #  include <avr/ioa6285.h>
+ #elif defined (__AVR_ATA6286__)
+diff -Naurp include/avr/Makefile.am include/avr/Makefile.am
+--- include/avr/Makefile.am	2013-03-15 12:01:34.000000000 +0530
++++ include/avr/Makefile.am	2013-03-15 12:01:52.000000000 +0530
+@@ -69,6 +69,7 @@ avr_HEADERS = \
+     ioa5790.h \
+     ioa5790n.h \
+     ioa5795.h \
++    ioa5831.h \
+     ioa6285.h \
+     ioa6286.h \
+     ioa6289.h \
+diff -Naurp include/avr/power.h include/avr/power.h
+--- include/avr/power.h	2013-03-15 12:01:34.000000000 +0530
++++ include/avr/power.h	2013-03-15 12:01:52.000000000 +0530
+@@ -346,6 +346,163 @@ find out which macros are applicable to 
+     <td>Disable all modules.</td>
+     <td>ATxmega6A4, ATxmega32A4, ATxmega64A1, ATxmega64A1U, ATxmega64A3, ATxmegaA1, ATxmegaA1U, ATxmega128A3, ATxmega192A3, ATxmega256A3, ATxmegaA3B, ATxmega16D4, ATxmega32D4, ATxmega64D3, ATxmega128D3,ATxmega192D3, ATmega640, ATmega1280, ATmega1281, ATmega128RFA1, ATmega2560, ATmega2561, AT90USB646, AT90USB647, AT90USB1286, AT90USB1287, AT90PWM1, AT90PWM2, AT90PWM2B, AT90PWM3, AT90PWM3B, AT90PWM216, AT90PWM316, ATmega165, ATmega165P, ATmega325, ATmega325A, ATmega325PA, ATmega3250, ATmega3250A, ATmega3250PA, ATmega645, ATmega6450, ATmega169, ATmega169P, ATmega329, ATmega329A, ATmega3290, ATmega3290A, ATmega3290PA, ATmega649, ATmega6490, ATmega164P, ATmega324P, ATmega644, ATmega406, ATmega48, ATmega88, ATmega168, ATtiny24, ATtiny44, ATtiny84, ATtiny84A, ATtiny25, ATtiny45, ATtiny85, ATtiny261, ATtiny461, ATtiny861, ATxmega64B1, ATxmega128B1, ATxmega64B3, ATxmega128B3, ATxmega16A4U, ATxmega32A4U, ATxmega64A3U, ATxmega128A3U, ATxmega192A3U, ATxmega256A3U</td>
+   </tr>
++
++  <tr>
++    <td>power_clock_output_enable()</td>
++    <td>Enable clock output module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_clock_output_disable()</td>
++    <td>Enable clock output module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_voltage_monitor_enable()</td>
++    <td>Enable voltage monitor module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_voltage_monitor_disable()</td>
++    <td>Disable voltage monitor module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_crc_enable()</td>
++    <td>Enable CRC module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_crc_disable()</td>
++    <td>Disable CRC module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_transmit_dsp_control_enable()</td>
++    <td>Enable Transmit DSP control module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_transmit_dsp_control_disable()</td>
++    <td>Disable Transmit DSP control module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_receive_dsp_control_enable()</td>
++    <td>Enable Receive DSP control module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_receive_dsp_control_disable()</td>
++    <td>Disable Receive DSP control module</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_sequencer_state_machine_enable()</td>
++    <td>Enable power sequencer state machine</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_sequencer_state_machine_disable()</td>
++    <td>Disable power sequencer state machine</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_tx_modulator_enable()</td>
++    <td>Enable Tx modulator</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_tx_modulator_disable()</td>
++    <td>Disable Tx modulator</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_rssi_buffer_enable()</td>
++    <td>Enable RSSI buffer</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_rssi_buffer_disable()</td>
++    <td>Disable RSSI buffer</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_id_scan_enable()</td>
++    <td>Enable ID Scan</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_id_scan_disable()</td>
++    <td>Disable ID Scan</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_data_fifo_enable()</td>
++    <td>Enable data FIFO</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_data_fifo_disable()</td>
++    <td>Disable data FIFO</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_preamble_rssi_fifo_enable()</td>
++    <td>Enable preamble/RSSI FIFO</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_preamble_rssi_fifo_disable()</td>
++    <td>Disable preamble/RSSI FIFO</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_rx_buffer_A_enable()</td>
++    <td>Enable receive buffer for data path A</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_rx_buffer_A_disable()</td>
++    <td>Disable receive buffer for data path A</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_rx_buffer_B_enable()</td>
++    <td>Enable receive buffer for data path B</td>
++    <td>ATA5831</td>
++  </tr>
++
++  <tr>
++    <td>power_rx_buffer_B_disable()</td>
++    <td>Disable receive buffer for data path B</td>
++    <td>ATA5831</td>
++  </tr>
++
+ </table>
+ </center>
+ </small>
+@@ -1731,6 +1888,79 @@ do{ \
+ #define power_all_enable()      (PRR0 &= (uint8_t)~((1<<PRLIN)|(1<<PRSPI)|(1<<PRTIM0)|(1<<PRTIM1)))
+ #define power_all_disable()     (PRR0 |= (uint8_t)((1<<PRLIN)|(1<<PRSPI)|(1<<PRTIM0)|(1<<PRTIM1)))
+ 
++#elif defined(__AVR_ATA5831__)
++
++#define power_clock_output_enable()     (PRR0 &= (uint8_t)~(1 << PRCO))
++#define power_clock_output_disable()    (PRR0 |= (uint8_t)(1 << PRCO))
++
++#define power_voltage_monitor_enable()  (PRR0 &= (uint8_t)~(1 << PRVM))
++#define power_voltage_monitor_disable() (PRR0 |= (uint8_t)(1 << PRVM))
++
++#define power_crc_enable()              (PRR0 &= (uint8_t)~(1 << PRCRC))
++#define power_crc_disable()             (PRR0 |= (uint8_t)(1 << PRCRC))
++
++#define power_transmit_dsp_control_enable()     (PRR0 &= (uint8_t)~(1 << PRTXDC))
++#define power_transmit_dsp_control_disable()    (PRR0 |= (uint8_t)(1 << PRTXDC))
++
++#define power_receive_dsp_control_enable()      (PRR0 &= (uint8_t)~(1 << PRRXDC))
++#define power_receive_dsp_control_disable()     (PRR0 |= (uint8_t)(1 << PRRXDC))
++
++#define power_spi_enable()              (PRR0 &= (uint8_t)~(1 << PRSPI))
++#define power_spi_disable()             (PRR0 |= (uint8_t)(1 << PRSPI))
++
++#define power_timer1_enable()           (PRR1 &= (uint8_t)~(1 << PRT1))
++#define power_timer1_disable()          (PRR1 |= (uint8_t)(1 << PRT1))
++
++#define power_timer2_enable()           (PRR1 &= (uint8_t)~(1 << PRT2))
++#define power_timer2_disable()          (PRR1 |= (uint8_t)(1 << PRT2))
++
++#define power_timer3_enable()           (PRR1 &= (uint8_t)~(1 << PRT3))
++#define power_timer3_disable()          (PRR1 |= (uint8_t)(1 << PRT3))
++
++#define power_timer4_enable()           (PRR1 &= (uint8_t)~(1 << PRT4))
++#define power_timer4_disable()          (PRR1 |= (uint8_t)(1 << PRT4))
++
++#define power_timer5_enable()           (PRR1 &= (uint8_t)~(1 << PRT5))
++#define power_timer5_disable()          (PRR1 |= (uint8_t)(1 << PRT5))
++
++#define power_sequencer_state_machine_enable()  (PRR2 &= (uint8_t)~(1 << PRSSM))
++#define power_sequencer_state_machine_disable() (PRR2 |= (uint8_t)(1 << PRSSM))
++
++#define power_tx_modulator_enable()     (PRR2 &= (uint8_t)~(1 << PRTM))
++#define power_tx_modulator_disable()    (PRR2 |= (uint8_t)(1 << PRTM))
++
++#define power_rssi_buffer_enable()      (PRR2 &= (uint8_t)~(1 << PRRS))
++#define power_rssi_buffer_disable()     (PRR2 |= (uint8_t)(1 << PRRS))
++
++#define power_id_scan_enable()          (PRR2 &= (uint8_t)~(1 << PRIDS))
++#define power_id_scan_disable()         (PRR2 |= (uint8_t)(1 << PRIDS))
++
++#define power_data_fifo_enable()        (PRR2 &= (uint8_t)~(1 << PRDF))
++#define power_data_fifo_disable()       (PRR2 |= (uint8_t)(1 << PRDF))
++
++#define power_preamble_rssi_fifo_enable()       (PRR2 &= (uint8_t)~(1 << PRSF))
++#define power_preamble_rssi_fifo_disable()      (PRR2 |= (uint8_t)(1 << PRSF))
++
++#define power_rx_buffer_A_enable()      (PRR2 &= (uint8_t)~(1 << PRXA))
++#define power_rx_buffer_A_disable()     (PRR2 |= (uint8_t)(1 << PRXA))
++
++#define power_rx_buffer_B_enable()      (PRR2 &= (uint8_t)~(1 << PRXB))
++#define power_rx_buffer_B_disable()     (PRR2 |= (uint8_t)(1 << PRXB))
++
++#define power_all_enable() \
++do{ \
++    PRR0 &= (uint8_t)~((1 << PRCO) | (1 << PRVM) | (1 << PRCRC) | (1 << PRTXDC) | (1 << PRRXDC) | (1 << PRSPI)); \
++    PRR1 &= (uint8_t)~((1 << PRT1) | (1 << PRT2) | (1 << PRT3) | (1 << PRT4) | (1 << PRT5)); \
++    PRR2 &= (uint8_t)~((1 << PRSSM) | (1 << PRTM) | (1 << PRRS) | (1 << PRIDS) | (1 << PRDF) | (1 << PRSF) | (1 << PRXA) | (1 << PRXB)); \
++}while(0)
++
++#define power_all_disable() \
++do{ \
++    PRR0 |= (uint8_t)((1 << PRCO) | (1 << PRVM) | (1 << PRCRC) | (1 << PRTXDC) | (1 << PRRXDC) | (1 << PRSPI)); \
++    PRR1 |= (uint8_t)((1 << PRT1) | (1 << PRT2) | (1 << PRT3) | (1 << PRT4) | (1 << PRT5)); \
++    PRR2 |= (uint8_t)((1 << PRSSM) | (1 << PRTM) | (1 << PRRS) | (1 << PRIDS) | (1 << PRDF) | (1 << PRSF) | (1 << PRXA) | (1 << PRXB)); \
++}while(0)
++
+ #elif defined(__AVR_ATmega16M1__) \
+ || defined(__AVR_ATmega32C1__) \
+ || defined(__AVR_ATmega32M1__) \
+@@ -2241,7 +2471,8 @@ void timer_clock_prescale_set(timer_cloc
+ #define timer_clock_prescale_get()  (timer_clock_div_t)(CLKPR & (uint8_t)((1<<CLTPS0)|(1<<CLTPS1)|(1<<CLTPS2)))
+ 
+ #elif defined(__AVR_ATA6285__) \
+-|| defined(__AVR_ATA6286__)
++|| defined(__AVR_ATA6286__) \
++|| defined(__AVR_ATA5831__) 
+ 
+ typedef enum
+ {
+@@ -2272,7 +2503,12 @@ void system_clock_prescale_set(clock_div
+         "out __SREG__,__tmp_reg__" "\n\t"
+         : /* no outputs */
+         : [temp] "r" (__t),
++#if defined(__AVR_ATA6286__) \
++|| defined(__AVR_ATA6285__)
+           [clpr] "I" (_SFR_IO_ADDR(CLKPR)),
++#elif defined(__AVR_ATA5831__)
++	  [clpr] "I" (_SFR_IO_ADDR(CLPR)),
++#endif
+           [enable] "r" _BV(CLPCE),
+           [not_CLKPS] "M" (0xFF & (~ ((1 << CLKPS2) | (1 << CLKPS1) | (1 << CLKPS0)))),
+           [set_value] "r" (__x & 7)
+@@ -2310,7 +2546,12 @@ void timer_clock_prescale_set(timer_cloc
+         "out __SREG__,__tmp_reg__" "\n\t"
+         : /* no outputs */
+         : [temp] "r" (__t),
++#if defined(__AVR_ATA6286__) \
++|| defined(__AVR_ATA6285__)
+           [clpr] "I" (_SFR_IO_ADDR(CLKPR)),
++#elif defined(__AVR_ATA5831__)
++         [clpr] "I" (_SFR_IO_ADDR(CLPR)),
++#endif
+           [enable] "r" (_BV(CLPCE)),	  
+           [not_CLTPS] "M" (0xFF & (~ ((1 << CLTPS2) | (1 << CLTPS1) | (1 << CLTPS0)))),
+           [set_value] "r" ((__x & 7) << 3)
+diff -Naurp include/avr/sleep.h include/avr/sleep.h
+--- include/avr/sleep.h	2013-03-15 12:01:34.000000000 +0530
++++ include/avr/sleep.h	2013-03-15 12:01:52.000000000 +0530
+@@ -569,7 +569,8 @@
+ 
+ #elif defined (__AVR_ATA5790__) \
+ || defined (__AVR_ATA5790N__) \
+-|| defined (__AVR_ATA5795__)
++|| defined (__AVR_ATA5795__) \
++|| defined (__AVR_ATA5831__)
+ 
+     #define SLEEP_MODE_IDLE           (0)
+     #define SLEEP_MODE_EXT_PWR_SAVE   (_BV(SM0))
+diff -Naurp include/avr/wdt.h include/avr/wdt.h
+--- include/avr/wdt.h	2013-03-15 12:01:34.000000000 +0530
++++ include/avr/wdt.h	2013-03-15 12:01:52.000000000 +0530
+@@ -324,7 +324,8 @@ __asm__ __volatile__ ( \
+ || defined(__AVR_ATA5505__) \
+ || defined(__AVR_ATA5790__) \
+ || defined(__AVR_ATA5790N__) \
+-|| defined(__AVR_ATA5795__)
++|| defined(__AVR_ATA5795__) \
++|| defined(__AVR_ATA5831__)
+ 
+ /* Use STS instruction. */
+  
