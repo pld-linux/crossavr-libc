@@ -2,10 +2,16 @@ Summary:	AVR libc
 Summary(pl.UTF-8):	libc na AVR
 Name:		crossavr-libc
 Version:	1.8.0
-Release:	4
+Release:	5
 Epoch:		1
 License:	Modified BSD (see included LICENSE)
 Group:		Development/Tools
+Source0:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-%{version}.tar.bz2
+# Source0-md5:	54c71798f24c96bab206be098062344f
+Source1:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-user-manual-%{version}.tar.bz2
+# Source1-md5:	d8a02a987cc0ea447348e0b6a08ab679
+Source2:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-manpages-%{version}.tar.bz2
+# Source2-md5:	35af895d775015731b77d027a9e07cca
 Patch0:		%{name}-builtins.patch
 Patch1:		disable-unknown.patch
 # Patches 1xx are taken form Atmel official AVR8-GNU toolchain version 3.4.1.830
@@ -36,12 +42,6 @@ Patch123:	509-avr-libc-avrtc446.patch
 Patch124:	510-avr-libc-enable-xml-doc.patch
 Patch125:	511-avr-libc-tiny-stack-backported.patch
 Patch300:	999-avr-libc-new-headers.patch
-Source0:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-%{version}.tar.bz2
-# Source0-md5:	54c71798f24c96bab206be098062344f
-Source1:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-user-manual-%{version}.tar.bz2
-# Source1-md5:	d8a02a987cc0ea447348e0b6a08ab679
-Source2:	http://download.savannah.gnu.org/releases/avr-libc/avr-libc-manpages-%{version}.tar.bz2
-# Source2-md5:	35af895d775015731b77d027a9e07cca
 URL:		http://www.nongnu.org/avr-libc/
 BuildRequires:	crossavr-binutils >= 2.23.1
 BuildRequires:	crossavr-gcc >= 1:3.3
@@ -49,7 +49,9 @@ Requires:	crossavr-gcc >= 1:3.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target		avr
-%define		arch		%{_prefix}/%{target}
+%define		archprefix	%{_prefix}/%{target}
+%define		archlibdir	%{archprefix}/lib
+%define		archincludedir	%{archprefix}/include
 
 %define		__strip		%{target}-strip
 
@@ -57,7 +59,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Contains the standard C library for Atmel AVR microcontrollers.
 
 %description -l pl.UTF-8
-Pakiet zawiera standardową bibliotekę C dla mikrokontrolerów Atmel
+Pakiet zawiera bibliotekę standardową C dla mikrokontrolerów Atmel
 AVR.
 
 %prep
@@ -114,11 +116,11 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 cp -rf doc/examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -rf man $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
-rm -rf $RPM_BUILD_ROOT%{_docdir}/avr-libc-%{version}/examples
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/avr-libc-%{version}/examples
 
 %if 0%{!?debug:1}
-%{target}-strip -g $RPM_BUILD_ROOT%{arch}/lib/*.[oa] \
-	$RPM_BUILD_ROOT%{arch}/lib/avr?/*.[oa]
+%{target}-strip -g $RPM_BUILD_ROOT%{archlibdir}/*.[oa] \
+	$RPM_BUILD_ROOT%{archlibdir}/{avr*,avr*/tiny-stack,tiny-stack}/*.[oa]
 %endif
 
 %clean
@@ -126,22 +128,31 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc avr-libc-user-manual-%{version}/ ChangeLog LICENSE README NEWS
-%attr(755,root,root) %{_bindir}/*
-%dir %{arch}/include
-%{arch}/include/*.h
-%dir %{arch}/include/avr
-%{arch}/include/avr/*.h
-%dir %{arch}/include/compat
-%{arch}/include/compat/*.h
-%dir %{arch}/include/util
-%{arch}/include/util/*.h
-%{arch}/lib/*.[oa]
-%dir %{arch}/lib/avr*
-%{arch}/lib/avr*/*.[oa]
-%dir %{arch}/lib/avr*/tiny-stack
-%{arch}/lib/avr*/tiny-stack/*.[oa]
-%dir %{arch}/lib/tiny-stack
-%{arch}/lib/tiny-stack/*.[oa]
+%doc ChangeLog LICENSE NEWS README avr-libc-user-manual-%{version}
+%attr(755,root,root) %{_bindir}/avr-man
+%dir %{archincludedir}
+%{archincludedir}/*.h
+%{archincludedir}/avr
+%{archincludedir}/compat
+%{archincludedir}/util
+%{archlibdir}/libc.a
+%{archlibdir}/libm.a
+%{archlibdir}/libprintf_*.a
+%{archlibdir}/libscanf_*.a
+%{archlibdir}/crt*.o
+%{archlibdir}/avr25
+%{archlibdir}/avr3
+%{archlibdir}/avr31
+%{archlibdir}/avr35
+%{archlibdir}/avr4
+%{archlibdir}/avr5
+%{archlibdir}/avr51
+%{archlibdir}/avr6
+%{archlibdir}/avrxmega2
+%{archlibdir}/avrxmega4
+%{archlibdir}/avrxmega5
+%{archlibdir}/avrxmega6
+%{archlibdir}/avrxmega7
+%{archlibdir}/tiny-stack
 %{_datadir}/%{name}-%{version}
 %{_examplesdir}/%{name}-%{version}

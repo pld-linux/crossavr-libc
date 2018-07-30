@@ -147,8 +147,9 @@
 @@ -288,7 +246,6 @@
  atmega1281:crtm1281.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
  atmega1284p:crtm1284p.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
- atmega128rfa1:crtm128rfa1.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
+-atmega128rfa1:crtm128rfa1.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS};\
 -m3000:crtm3000.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
++atmega128rfa1:crtm128rfa1.o:${DEV_DEFS}:${CFLAGS_SPACE}:${DEV_ASFLAGS}\
  "
  
  AVR51_DEV_INFO="\
